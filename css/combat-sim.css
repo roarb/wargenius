@@ -1,0 +1,27 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* combat simulator */
+body { background:#fff; }
+
+#armyChoice { width:200px; float:left; }
+#opparmyChoice { width:200px; float:left; }
+#unitChoice { width:200px; float:left; min-height:24px; }
+#oppunitChoice { width:200px; float:left; }
+#unitOptions { width:200px; float:left; }
+#oppunitOptions { width:200px; float:left; }
+.count { width:200px; float:left; }
+.oppcount { width:200px; float:left; }
+#fight { width:400px; text-align:center; padding:10px; }
+
+.clearer { clear:both; }
+
+table td { text-align:center; border:1px #d1d1d1 solid; padding:5px; }
+.armorSaves { color:#333; }
+.parrySaves { color:#690; }
+.wardSaves { color:#009; }
+.regenSaves { color:#F00; }
+
+.draw-box { width:300px; text-align:center; }
+#draw-ranks-top { padding-bottom:2px; }
+#draw-ranks-bottom { padding-top:2px; }

@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Fantasy Combat Simulator</title>
+<script type="text/javascript" src="js/combat-sim.js"></script>
+<script type="text/javascript" src="js/units.js"></script>
+<script type="text/javascript" src="js/choices.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/combat-sim.css" />
+</head>
+
+<body class="combatSim">
+	<div id="armyChoice">
+        <strong>Your Army Choice</strong><br />
+        <select id="army1" onchange="armyChoice()">
+        <option value="">Choose Your Army</option>
+        <script>
+            for (var i=0;i<army.length;i++)
+            { 
+            document.write("<option value=\""+army[i]+"\">"+ army[i] + "</option>");
+            } 	
+        </script>
+        </select>
+    </div>
+    <div id="opparmyChoice">
+    	<strong>Opponent Army Choice</strong><br />
+        <select id="army2" onchange="opparmyChoice()">
+        <option value="">Choose Opponents Army</option>
+        <script>
+            for (var i=0;i<army.length;i++)
+            { 
+            document.write("<option value=\""+army[i]+"\">"+ army[i] + "</option>");
+            } 	
+        </script>
+        </select>
+    </div>
+    <div class="clearer"></div>
+    <form name="countsoptions">
+    <div id="unitChoice"></div>
+    <div id="oppunitChoice"></div>
+    <div class="clearer"></div>
+    <div id="unitOptions"></div>
+    <div id="oppunitOptions"></div>
+    <div class="clearer"></div>
+    <div class="count">
+    	Unit Count: <input type="text" name="unitcount1" maxlength="3" width="2" /><br />
+        Unit Width: <input type="text" name="unitwidth1" maxlength="2" width="2" /><br />
+        <!--Charge: <input type="checkbox" id="charge1" />-->
+    </div>
+    <div class="oppcount">
+    	Unit Count: <input type="text" name="unitcount2" maxlength="3" width="2" /><br />
+        Unit Width: <input type="text" name="unitwidth2" maxlength="2" width="2" /><br />
+        <!--Charge: <input type="checkbox" id="charge2" />-->
+    </div>
+    <div class="clearer"></div>
+    <div id="fight">
+        <input type="button" onclick="fight();" value="Battle Royal!">
+    </form></div>
+    <div id="fight-text">
+    </div>
+    
+</body>
+</html>

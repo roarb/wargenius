@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Battlefield Terrain Generation</title>
+<script type="text/javascript" src="js/terraingen.js"></script>
+<link rel="stylesheet" type="text/css" href="css/styles.css" />
+</head>
+<body>
+<div class="buttons">
+	<button onclick="scenario()">Your Scenario</button><br />
+    <button onclick="standardChart()">Standard 8th Edition</button><br />
+    <button onclick="wildernessChart()">Badlands / Wilderness</button><br />
+    <button onclick="chaoswastesChart()">Chaos Wastes</button><br />
+    <button onclick="mountainChart()">Mountainous Region / Dwarf Realm</button><br />
+    <button onclick="desertChart()">Deserts</button><br />
+    <button onclick="jungleChart()">Jungle / Lustria</button><br />
+    <button onclick="menChart()">The Realms of Men</button><br />
+    <button onclick="islandsChart()">Islands / Ulthuan / Naggaroth</button><br />
+    <button onclick="forestGen()">Mysterious Forest Generation</button><br />
+    <a href="/combat-simulator.html">Combat Simulator</a>
+</div > 
+<div class="results_pane">
+<div id="scenario"></div>
+<div id="title">Choose your battlefield!</div>
+<div id="results"></div>
+<div id="forest"></div>
+</div>
+</body>
+</html>
