@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <widget id="com.wargenius.terrain-battlesim" version="0.0.1">
+        <name>WarGenius Terrain Generator and Battle Simulator</name>
+        <description>
+           hold
+        </description>
+        <author email="rob@wargenius.com" href="http://wargenius.com">
+            WarGenius
+        </author>
+        <content src="index.html" />
+        <access origin="*" />
+        <preference name="Fullscreen" value="true" />
+		<preference name="Orientation" value="landscape" />
+        <preference name="WebViewBounce" value="true" />
+    </widget>
