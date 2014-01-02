@@ -1,10 +1,12 @@
 @charset "utf-8";
 /* CSS Document */
 
-body { background:#000; color:#fff; width:880px; margin:auto; padding-top:20px; }
+body { background:url(../images/terrain-gen-bg.jpg) no-repeat #000; color:#fff; width:1000px; margin:auto; padding-top:20px;  }
 .buttons { float:left; text-align:right; width:250px; margin:0; }
-.results_pane { border:1px solid #d1d1d1; width:600px; float:left; padding:10px; }
+.buttons button { background-color: rgba(255, 255, 255,0.6); width:240px; margin:3px 0; padding:3px 0; }
+.results_pane { border:1px solid #d1d1d1; width:600px; float:left; padding:10px; background-color: rgba(0, 0, 0,0.7); }
 
-/* combat simulator */
-body.combatSim { background:#fff; }
-#unitChoice { display:none; }
+#title { font-weight:bold; text-align:center; }
+#scenario { border-bottom:1px solid #999; }
+#results { margin:10px 0; }
+#forest { border-top:1px solid #999; }
