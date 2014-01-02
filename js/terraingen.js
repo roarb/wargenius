@@ -160,6 +160,7 @@ function reloadPage()
 			} 
 			
 			document.getElementById("results").innerHTML=value;
+			$('body').css('background-image', 'url(images/badlands.jpg)');
 		}
 		 
 		function chaoswastesChart(){
@@ -229,7 +230,7 @@ function reloadPage()
 			} 
 			
 			document.getElementById("results").innerHTML=value;
-			document.getElementById("body").style="background:url(images/chaos-wastes.jpg) no-repeat #000;";
+			$('body').css('background-image', 'url(images/chaos-wastes.jpg)');
 		}
 		
 		function mountainChart(){
@@ -293,6 +294,7 @@ function reloadPage()
 			} 
 			
 			document.getElementById("results").innerHTML=value;
+			$('body').css('background-image', 'url(images/mountains.jpg)');
 		}
 		
 		function desertChart(){
@@ -350,6 +352,7 @@ function reloadPage()
 			} 
 			
 			document.getElementById("results").innerHTML=value;
+			$('body').css('background-image', 'url(images/deserts.jpg)');
 		}
 		
 		function jungleChart() {
@@ -413,7 +416,7 @@ function reloadPage()
 			} 
 			
 			document.getElementById("results").innerHTML=value;
-			document.getElementById("body").style = "background:url(images/jungle.jpg) no-repeat #000;";
+			$('body').css('background-image', 'url(../images/jungle.jpg)');
 		}
 		
 		function menChart() {
@@ -477,6 +480,7 @@ function reloadPage()
 			} 
 			
 			document.getElementById("results").innerHTML=value;
+			$('body').css('background-image', 'url(images/men.jpg)');
 		}
 		
 		function islandsChart(){
@@ -528,6 +532,7 @@ function reloadPage()
 			} 
 			
 			document.getElementById("results").innerHTML=value;
+			$('body').css('background-image', 'url(images/islands.jpg)');
 		}
 		
 		function forestGen(){
