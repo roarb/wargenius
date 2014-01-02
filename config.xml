@@ -4,8 +4,8 @@
 
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.phonegap.hello-world"
-        version   = "0.0.01">
+        id        = "com.wargenius.terrain-battle"
+        version   = "0.0.02">
  
     <name>WarGenius</name>
  
