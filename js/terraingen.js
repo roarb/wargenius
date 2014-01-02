@@ -353,40 +353,40 @@ function reloadPage()
 		
 		function jungleChart() {
 			var chart = new Array(); 
-				chart[0] = ("<strong>Crag:</strong> <em>A rocky with steep sides and a flat plateau.</em> Medium Hill.");
-				chart[1] = new Array ("<strong>Shallow River:</strong> <em>The edges are lined with mangroves and thickets of reeds.</em> Normal River.",
-					"<strong>Shallow River:</strong> <em>The edges are lined with mangroves and thickets of reeds.</em> Normal River.",
-					"<strong>Shallow River:</strong> <em>The edges are lined with mangroves and thickets of reeds.</em> Boiling River (piranha!).",
-					"<strong>Shallow River:</strong> <em>The edges are lined with mangroves and thickets of reeds.</em> Boiling River (piranha!).",
-					"<strong>Shallow River:</strong> <em>The edges are lined with mangroves and thickets of reeds.</em> Necrotic.",
-					"<strong>Shallow River:</strong> <em>The edges are lined with mangroves and thickets of reeds.</em> Necrotic."
+				chart[0] = ("<h2>Crag:</h2> <em>A rocky with steep sides and a flat plateau.</em> Medium Hill.");
+				chart[1] = new Array ("<h2>Shallow River:</h2> <em>The edges are lined with mangroves and thickets of reeds.</em> Normal River.",
+					"<h2>Shallow River:</h2> <em>The edges are lined with mangroves and thickets of reeds.</em> Normal River.",
+					"<h2>Shallow River:</h2> <em>The edges are lined with mangroves and thickets of reeds.</em> Boiling River (piranha!).",
+					"<h2>Shallow River:</h2> <em>The edges are lined with mangroves and thickets of reeds.</em> Boiling River (piranha!).",
+					"<h2>Shallow River:</h2> <em>The edges are lined with mangroves and thickets of reeds.</em> Necrotic.",
+					"<h2>Shallow River:</h2> <em>The edges are lined with mangroves and thickets of reeds.</em> Necrotic."
 					);
-				chart[2] = ("<strong>Boulders:</strong> <em>An are of large boulders embedded in vegetation.</em> As forest, hard cover.");
-				chart[3] = ("<strong>Tangled Scrub:</strong> <em>An area covered in bushes and small stunted thorn trees; possibly tall cactus, bamboo, or pampasgrass.</em> Mysterious Forest.");
-				chart[4] = ("<strong>Swamp:</strong> <em>An area of shallow water full of mangrove trees or similar tropical plants.</em> Marshland, impassable to war machines (cannot deploy here)");
-				chart[5] = ("<strong>Dense Jungle:</strong>. <em>An area of dense, tangled jungle.</em> Mysterious forest, impassable to chariots, cavalry, and monstrous cavalry. Monsters may not march through it. Terradons are fine.");
-				chart[6] = ("<strong>Tall Rainforest Trees:</strong> <em>Blocks line of sight through it, can see in and out.</em> Mysterious Forest");
-				chart[7] = ("<strong>Hill:</strong> <em>A low hill with gentle slopes, entirely covered in scrub vegetation.</em> Small Hill that provides Soft Cover");
-				chart[8] = new Array ("<strong>Overgrown Temple or Shrine:</strong> <em>Lizardmen hate non lizardmen units within 6 inches of temple.</em> Temple of Sotek (Altar of Khaine)",
-					"<strong>Overgrown Temple or Shrine:</strong> <em>Lizardmen hate non lizardmen units within 6 inches of temple.</em> Temple of Tlazcotl (Charnel Pit, lizardmen get 6+ regeneration instead of undead)",
-					"<strong>Overgrown Temple or Shrine:</strong> <em>Lizardmen hate non lizardmen units within 6 inches of temple.</em> Temple of Tepok (Arcane Ruins)",
-					"<strong>Overgrown Temple or Shrine:</strong> <em>Lizardmen hate non lizardmen units within 6 inches of temple.</em> Temple of Quetzel (Magic Circle)",
-					"<strong>Overgrown Temple or Shrine:</strong> <em>Lizardmen hate non lizardmen units within 6 inches of temple.</em> Temple of Chotec (Idol of Mork)",
-					"<strong>Overgrown Temple or Shrine:</strong> <em>Lizardmen hate non lizardmen units within 6 inches of temple.</em> Temple of the Old Ones (Wizards Tower)"
+				chart[2] = ("<h2>Boulders:</h2> <em>An are of large boulders embedded in vegetation.</em> As forest, hard cover.");
+				chart[3] = ("<h2>Tangled Scrub:</h2> <em>An area covered in bushes and small stunted thorn trees; possibly tall cactus, bamboo, or pampasgrass.</em> Mysterious Forest.");
+				chart[4] = ("<h2>Swamp:</h2> <em>An area of shallow water full of mangrove trees or similar tropical plants.</em> Marshland, impassable to war machines (cannot deploy here)");
+				chart[5] = ("<h2>Dense Jungle:</h2>. <em>An area of dense, tangled jungle.</em> Mysterious forest, impassable to chariots, cavalry, and monstrous cavalry. Monsters may not march through it. Terradons are fine.");
+				chart[6] = ("<h2>Tall Rainforest Trees:</h2> <em>Blocks line of sight through it, can see in and out.</em> Mysterious Forest");
+				chart[7] = ("<h2>Hill:</h2> <em>A low hill with gentle slopes, entirely covered in scrub vegetation.</em> Small Hill that provides Soft Cover");
+				chart[8] = new Array ("<h2>Overgrown Temple or Shrine:</h2> <em>Lizardmen hate non lizardmen units within 6 inches of temple.</em> Temple of Sotek (Altar of Khaine)",
+					"<h2>Overgrown Temple or Shrine:</h2> <em>Lizardmen hate non lizardmen units within 6 inches of temple.</em> Temple of Tlazcotl (Charnel Pit, lizardmen get 6+ regeneration instead of undead)",
+					"<h2>Overgrown Temple or Shrine:</h2> <em>Lizardmen hate non lizardmen units within 6 inches of temple.</em> Temple of Tepok (Arcane Ruins)",
+					"<h2>Overgrown Temple or Shrine:</h2> <em>Lizardmen hate non lizardmen units within 6 inches of temple.</em> Temple of Quetzel (Magic Circle)",
+					"<h2>Overgrown Temple or Shrine:</h2> <em>Lizardmen hate non lizardmen units within 6 inches of temple.</em> Temple of Chotec (Idol of Mork)",
+					"<h2>Overgrown Temple or Shrine:</h2> <em>Lizardmen hate non lizardmen units within 6 inches of temple.</em> Temple of the Old Ones (Wizards Tower)"
 					);
-				chart[9] = new Array ("<strong>Grass Huts:</strong> 1 Single Story Building",
-					"<strong>Grass Huts:</strong> 1 Single Story Building and 1 Fence",
-					"<strong>Grass Huts:</strong> 1 Single Story Building and 2 Fences",
-					"<strong>Grass Huts:</strong> 2 Single Story Buildings",
-					"<strong>Grass Huts:</strong> 2 Single Story Buildings and 1 Fence",
-					"<strong>Grass Huts:</strong> 2 Single Story Buildings and 2 Fences"
+				chart[9] = new Array ("<h2>Grass Huts:</h2> 1 Single Story Building",
+					"<h2>Grass Huts:</h2> 1 Single Story Building and 1 Fence",
+					"<h2>Grass Huts:</h2> 1 Single Story Building and 2 Fences",
+					"<h2>Grass Huts:</h2> 2 Single Story Buildings",
+					"<h2>Grass Huts:</h2> 2 Single Story Buildings and 1 Fence",
+					"<h2>Grass Huts:</h2> 2 Single Story Buildings and 2 Fences"
 					);
-				chart[10] = new Array ("<strong>Lagoon:</strong> <em>Open shallow water remaining after a torrential monsoon or seasonal floods. It is probably infested with alligators or piranha fish.</em> Mist Wreathed Swamp",
-					"<strong>Lagoon:</strong> <em>Open shallow water remaining after a torrential monsoon or seasonal floods. It is probably infested with alligators or piranha fish.</em> Mist Wreathed Swamp",
-					"<strong>Lagoon:</strong> <em>Open shallow water remaining after a torrential monsoon or seasonal floods. It is probably infested with alligators or piranha fish.</em> Earthblood Mere",
-					"<strong>Lagoon:</strong> <em>Open shallow water remaining after a torrential monsoon or seasonal floods. It is probably infested with alligators or piranha fish.</em> Earthblood Mere",
-					"<strong>Lagoon:</strong> <em>Open shallow water remaining after a torrential monsoon or seasonal floods. It is probably infested with alligators or piranha fish.</em> Wyrding Well (impassable)",
-					"<strong>Lagoon:</strong> <em>Open shallow water remaining after a torrential monsoon or seasonal floods. It is probably infested with alligators or piranha fish.</em> Wyrding Well (impassable)"
+				chart[10] = new Array ("<h2>Lagoon:</h2> <em>Open shallow water remaining after a torrential monsoon or seasonal floods. It is probably infested with alligators or piranha fish.</em> Mist Wreathed Swamp",
+					"<h2>Lagoon:</h2> <em>Open shallow water remaining after a torrential monsoon or seasonal floods. It is probably infested with alligators or piranha fish.</em> Mist Wreathed Swamp",
+					"<h2>Lagoon:</h2> <em>Open shallow water remaining after a torrential monsoon or seasonal floods. It is probably infested with alligators or piranha fish.</em> Earthblood Mere",
+					"<h2>Lagoon:</h2> <em>Open shallow water remaining after a torrential monsoon or seasonal floods. It is probably infested with alligators or piranha fish.</em> Earthblood Mere",
+					"<h2>Lagoon:</h2> <em>Open shallow water remaining after a torrential monsoon or seasonal floods. It is probably infested with alligators or piranha fish.</em> Wyrding Well (impassable)",
+					"<h2>Lagoon:</h2> <em>Open shallow water remaining after a torrential monsoon or seasonal floods. It is probably infested with alligators or piranha fish.</em> Wyrding Well (impassable)"
 					);
 				
 			var terrainChart = "Jungle - Lustria<br /><br />";
@@ -412,6 +412,7 @@ function reloadPage()
 			} 
 			
 			document.getElementById("results").innerHTML=value;
+			document.getElementById("body").style = "background:url(images/jungle.jpg) no-repeat #000;";
 		}
 		
 		function menChart() {
