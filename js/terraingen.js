@@ -26,64 +26,64 @@ function reloadPage()
 	
 	function standardChart(){
 			var chart = new Array();
-				chart[0] = new Array ("<strong>Encampment of Order</strong> " + Math.floor((Math.random()*3)+1) + " Buldings, " + Math.floor((Math.random()*3)+1) + " Obstacles and Grail Chapel",
-					"<strong>Encampment of Order</strong> " + Math.floor((Math.random()*3)+1) + " Buldings, " + Math.floor((Math.random()*3)+1) + " Obstacles and Acropolis of Heros",
-					"<strong>Encampment of Order</strong> " + Math.floor((Math.random()*3)+1) + " Buldings, " + Math.floor((Math.random()*3)+1) + " Obstacles and Wizard's Tower",
-					"<strong>Encampment of Order</strong> " + Math.floor((Math.random()*3)+1) + " Buldings, " + Math.floor((Math.random()*3)+1) + " Obstacles and Sigmarite Shrine",
-					"<strong>Encampment of Order</strong> " + Math.floor((Math.random()*3)+1) + " Buldings, " + Math.floor((Math.random()*3)+1) + " Obstacles and Elven Waystone",
-					"<strong>Encampment of Order</strong> " + Math.floor((Math.random()*3)+1) + " Buldings, " + Math.floor((Math.random()*3)+1) + " Obstacles and Dwarf Brewhouse"
+				chart[0] = new Array ("<h2>Encampment of Order</h2> " + Math.floor((Math.random()*3)+1) + " Buldings, " + Math.floor((Math.random()*3)+1) + " Obstacles and Grail Chapel",
+					"<h2>Encampment of Order</h2> " + Math.floor((Math.random()*3)+1) + " Buldings, " + Math.floor((Math.random()*3)+1) + " Obstacles and Acropolis of Heros",
+					"<h2>Encampment of Order</h2> " + Math.floor((Math.random()*3)+1) + " Buldings, " + Math.floor((Math.random()*3)+1) + " Obstacles and Wizard's Tower",
+					"<h2>Encampment of Order</h2> " + Math.floor((Math.random()*3)+1) + " Buldings, " + Math.floor((Math.random()*3)+1) + " Obstacles and Sigmarite Shrine",
+					"<h2>Encampment of Order</h2> " + Math.floor((Math.random()*3)+1) + " Buldings, " + Math.floor((Math.random()*3)+1) + " Obstacles and Elven Waystone",
+					"<h2>Encampment of Order</h2> " + Math.floor((Math.random()*3)+1) + " Buldings, " + Math.floor((Math.random()*3)+1) + " Obstacles and Dwarf Brewhouse"
 					);
-				chart[1] = new Array ("<strong>Steadfast Sanctum</strong> Grail Chapel",
-					"<strong>Steadfast Sanctum</strong> Acropolis of Heros",
-					"<strong>Steadfast Sanctum</strong> Wizard's Tower",
-					"<strong>Steadfast Sanctum</strong> Sigmarite Shrine",
-					"<strong>Steadfast Sanctum</strong> Elven Waystone",
-					"<strong>Steadfast Sanctum</strong> Dwarf Brewhouse"
+				chart[1] = new Array ("<h2>Steadfast Sanctum</h2> Grail Chapel",
+					"<h2>Steadfast Sanctum</h2> Acropolis of Heros",
+					"<h2>Steadfast Sanctum</h2> Wizard's Tower",
+					"<h2>Steadfast Sanctum</h2> Sigmarite Shrine",
+					"<h2>Steadfast Sanctum</h2> Elven Waystone",
+					"<h2>Steadfast Sanctum</h2> Dwarf Brewhouse"
 					);
-				chart[2] = new Array ("<strong>Sinister Structure</strong> Altar of Khaine",
-					"<strong>Sinister Structure</strong> Charnel Pit",
-					"<strong>Sinister Structure</strong> Bane Stone",
-					"<strong>Sinister Structure</strong> Haunted Mansion",
-					"<strong>Sinister Structure</strong> Idol of Gork",
-					"<strong>Sinister Structure</strong> Tower of Blood"
+				chart[2] = new Array ("<h2>Sinister Structure</h2> Altar of Khaine",
+					"<h2>Sinister Structure</h2> Charnel Pit",
+					"<h2>Sinister Structure</h2> Bane Stone",
+					"<h2>Sinister Structure</h2> Haunted Mansion",
+					"<h2>Sinister Structure</h2> Idol of Gork",
+					"<h2>Sinister Structure</h2> Tower of Blood"
 					);
-				chart[3] = new Array ("<strong>Hill</strong> Ordinary Hill",
-					"<strong>Hill</strong> Ordinary Hill",
-					"<strong>Hill</strong> Ordinary Hill",
-					"<strong>Hill</strong> Temple of Skulls",
-					"<strong>Hill</strong> Scree Slope",
-					"<strong>Hill</strong> Anvil of Vaul"
+				chart[3] = new Array ("<h2>Hill</h2> Ordinary Hill",
+					"<h2>Hill</h2> Ordinary Hill",
+					"<h2>Hill</h2> Ordinary Hill",
+					"<h2>Hill</h2> Temple of Skulls",
+					"<h2>Hill</h2> Scree Slope",
+					"<h2>Hill</h2> Anvil of Vaul"
 					);
-				chart[4] = ("<strong>Building</strong> <em>A watchtower, mansion or other similar ordinary building</em>");
-				chart[5] = ("<strong>Mysterious Forest</strong>");
-				chart[6] = new Array ("<strong>Obstacles</strong> Fence",
-					"<strong>Obstacles</strong> Wall",
-					"<strong>Obstacles</strong> Blazing Barricade",
-					"<strong>Obstacles</strong> Blessed Bulwark",
-					"<strong>Obstacles</strong> Ghost Fence",
-					"<strong>Obstacles</strong> Fence"
+				chart[4] = ("<h2>Building</h2> <em>A watchtower, mansion or other similar ordinary building</em>");
+				chart[5] = ("<h2>Mysterious Forest</h2> A very mysterious forest, roll with the button on the left");
+				chart[6] = new Array ("<h2>Obstacles</h2> Fence",
+					"<h2>Obstacles</h2> Wall",
+					"<h2>Obstacles</h2> Blazing Barricade",
+					"<h2>Obstacles</h2> Blessed Bulwark",
+					"<h2>Obstacles</h2> Ghost Fence",
+					"<h2>Obstacles</h2> Fence"
 					);
-				chart[7] = ("<strong>Mysterious River</strong>");
-				chart[8] = new Array ("<strong>Magical Mystery</strong> Sinister Statue",
-					"<strong>Magical Mystery</strong> Arcane Ruins",
-					"<strong>Magical Mystery</strong> Nehekharan Sphynx",
-					"<strong>Magical Mystery</strong> Sorcerous Portal",
-					"<strong>Magical Mystery</strong> Wyrding Well",
-					"<strong>Magical Mystery</strong> Magic Circle"
+				chart[7] = ("<h2>Mysterious River</h2> A very mysterious river.");
+				chart[8] = new Array ("<h2>Magical Mystery</h2> Sinister Statue",
+					"<h2>Magical Mystery</h2> Arcane Ruins",
+					"<h2>Magical Mystery</h2> Nehekharan Sphynx",
+					"<h2>Magical Mystery</h2> Sorcerous Portal",
+					"<h2>Magical Mystery</h2> Wyrding Well",
+					"<h2>Magical Mystery</h2> Magic Circle"
 					);
-				chart[9] = new Array ("<strong>Marsh</strong> Earthblood Mere",
-					"<strong>Marsh</strong> Earthblood Mere",
-					"<strong>Marsh</strong> Khemrian Quicksand",
-					"<strong>Marsh</strong> Khemrian Quicksand",
-					"<strong>Marsh</strong> Mist-wreathed Swamp",
-					"<strong>Marsh</strong> Mist-wreathed Swamp"
+				chart[9] = new Array ("<h2>Marsh</h2> Earthblood Mere",
+					"<h2>Marsh</h2> Earthblood Mere",
+					"<h2>Marsh</h2> Khemrian Quicksand",
+					"<h2>Marsh</h2> Khemrian Quicksand",
+					"<h2>Marsh</h2> Mist-wreathed Swamp",
+					"<h2>Marsh</h2> Mist-wreathed Swamp"
 					);
-				chart[10] = new Array ("<strong>Encampment of Destruction</strong> " + Math.floor((Math.random()*3)+1) + " Buldings " + Math.floor((Math.random()*3)+1) + " Obstacles and Altar of Khaine",
-					"<strong>Encampment of Destruction</strong> " + Math.floor((Math.random()*3)+1) + " Buldings, " + Math.floor((Math.random()*3)+1) + " Obstacles and Charnel Pit",
-					"<strong>Encampment of Destruction</strong> " + Math.floor((Math.random()*3)+1) + " Buldings, " + Math.floor((Math.random()*3)+1) + " Obstacles and Bane Stone",
-					"<strong>Encampment of Destruction</strong> " + Math.floor((Math.random()*3)+1) + " Buldings, " + Math.floor((Math.random()*3)+1) + " Obstacles and Haunted Mansion",
-					"<strong>Encampment of Destruction</strong> " + Math.floor((Math.random()*3)+1) + " Buldings, " + Math.floor((Math.random()*3)+1) + " Obstacles and Idol of Gork",
-					"<strong>Encampment of Destruction</strong> " + Math.floor((Math.random()*3)+1) + " Buldings, " + Math.floor((Math.random()*3)+1) + " Obstacles and Tower of Blood"
+				chart[10] = new Array ("<h2>Encampment of Destruction</h2> " + Math.floor((Math.random()*3)+1) + " Buldings " + Math.floor((Math.random()*3)+1) + " Obstacles and Altar of Khaine",
+					"<h2>Encampment of Destruction</h2> " + Math.floor((Math.random()*3)+1) + " Buldings, " + Math.floor((Math.random()*3)+1) + " Obstacles and Charnel Pit",
+					"<h2>Encampment of Destruction</h2> " + Math.floor((Math.random()*3)+1) + " Buldings, " + Math.floor((Math.random()*3)+1) + " Obstacles and Bane Stone",
+					"<h2>Encampment of Destruction</h2> " + Math.floor((Math.random()*3)+1) + " Buldings, " + Math.floor((Math.random()*3)+1) + " Obstacles and Haunted Mansion",
+					"<h2>Encampment of Destruction</h2> " + Math.floor((Math.random()*3)+1) + " Buldings, " + Math.floor((Math.random()*3)+1) + " Obstacles and Idol of Gork",
+					"<h2>Encampment of Destruction</h2> " + Math.floor((Math.random()*3)+1) + " Buldings, " + Math.floor((Math.random()*3)+1) + " Obstacles and Tower of Blood"
 					);	
 						
 			var terrainChart = "Standard 8th Edition<br /><br />";
@@ -113,29 +113,29 @@ function reloadPage()
 		
 		function wildernessChart(){
 			 var chart = new Array (); 
-				chart[0] = ("<strong>Crag:</strong> <em>A huge outcrop of craggy rock. Impassable. Flying creatures may land on top.</em>");
-				chart[1] = ("<strong>Shallow River:</strong> <em>A section of shallow river. Must enter and leave from a table edge, and have one crossing point.</em>");
-				chart[2] = ("<strong>Marshland:</strong> <em>This is an area of water and reeds with the odd gnarled tree here and there.</em>");
-				chart[3] = new Array ("<strong>Cairn:</strong> <em>A huge pile of boulders, probably marking the burial place of a formidable Orc warrior.</em> Idol of Mork.",
-						"<strong>Cairn:</strong> <em>A huge pile of boulders, probably marking the burial place of a formidable Orc warrior.</em> Idol of Mork.",
-						"<strong>Cairn:</strong> <em>A huge pile of boulders, probably marking the burial place of a formidable Orc warrior.</em> Idol of Mork.",
-						"<strong>Cairn:</strong> <em>A huge pile of boulders, probably marking the burial place of a formidable Orc warrior.</em> Bane Stone.",
-						"<strong>Cairn:</strong> <em>A huge pile of boulders, probably marking the burial place of a formidable Orc warrior.</em> Bane Stone.",
-						"<strong>Cairn:</strong> <em>A huge pile of boulders, probably marking the burial place of a formidable Orc warrior.</em> Bane Stone."
+				chart[0] = ("<h2>Crag:</h2> <em>A huge outcrop of craggy rock. Impassable. Flying creatures may land on top.</em>");
+				chart[1] = ("<h2>Shallow River:</h2> <em>A section of shallow river. Must enter and leave from a table edge, and have one crossing point.</em>");
+				chart[2] = ("<h2>Marshland:</h2> <em>This is an area of water and reeds with the odd gnarled tree here and there.</em>");
+				chart[3] = new Array ("<h2>Cairn:</h2> <em>A huge pile of boulders, probably marking the burial place of a formidable Orc warrior.</em> Idol of Mork.",
+						"<h2>Cairn:</h2> <em>A huge pile of boulders, probably marking the burial place of a formidable Orc warrior.</em> Idol of Mork.",
+						"<h2>Cairn:</h2> <em>A huge pile of boulders, probably marking the burial place of a formidable Orc warrior.</em> Idol of Mork.",
+						"<h2>Cairn:</h2> <em>A huge pile of boulders, probably marking the burial place of a formidable Orc warrior.</em> Bane Stone.",
+						"<h2>Cairn:</h2> <em>A huge pile of boulders, probably marking the burial place of a formidable Orc warrior.</em> Bane Stone.",
+						"<h2>Cairn:</h2> <em>A huge pile of boulders, probably marking the burial place of a formidable Orc warrior.</em> Bane Stone."
 					);
-				chart[4] = ("<strong>Scrub:</strong> <em>An area of tangled scrub, thorn bushes, and stunted trees mingled with boulders.</em> Forest.");
-				chart[5] = ("<strong>Choose Scrub or Hill.</strong>");
-				chart[6] = ("<strong>Hill:</strong> <em>A long, low hill.</em>");
-				chart[7] = ("<strong>Boulders:</strong> <em>Pile of rocks or standing stones.</em> Treat as non‐mysterious forest, with hard cover.");
-				chart[8] = new Array ("<strong>Sinister Structure:</strong> Altar of Khaine",
-						"<strong>Sinister Structure:</strong> Charnel Pit",
-						"<strong>Sinister Structure:</strong> Bane Stone",
-						"<strong>Sinister Structure:</strong> Haunted Mansion",
-						"<strong>Sinister Structure:</strong> Idol of Gork",
-						"<strong>Sinister Structure:</strong> Tower of Blood"
+				chart[4] = ("<h2>Scrub:</h2> <em>An area of tangled scrub, thorn bushes, and stunted trees mingled with boulders.</em> Forest.");
+				chart[5] = ("<h2>Choose Scrub or Hill.</h2>");
+				chart[6] = ("<h2>Hill:</h2> <em>A long, low hill.</em>");
+				chart[7] = ("<h2>Boulders:</h2> <em>Pile of rocks or standing stones.</em> Treat as non‐mysterious forest, with hard cover.");
+				chart[8] = new Array ("<h2>Sinister Structure:</h2> Altar of Khaine",
+						"<h2>Sinister Structure:</h2> Charnel Pit",
+						"<h2>Sinister Structure:</h2> Bane Stone",
+						"<h2>Sinister Structure:</h2> Haunted Mansion",
+						"<h2>Sinister Structure:</h2> Idol of Gork",
+						"<h2>Sinister Structure:</h2> Tower of Blood"
 					);
-				chart[9] = ("<strong>Ravine:</strong> <em>A ravine or gulley with rocky edges.</em> Units with the majority in a ravine are out of Line of Sight for spells or shooting. Can not declare charge unless enemy is 2 inches from edge of ravine. Opponents gain charging downhill bonus against units in a ravine.");
-				chart[10] =("<strong>Rocky Ridge:</strong> <em>A steep hill which is longer than it is wide and rises up to a craggy edge.</em> Large Hill / Scree Slope.");
+				chart[9] = ("<h2>Ravine:</h2> <em>A ravine or gulley with rocky edges.</em> Units with the majority in a ravine are out of Line of Sight for spells or shooting. Can not declare charge unless enemy is 2 inches from edge of ravine. Opponents gain charging downhill bonus against units in a ravine.");
+				chart[10] =("<h2>Rocky Ridge:</h2> <em>A steep hill which is longer than it is wide and rises up to a craggy edge.</em> Large Hill / Scree Slope.");
 				
 			var terrainChart = "Badlands - Wilderness<br /><br />";
 			
@@ -164,46 +164,46 @@ function reloadPage()
 		 
 		function chaoswastesChart(){
 			var chart = new Array ();
-				chart[0] =("<strong>Fetid Mere:</strong> <em>An area of stagnant water with gnarled trees, rotten floating corpses, and clouds of flies.</em> Marshland.");
-				chart[1] = ("<strong>Lava Flow:</strong> <em>A river of slow flowing lava descending from some distant volcano.</em> River. Impassable. Dangerous terrain for all units on 1‐3, flaming. Alternately, use river of blood.");
-				chart[2] = new Array ("<strong>Heap of Bones:</strong> <em>A vast heap of bones, among them may be skeletons of huge monsters.</em> Cairnal Pit.",
-					"<strong>Heap of Bones:</strong> <em>A vast heap of bones, among them may be skeletons of huge monsters.</em> Cairnal Pit.",
-					"<strong>Heap of Bones:</strong> <em>A vast heap of bones, among them may be skeletons of huge monsters.</em> Cairnal Pit.",
-					"<strong>Heap of Bones:</strong> <em>A vast heap of bones, among them may be skeletons of huge monsters.</em> Haunted Mansion.",
-					"<strong>Heap of Bones:</strong> <em>A vast heap of bones, among them may be skeletons of huge monsters.</em> Haunted Mansion.",
-					"<strong>Heap of Bones:</strong> <em>A vast heap of bones, among them may be skeletons of huge monsters.</em> Haunted Mansion."
+				chart[0] =("<h2>Fetid Mere:</h2> <em>An area of stagnant water with gnarled trees, rotten floating corpses, and clouds of flies.</em> Marshland.");
+				chart[1] = ("<h2>Lava Flow:</h2> <em>A river of slow flowing lava descending from some distant volcano.</em> River. Impassable. Dangerous terrain for all units on 1‐3, flaming. Alternately, use river of blood.");
+				chart[2] = new Array ("<h2>Heap of Bones:</h2> <em>A vast heap of bones, among them may be skeletons of huge monsters.</em> Cairnal Pit.",
+					"<h2>Heap of Bones:</h2> <em>A vast heap of bones, among them may be skeletons of huge monsters.</em> Cairnal Pit.",
+					"<h2>Heap of Bones:</h2> <em>A vast heap of bones, among them may be skeletons of huge monsters.</em> Cairnal Pit.",
+					"<h2>Heap of Bones:</h2> <em>A vast heap of bones, among them may be skeletons of huge monsters.</em> Haunted Mansion.",
+					"<h2>Heap of Bones:</h2> <em>A vast heap of bones, among them may be skeletons of huge monsters.</em> Haunted Mansion.",
+					"<h2>Heap of Bones:</h2> <em>A vast heap of bones, among them may be skeletons of huge monsters.</em> Haunted Mansion."
 					);
-				chart[3] = ("<strong>Rocky Ridge:</strong> <em>A steep hill which is longer than it is wide, rising up to a craggy ridge. The slopes are steep and strewn with boulders, scree, or scrub. They may be caves where trolls or other creatures hide.</em> Large Hill / Scree Slope.");
-				chart[4] = new Array ("<strong>Gnarled Wood:</strong> <em>A copse of old dead gnarled trees lacking any leaves.</em> Normal Forest",
-					"<strong>Gnarled Wood:</strong> <em>A copse of old dead gnarled trees lacking any leaves.</em> Normal Forest",
-					"<strong>Gnarled Wood:</strong> <em>A copse of old dead gnarled trees lacking any leaves.</em> Abyssal Forest",
-					"<strong>Gnarled Wood:</strong> <em>A copse of old dead gnarled trees lacking any leaves.</em> Abyssal Forest",
-					"<strong>Gnarled Wood:</strong> <em>A copse of old dead gnarled trees lacking any leaves.</em> Blood Forest",
-					"<strong>Gnarled Wood:</strong> <em>A copse of old dead gnarled trees lacking any leaves.</em> Blood Forest"
+				chart[3] = ("<h2>Rocky Ridge:</h2> <em>A steep hill which is longer than it is wide, rising up to a craggy ridge. The slopes are steep and strewn with boulders, scree, or scrub. They may be caves where trolls or other creatures hide.</em> Large Hill / Scree Slope.");
+				chart[4] = new Array ("<h2>Gnarled Wood:</h2> <em>A copse of old dead gnarled trees lacking any leaves.</em> Normal Forest",
+					"<h2>Gnarled Wood:</h2> <em>A copse of old dead gnarled trees lacking any leaves.</em> Normal Forest",
+					"<h2>Gnarled Wood:</h2> <em>A copse of old dead gnarled trees lacking any leaves.</em> Abyssal Forest",
+					"<h2>Gnarled Wood:</h2> <em>A copse of old dead gnarled trees lacking any leaves.</em> Abyssal Forest",
+					"<h2>Gnarled Wood:</h2> <em>A copse of old dead gnarled trees lacking any leaves.</em> Blood Forest",
+					"<h2>Gnarled Wood:</h2> <em>A copse of old dead gnarled trees lacking any leaves.</em> Blood Forest"
 					);
-				chart[5] = ("<strong>Choose gnarled wood or plateau.</strong>");
-				chart[6] = ("<strong>Plateau:</strong> <em>A low flat‐topped hill of bare, weatherd rock.</em>");
-				chart[7] = ("<strong>Malignant Marsh:</strong> <em>A vile, stagnant, foul‐smelling marsh surrounded by tangled scrub.</em> Marshland");
-				chart[8] = new Array ("<strong>Chaos Monolith:</strong> <em>A colossal standing stone on its own, decorated with skulls or other debris.</em> Sinister Statue",
-					"<strong>Chaos Monolith:</strong> <em>A colossal standing stone on its own, decorated with skulls or other debris.</em> Sinister Statue",
-					"<strong>Chaos Monolith:</strong> <em>A colossal standing stone on its own, decorated with skulls or other debris.</em> Sinister Statue",
-					"<strong>Chaos Monolith:</strong> <em>A colossal standing stone on its own, decorated with skulls or other debris.</em> Sorcerous Portal",
-					"<strong>Chaos Monolith:</strong> <em>A colossal standing stone on its own, decorated with skulls or other debris.</em> Sorcerous Portal",
-					"<strong>Chaos Monolith:</strong> <em>A colossal standing stone on its own, decorated with skulls or other debris.</em> Sorcerous Portal"
+				chart[5] = ("<h2>Choose gnarled wood or plateau.</h2>");
+				chart[6] = ("<h2>Plateau:</h2> <em>A low flat‐topped hill of bare, weatherd rock.</em>");
+				chart[7] = ("<h2>Malignant Marsh:</h2> <em>A vile, stagnant, foul‐smelling marsh surrounded by tangled scrub.</em> Marshland");
+				chart[8] = new Array ("<h2>Chaos Monolith:</h2> <em>A colossal standing stone on its own, decorated with skulls or other debris.</em> Sinister Statue",
+					"<h2>Chaos Monolith:</h2> <em>A colossal standing stone on its own, decorated with skulls or other debris.</em> Sinister Statue",
+					"<h2>Chaos Monolith:</h2> <em>A colossal standing stone on its own, decorated with skulls or other debris.</em> Sinister Statue",
+					"<h2>Chaos Monolith:</h2> <em>A colossal standing stone on its own, decorated with skulls or other debris.</em> Sorcerous Portal",
+					"<h2>Chaos Monolith:</h2> <em>A colossal standing stone on its own, decorated with skulls or other debris.</em> Sorcerous Portal",
+					"<h2>Chaos Monolith:</h2> <em>A colossal standing stone on its own, decorated with skulls or other debris.</em> Sorcerous Portal"
 					);
-				chart[9] = new Array ("<strong>Cairn:</strong> <em>A huge mound of boulders or smaller cairns, the burial mound of a warrior or entire army.</em> Altar of Khaine (hill)",
-					"<strong>Cairn:</strong> <em>A huge mound of boulders or smaller cairns, the burial mound of a warrior or entire army.</em> Altar of Khaine (hill)",
-					"<strong>Cairn:</strong> <em>A huge mound of boulders or smaller cairns, the burial mound of a warrior or entire army.</em> Tower of Blood (impassable)",
-					"<strong>Cairn:</strong> <em>A huge mound of boulders or smaller cairns, the burial mound of a warrior or entire army.</em> Tower of Blood (impassable)",
-					"<strong>Cairn:</strong> <em>A huge mound of boulders or smaller cairns, the burial mound of a warrior or entire army.</em> Temple of Skulls (hill)",
-					"<strong>Cairn:</strong> <em>A huge mound of boulders or smaller cairns, the burial mound of a warrior or entire army.</em> Temple of Skulls (hill)"
+				chart[9] = new Array ("<h2>Cairn:</h2> <em>A huge mound of boulders or smaller cairns, the burial mound of a warrior or entire army.</em> Altar of Khaine (hill)",
+					"<h2>Cairn:</h2> <em>A huge mound of boulders or smaller cairns, the burial mound of a warrior or entire army.</em> Altar of Khaine (hill)",
+					"<h2>Cairn:</h2> <em>A huge mound of boulders or smaller cairns, the burial mound of a warrior or entire army.</em> Tower of Blood (impassable)",
+					"<h2>Cairn:</h2> <em>A huge mound of boulders or smaller cairns, the burial mound of a warrior or entire army.</em> Tower of Blood (impassable)",
+					"<h2>Cairn:</h2> <em>A huge mound of boulders or smaller cairns, the burial mound of a warrior or entire army.</em> Temple of Skulls (hill)",
+					"<h2>Cairn:</h2> <em>A huge mound of boulders or smaller cairns, the burial mound of a warrior or entire army.</em> Temple of Skulls (hill)"
 					);					
-				chart[10] = new Array ("<strong>Sorcerer's Tower:</strong> <em>A tall eerie stone tower.</em> Magic Circle",
-					"<strong>Sorcerer's Tower:</strong> <em>A tall eerie stone tower.</em> Magic Circle",
-					"<strong>Sorcerer's Tower:</strong> <em>A tall eerie stone tower.</em> Arcane Ruins",
-					"<strong>Sorcerer's Tower:</strong> <em>A tall eerie stone tower.</em> Arcane Ruins",
-					"<strong>Sorcerer's Tower:</strong> <em>A tall eerie stone tower.</em> Wizard's Tower",
-					"<strong>Sorcerer's Tower:</strong> <em>A tall eerie stone tower.</em> Wizard's Tower"
+				chart[10] = new Array ("<h2>Sorcerer's Tower:</h2> <em>A tall eerie stone tower.</em> Magic Circle",
+					"<h2>Sorcerer's Tower:</h2> <em>A tall eerie stone tower.</em> Magic Circle",
+					"<h2>Sorcerer's Tower:</h2> <em>A tall eerie stone tower.</em> Arcane Ruins",
+					"<h2>Sorcerer's Tower:</h2> <em>A tall eerie stone tower.</em> Arcane Ruins",
+					"<h2>Sorcerer's Tower:</h2> <em>A tall eerie stone tower.</em> Wizard's Tower",
+					"<h2>Sorcerer's Tower:</h2> <em>A tall eerie stone tower.</em> Wizard's Tower"
 					);
 				
 			var terrainChart = "Chaos Wastes<br /><br />";
@@ -229,44 +229,45 @@ function reloadPage()
 			} 
 			
 			document.getElementById("results").innerHTML=value;
+			document.getElementById("body").style="background:url(images/chaos-wastes.jpg) no-repeat #000;";
 		}
 		
 		function mountainChart(){
 			var chart = new Array ();
-					chart[0] = ("<strong>Chasm:</strong> <em>A deep, steep sided gorge.</em> Must enter battle field from table edge, can taper to an end. Impassable. Has a bridge. Units fleeing through chasm die unless they can fly or hover.");
-					chart[1] = ("<strong>Raging Torrent:</strong> </em>A section of fast flowing mountain stream, cascading between boulders.</em>");
-					chart[2] = ("<strong>Boulders:</strong> <em>An area of big boulder which have tumbled down the mountain.</em> Forest, not mysterious, hard cover.");
-					chart[3] = ("<strong>Rocky Peak:</strong> <em>A very steep hill which rises up to a rocky peak.</em> Very tall hill. Impassable. Flyers may land on it.");
-					chart[4] = new Array ("<strong>Pine Forest:</strong> <em>A dense forest of fir trees.</em> Normal Forest",
-						"<strong>Pine Forest:</strong> <em>A dense forest of fir trees.</em> Normal Forest",
-						"<strong>Pine Forest:</strong> <em>A dense forest of fir trees.</em> Normal Forest",
-						"<strong>Pine Forest:</strong> <em>A dense forest of fir trees.</em> Wildwood",
-						"<strong>Pine Forest:</strong> <em>A dense forest of fir trees.</em> Wildwood",
-						"<strong>Pine Forest:</strong> <em>A dense forest of fir trees.</em> Wildwood"
+					chart[0] = ("<h2>Chasm:</h2> <em>A deep, steep sided gorge.</em> Must enter battle field from table edge, can taper to an end. Impassable. Has a bridge. Units fleeing through chasm die unless they can fly or hover.");
+					chart[1] = ("<h2>Raging Torrent:</h2> </em>A section of fast flowing mountain stream, cascading between boulders.</em>");
+					chart[2] = ("<h2>Boulders:</h2> <em>An area of big boulder which have tumbled down the mountain.</em> Forest, not mysterious, hard cover.");
+					chart[3] = ("<h2>Rocky Peak:</h2> <em>A very steep hill which rises up to a rocky peak.</em> Very tall hill. Impassable. Flyers may land on it.");
+					chart[4] = new Array ("<h2>Pine Forest:</h2> <em>A dense forest of fir trees.</em> Normal Forest",
+						"<h2>Pine Forest:</h2> <em>A dense forest of fir trees.</em> Normal Forest",
+						"<h2>Pine Forest:</h2> <em>A dense forest of fir trees.</em> Normal Forest",
+						"<h2>Pine Forest:</h2> <em>A dense forest of fir trees.</em> Wildwood",
+						"<h2>Pine Forest:</h2> <em>A dense forest of fir trees.</em> Wildwood",
+						"<h2>Pine Forest:</h2> <em>A dense forest of fir trees.</em> Wildwood"
 						);
-					chart[5] = ("<strong>Choose pine forest or rocky ridge</strong>");
-					chart[6] = ("<strong>Rocky Ridge:</strong> <em>A long, narrow steep sided hill with a jagged ridge a top it.</em> Medium hill.");
-					chart[7] = ("<strong>Scree:</strong> <em>Area of loose rocks.</em> Scree Slope.");
-					chart[8] = new Array ("<strong>Watchtower:</strong> <em>A stone watchtower</em> A building and 1 wall",
-						"<strong>Watchtower:</strong> <em>A stone watchtower</em> A building and 1 wall",
-						"<strong>Watchtower:</strong> <em>A stone watchtower</em> A building and 2 walls",
-						"<strong>Watchtower:</strong> <em>A stone watchtower</em> A building and 2 walls",
-						"<strong>Watchtower:</strong> <em>A stone watchtower</em> A building and 3 walls",
-						"<strong>Watchtower:</strong> <em>A stone watchtower</em> A building and 3 walls"
+					chart[5] = ("<h2>Choose pine forest or rocky ridge</h2>");
+					chart[6] = ("<h2>Rocky Ridge:</h2> <em>A long, narrow steep sided hill with a jagged ridge a top it.</em> Medium hill.");
+					chart[7] = ("<h2>Scree:</h2> <em>Area of loose rocks.</em> Scree Slope.");
+					chart[8] = new Array ("<h2>Watchtower:</h2> <em>A stone watchtower</em> A building and 1 wall",
+						"<h2>Watchtower:</h2> <em>A stone watchtower</em> A building and 1 wall",
+						"<h2>Watchtower:</h2> <em>A stone watchtower</em> A building and 2 walls",
+						"<h2>Watchtower:</h2> <em>A stone watchtower</em> A building and 2 walls",
+						"<h2>Watchtower:</h2> <em>A stone watchtower</em> A building and 3 walls",
+						"<h2>Watchtower:</h2> <em>A stone watchtower</em> A building and 3 walls"
 						);
-					chart[9] = new Array ("<strong>Ancestral Hall:</strong> <em>A dwarven building.</em> Acropolis of Heroes.",
-						"<strong>Ancestral Hall:</strong> <em>A dwarven building.</em> Acropolis of Heroes.",
-						"<strong>Ancestral Hall:</strong> <em>A dwarven building.</em> Acropolis of Heroes.",
-						"<strong>Ancestral Hall:</strong> <em>A dwarven building.</em> Dwarf Brewhouse.",
-						"<strong>Ancestral Hall:</strong> <em>A dwarven building.</em> Dwarf Brewhouse.",
-						"<strong>Ancestral Hall:</strong> <em>A dwarven building.</em> Dwarf Brewhouse."
+					chart[9] = new Array ("<h2>Ancestral Hall:</h2> <em>A dwarven building.</em> Acropolis of Heroes.",
+						"<h2>Ancestral Hall:</h2> <em>A dwarven building.</em> Acropolis of Heroes.",
+						"<h2>Ancestral Hall:</h2> <em>A dwarven building.</em> Acropolis of Heroes.",
+						"<h2>Ancestral Hall:</h2> <em>A dwarven building.</em> Dwarf Brewhouse.",
+						"<h2>Ancestral Hall:</h2> <em>A dwarven building.</em> Dwarf Brewhouse.",
+						"<h2>Ancestral Hall:</h2> <em>A dwarven building.</em> Dwarf Brewhouse."
 						);
-					chart[10] = new Array ("<strong>Tarn:</strong> <em>A small, round mountain lake. Monsters probably lurk within it.</em> Impassable.",
-						"<strong>Tarn:</strong> <em>A small, round mountain lake. Monsters probably lurk within it.</em> Impassable.",
-						"<strong>Tarn:</strong> <em>A small, round mountain lake. Monsters probably lurk within it.</em> Impassable.",
-						"<strong>Tarn:</strong> <em>A small, round mountain lake. Monsters probably lurk within it.</em> Mist Wreathed Swamp.",
-						"<strong>Tarn:</strong> <em>A small, round mountain lake. Monsters probably lurk within it.</em> Mist Wreathed Swamp.",
-						"<strong>Tarn:</strong> <em>A small, round mountain lake. Monsters probably lurk within it.</em> Mist Wreathed Swamp."
+					chart[10] = new Array ("<h2>Tarn:</h2> <em>A small, round mountain lake. Monsters probably lurk within it.</em> Impassable.",
+						"<h2>Tarn:</h2> <em>A small, round mountain lake. Monsters probably lurk within it.</em> Impassable.",
+						"<h2>Tarn:</h2> <em>A small, round mountain lake. Monsters probably lurk within it.</em> Impassable.",
+						"<h2>Tarn:</h2> <em>A small, round mountain lake. Monsters probably lurk within it.</em> Mist Wreathed Swamp.",
+						"<h2>Tarn:</h2> <em>A small, round mountain lake. Monsters probably lurk within it.</em> Mist Wreathed Swamp.",
+						"<h2>Tarn:</h2> <em>A small, round mountain lake. Monsters probably lurk within it.</em> Mist Wreathed Swamp."
 						);
 				
 			var terrainChart = "Mountainous Region - Dwarf Realm<br /><br />";
@@ -296,35 +297,35 @@ function reloadPage()
 		
 		function desertChart(){
 			var chart = new Array  ();
-				chart[0] = ("<strong>A deep ravine:</strong> Must enter from table edge, can taper to an end. Has bridge for crossing. Dangerous terrain test to cross for all units.");
-				chart[1] = ("<strong>A wadi:</strong> <em>A dry riverbed filled with sand instead of water.</em> As river for movement only, no bridge.");
-				chart[2] = ("<strong>Boulders:</strong> <em>A scattering of boulders and loose rocks, fallen statues, or rubble from tombs.</em> As forest with hard cover.");
-				chart[3] = ("<strong>Jebel:</strong> <em>A rugged desert hill of bare weathered rock.</em> A Hill");
-				chart[4] = ("<strong>Sand Dune:</strong> <em>Gently sloping hills made of wind blown sand.</em> A Hill, unable to march on it.");
-				chart[5] = ("<strong>Choose Jebel (hill) or Sand Dune (hill w/o marching over).</strong>");
-				chart[6] = new Array ("<strong>Palm Grove or Scrub:</strong> <em>Can also be thorn bushes or cacti.</em> Normal Forest",
-					"<strong>Palm Grove or Scrub:</strong> <em>Can also be thorn bushes or cacti.</em> Normal Forest",
-					"<strong>Palm Grove or Scrub:</strong> <em>Can also be thorn bushes or cacti.</em> Venom Thicket",
-					"<strong>Palm Grove or Scrub:</strong> <em>Can also be thorn bushes or cacti.</em> Venom Thicket",
-					"<strong>Palm Grove or Scrub:</strong> <em>Can also be thorn bushes or cacti.</em> Wildwood",
-					"<strong>Palm Grove or Scrub:</strong> <em>Can also be thorn bushes or cacti.</em> Wildwood"
+				chart[0] = ("<h2>A deep ravine:</h2> Must enter from table edge, can taper to an end. Has bridge for crossing. Dangerous terrain test to cross for all units.");
+				chart[1] = ("<h2>A wadi:</h2> <em>A dry riverbed filled with sand instead of water.</em> As river for movement only, no bridge.");
+				chart[2] = ("<h2>Boulders:</h2> <em>A scattering of boulders and loose rocks, fallen statues, or rubble from tombs.</em> As forest with hard cover.");
+				chart[3] = ("<h2>Jebel:</h2> <em>A rugged desert hill of bare weathered rock.</em> A Hill");
+				chart[4] = ("<h2>Sand Dune:</h2> <em>Gently sloping hills made of wind blown sand.</em> A Hill, unable to march on it.");
+				chart[5] = ("<h2>Choose Jebel (hill) or Sand Dune (hill w/o marching over).</h2>");
+				chart[6] = new Array ("<h2>Palm Grove or Scrub:</h2> <em>Can also be thorn bushes or cacti.</em> Normal Forest",
+					"<h2>Palm Grove or Scrub:</h2> <em>Can also be thorn bushes or cacti.</em> Normal Forest",
+					"<h2>Palm Grove or Scrub:</h2> <em>Can also be thorn bushes or cacti.</em> Venom Thicket",
+					"<h2>Palm Grove or Scrub:</h2> <em>Can also be thorn bushes or cacti.</em> Venom Thicket",
+					"<h2>Palm Grove or Scrub:</h2> <em>Can also be thorn bushes or cacti.</em> Wildwood",
+					"<h2>Palm Grove or Scrub:</h2> <em>Can also be thorn bushes or cacti.</em> Wildwood"
 					);
-				chart[7] = new Array ("<strong>Desert Ruins:</strong> Acropolis of Heroes",
-					"<strong>Desert Ruins:</strong> Arcane Ruins",
-					"<strong>Desert Ruins:</strong> Haunted Crypt (as haunted mansion)",
-					"<strong>Desert Ruins:</strong> Nehekharan Sphynx",
-					"<strong>Desert Ruins:</strong> Wyrdling Well",
-					"<strong>Desert Ruins:</strong> Obelisk of Light (as river of light except affects one unit within 6 inches at start of each player turn. Randomize which unit."
+				chart[7] = new Array ("<h2>Desert Ruins:</h2> Acropolis of Heroes",
+					"<h2>Desert Ruins:</h2> Arcane Ruins",
+					"<h2>Desert Ruins:</h2> Haunted Crypt (as haunted mansion)",
+					"<h2>Desert Ruins:</h2> Nehekharan Sphynx",
+					"<h2>Desert Ruins:</h2> Wyrdling Well",
+					"<h2>Desert Ruins:</h2> Obelisk of Light (as river of light except affects one unit within 6 inches at start of each player turn. Randomize which unit."
 					);
-				chart[8] = new Array ("<strong>Group of buildings</strong> 1 Building",
-					"<strong>Group of buildings</strong> 1 Building with 1 Fence",
-					"<strong>Group of buildings</strong> 1 Building with 2 Fences",
-					"<strong>Group of buildings</strong> 2 Buildings",
-					"<strong>Group of buildings</strong> 2 Buildings with 1 Fence",
-					"<strong>Group of buildings</strong> 2 Buildings with 2 Fences"
+				chart[8] = new Array ("<h2>Group of buildings</h2> 1 Building",
+					"<h2>Group of buildings</h2> 1 Building with 1 Fence",
+					"<h2>Group of buildings</h2> 1 Building with 2 Fences",
+					"<h2>Group of buildings</h2> 2 Buildings",
+					"<h2>Group of buildings</h2> 2 Buildings with 1 Fence",
+					"<h2>Group of buildings</h2> 2 Buildings with 2 Fences"
 					);
-				chart[9] = ("<strong>Oasis:</strong> <em>A roughly circular pool of water, surrounded by palm trees and boulders.</em> As river. On 4+ unit mostly within has 6+ regeneration.");
-				chart[10] = ("<strong>Quicksand:</strong> as Khemri quicksand.");
+				chart[9] = ("<h2>Oasis:</h2> <em>A roughly circular pool of water, surrounded by palm trees and boulders.</em> As river. On 4+ unit mostly within has 6+ regeneration.");
+				chart[10] = ("<h2>Quicksand:</h2> as Khemri quicksand.");
 				
 			var terrainChart = "The Deserts<br /><br />";
 		
@@ -417,41 +418,41 @@ function reloadPage()
 		
 		function menChart() {
 			var chart = new Array(); 
-				chart[0] = ("<strong>River or Lake:</strong> <em>Lakes are impassable, rives are normal.</em> Mysterious River.");
-				chart[1] = ("<strong>Stream:</strong> Treat as Mysterious River.");
-				chart[2] = ("<strong>Marshland:</strong> Treat as Mysteriuos Marshland.");
-				chart[3] = new Array ("<strong>Field Boundaries:</strong> Fence",
-					"<strong>Field Boundaries:</strong> Fence",
-					"<strong>Field Boundaries:</strong> Wall",
-					"<strong>Field Boundaries:</strong> Blazing Barricade",
-					"<strong>Field Boundaries:</strong> Blessed Bulwark",
-					"<strong>Field Boundaries:</strong> Ghost Fence"
+				chart[0] = ("<h2>River or Lake:</h2> <em>Lakes are impassable, rives are normal.</em> Mysterious River.");
+				chart[1] = ("<h2>Stream:</h2> Treat as Mysterious River.");
+				chart[2] = ("<h2>Marshland:</h2> Treat as Mysteriuos Marshland.");
+				chart[3] = new Array ("<h2>Field Boundaries:</h2> Fence",
+					"<h2>Field Boundaries:</h2> Fence",
+					"<h2>Field Boundaries:</h2> Wall",
+					"<h2>Field Boundaries:</h2> Blazing Barricade",
+					"<h2>Field Boundaries:</h2> Blessed Bulwark",
+					"<h2>Field Boundaries:</h2> Ghost Fence"
 					);
-				chart[4] = ("<strong>Woods:</strong> Mysterious Forests");
-				chart[5] = ("<strong>Choose Hill or Woods</strong>");
-				chart[6] = ("<strong>Hill:</strong> A small Hill");
-				chart[7] = new Array ("<strong>Building:</strong> A Regular 1 Story Building",
-					"<strong>Building:</strong> A Regular 1 Story Building",
-					"<strong>Building:</strong> A Regular 2 Story Building",
-					"<strong>Building:</strong> A Regular 2 Story Building",
-					"<strong>Building:</strong> A Regular 3 Story Building",
-					"<strong>Building:</strong> A Regular 3 Story Building"
+				chart[4] = ("<h2>Woods:</h2> Mysterious Forests");
+				chart[5] = ("<h2>Choose Hill or Woods</h2>");
+				chart[6] = ("<h2>Hill:</h2> A small Hill");
+				chart[7] = new Array ("<h2>Building:</h2> A Regular 1 Story Building",
+					"<h2>Building:</h2> A Regular 1 Story Building",
+					"<h2>Building:</h2> A Regular 2 Story Building",
+					"<h2>Building:</h2> A Regular 2 Story Building",
+					"<h2>Building:</h2> A Regular 3 Story Building",
+					"<h2>Building:</h2> A Regular 3 Story Building"
 					);
-				chart[8] = new Array ("<strong>Village:</strong> 2 Regular Buildings.",
-					"<strong>Village:</strong> 2 Regular Buildings.",
-					"<strong>Village:</strong> 2 Regular Buildings and 1 Fence",
-					"<strong>Village:</strong> 2 Regular Buildings and 1 Fence.",
-					"<strong>Village:</strong> 2 Regular Buildings and 2 Fences.",
-					"<strong>Village:</strong> 2 Regular Buildings and 2 Fences."
+				chart[8] = new Array ("<h2>Village:</h2> 2 Regular Buildings.",
+					"<h2>Village:</h2> 2 Regular Buildings.",
+					"<h2>Village:</h2> 2 Regular Buildings and 1 Fence",
+					"<h2>Village:</h2> 2 Regular Buildings and 1 Fence.",
+					"<h2>Village:</h2> 2 Regular Buildings and 2 Fences.",
+					"<h2>Village:</h2> 2 Regular Buildings and 2 Fences."
 					);
-				chart[9] = new Array ("<strong>Steadfast Sanctum:</strong> Grail Chapel",
-					"<strong>Steadfast Sanctum:</strong> Acropolis of Heroes",
-					"<strong>Steadfast Sanctum:</strong> Wizard's Tower",
-					"<strong>Steadfast Sanctum:</strong> Sigmarite Shrine",
-					"<strong>Steadfast Sanctum:</strong> Elven Waystone",
-					"<strong>Steadfast Sanctum:</strong> Dwarf Brewhouse"
+				chart[9] = new Array ("<h2>Steadfast Sanctum:</h2> Grail Chapel",
+					"<h2>Steadfast Sanctum:</h2> Acropolis of Heroes",
+					"<h2>Steadfast Sanctum:</h2> Wizard's Tower",
+					"<h2>Steadfast Sanctum:</h2> Sigmarite Shrine",
+					"<h2>Steadfast Sanctum:</h2> Elven Waystone",
+					"<h2>Steadfast Sanctum:</h2> Dwarf Brewhouse"
 					);
-				chart[10] = ("<strong>Fortified Building:</strong> Place a low hill, with a building on it, and 3 walls within 6 inches.");
+				chart[10] = ("<h2>Fortified Building:</h2> Place a low hill, with a building on it, and 3 walls within 6 inches.");
 				
 			var terrainChart = "The Realms of Men<br /><br />";
 		
@@ -480,29 +481,29 @@ function reloadPage()
 		
 		function islandsChart(){
 			var chart = new Array() 
-				chart[0] = ("<strong>Chasm:</strong> <em>A deep, steep sided gorge.</em> Must enter battle field from table edge, can taper to an end. Impassable. Has a bridge. Units fleeing through chasm die unless they can fly or hover.");
-				chart[1] = ("<strong>Inlet of the Sea:</strong> Treat as river.");
-				chart[2] = ("<strong>Rocky Peak:</strong> <em>A steep hill rising to a rocky peak.</em> A Medium Hill");
-				chart[3] = new Array ("<strong>Ancient Wall:</strong> Fence",
-					"<strong>Ancient Wall:</strong> Fence",
-					"<strong>Ancient Wall:</strong> Wall",
-					"<strong>Ancient Wall:</strong> Wall",
-					"<strong>Ancient Wall:</strong> choose Blazing Barricade (Ulthuan) or Ghost Fence (Naggaroth)",
-					"<strong>Ancient Wall:</strong> choose Blessed Bulwark (Ulthuan) or Cursed Bulwark (Naggaroth) [Cursed is Identical to Blessed but affects forces of Order]"
+				chart[0] = ("<h2>Chasm:</h2> <em>A deep, steep sided gorge.</em> Must enter battle field from table edge, can taper to an end. Impassable. Has a bridge. Units fleeing through chasm die unless they can fly or hover.");
+				chart[1] = ("<h2>Inlet of the Sea:</h2> Treat as river.");
+				chart[2] = ("<h2>Rocky Peak:</h2> <em>A steep hill rising to a rocky peak.</em> A Medium Hill");
+				chart[3] = new Array ("<h2>Ancient Wall:</h2> Fence",
+					"<h2>Ancient Wall:</h2> Fence",
+					"<h2>Ancient Wall:</h2> Wall",
+					"<h2>Ancient Wall:</h2> Wall",
+					"<h2>Ancient Wall:</h2> choose Blazing Barricade (Ulthuan) or Ghost Fence (Naggaroth)",
+					"<h2>Ancient Wall:</h2> choose Blessed Bulwark (Ulthuan) or Cursed Bulwark (Naggaroth) [Cursed is Identical to Blessed but affects forces of Order]"
 					);
-				chart[4] = ("<strong>Deep Forest:</strong> Mysterious Forest");
-				chart[5] = ("<strong>Choose hill or deep forest.</strong>");
-				chart[6] = ("<strong>Hill:</strong> A Small Hill.");
-				chart[7] = ("<strong>Elven Waystone:</strong> An Elven Waystone.");
-				chart[8] = ("<strong>Watchtower:</strong> A Three story building.");
-				chart[9] = new Array ("<strong>Secluded Shrine:</strong> <em>A shrine to one of the ancient Elven deities.</em> Altar of Khaine",
-					"<strong>Secluded Shrine:</strong> <em>A shrine to one of the ancient Elven deities.</em> Anvil of Vaul",
-					"<strong>Secluded Shrine:</strong> <em>A shrine to one of the ancient Elven deities.</em> Magic Circle",
-					"<strong>Secluded Shrine:</strong> <em>A shrine to one of the ancient Elven deities.</em> Magic Circle",
-					"<strong>Secluded Shrine:</strong> <em>A shrine to one of the ancient Elven deities.</em> Tower of Blood",
-					"<strong>Secluded Shrine:</strong> <em>A shrine to one of the ancient Elven deities.</em> Asur Chapel (as grail chapel but for High/Wood Elves)"
+				chart[4] = ("<h2>Deep Forest:</h2> Mysterious Forest");
+				chart[5] = ("<h2>Choose hill or deep forest.</h2>");
+				chart[6] = ("<h2>Hill:</h2> A Small Hill.");
+				chart[7] = ("<h2>Elven Waystone:</h2> An Elven Waystone.");
+				chart[8] = ("<h2>Watchtower:</h2> A Three story building.");
+				chart[9] = new Array ("<h2>Secluded Shrine:</h2> <em>A shrine to one of the ancient Elven deities.</em> Altar of Khaine",
+					"<h2>Secluded Shrine:</h2> <em>A shrine to one of the ancient Elven deities.</em> Anvil of Vaul",
+					"<h2>Secluded Shrine:</h2> <em>A shrine to one of the ancient Elven deities.</em> Magic Circle",
+					"<h2>Secluded Shrine:</h2> <em>A shrine to one of the ancient Elven deities.</em> Magic Circle",
+					"<h2>Secluded Shrine:</h2> <em>A shrine to one of the ancient Elven deities.</em> Tower of Blood",
+					"<h2>Secluded Shrine:</h2> <em>A shrine to one of the ancient Elven deities.</em> Asur Chapel (as grail chapel but for High/Wood Elves)"
 					);
-				chart[10] = ("<strong>Elven Hall:</strong> A Large Building with two sections.");
+				chart[10] = ("<h2>Elven Hall:</h2> A Large Building with two sections.");
 				
 			var terrainChart = "Islands / Ulthuan / Naggaroth<br /><br />";
 		
