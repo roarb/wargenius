@@ -109,6 +109,7 @@ function reloadPage()
 			} 
 			
 			document.getElementById("results").innerHTML=value;
+			$('body').css('background-image', 'url(images/8th.jpg)');
 		}
 		
 		function wildernessChart(){
@@ -416,7 +417,7 @@ function reloadPage()
 			} 
 			
 			document.getElementById("results").innerHTML=value;
-			$('body').css('background-image', 'url(../images/jungle.jpg)');
+			$('body').css('background-image', 'url(images/jungle.jpg)');
 		}
 		
 		function menChart() {
