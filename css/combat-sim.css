@@ -2,8 +2,9 @@
 /* CSS Document */
 
 /* combat simulator */
-body { background:#fff; width:960px; }
-
+body { background:url(../images/battle-sim-bg.jpg) no-repeat 0 0 #000; }
+div { z-index:1; position:relative; }
+.combatSim { width:940px; margin:auto; background-color: rgba(255, 255, 255,0.7); padding:5px; }
 #armyChoice { width:200px; float:left; }
 #opparmyChoice { width:200px; float:right; }
 #unitChoice { width:200px; min-height:24px; }
@@ -16,16 +17,21 @@ body { background:#fff; width:960px; }
 
 .clearer { clear:both; }
 
-table td { text-align:center; border:1px #d1d1d1 solid; padding:1px; }
-.armorSaves { color:#333; }
-.parrySaves { color:#690; }
-.wardSaves { color:#009; }
-.regenSaves { color:#F00; }
+table { margin:auto; }
+table td { background-color: rgba(255, 255, 255,0.7); padding: 2px 6px; }
+tr.armor { color:#09556b; }
+tr.parry { color:#690; }
+tr.ward { color:#009; }
+tr.regen { color:#f33; }
+td.label { text-align:right; font-weight:bold; }
+td.value { text-align:left; padding-left:4px;}
 
-.draw-box { min-width:560px; float:left; }
-#fight-intro { text-align:center; border-bottom:1px dashed #d1d1d1; margin:0 20px; font-size:1.2em; height:26px; }
-#fight-text-top, #fight-text-bottom { float:left; width:200px; }
+.draw-box { min-width:500px; float:left; }
+#fight-intro { text-align:center; border-bottom:1px dashed #333; margin:5px 20px; font-size:1.2em; }
+#fight-text-top, #fight-text-bottom { float:left; width:175px; }
 #draw-ranks-top, #draw-ranks-bottom { padding-top:40px; min-width:260px; float:left; text-align:center; }
-#draw-icons-top, #draw-icons-bottom { padding-top:40px; float:left; max-width:100px; color:#fff; }
+#draw-icons-top, #draw-icons-bottom { padding-top:40px; float:left; max-width:65px; color:#fff; }
 
-h2 { font-size: 1.2em; line-height:1em; }
+h2 { font-size: 1.2em; line-height:1em; text-align:center; margin:4px 0; border-bottom:1px solid #666; }
+
+#armyIcon, #oppArmyIcon { padding-top:10px; text-align:center; }

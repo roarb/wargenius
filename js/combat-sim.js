@@ -53,7 +53,7 @@ function fight(){
 	if (!$('#lance2').attr('checked'))	 	{unit2['op-lance'] = (0);}
 	
 	//opening message
-	var intro = "Today " + unit1['count'] + " " + unit1['name'] + "'s take on " + unit2['count'] + " " + unit2['name'] + "'s<br /><br />";
+	var intro = "Today " + unit1['count'] + " " + unit1['name'] + " take on " + unit2['count'] + " " + unit2['name'];
 	
 	// which unit is 1 which is 2 - initiative based attacks
 	var simoAttacks = 0;
@@ -72,29 +72,29 @@ function fight(){
 	
 	if (simoAttacks == 0 && secondUnitFirst == 0) {
 		var modelsLost = 0;
-		var firstUnitAttacks = "<h2>" + unit1['name'] + " attack first.</h2>";
+		var firstUnitAttacks = "<h2>" + unit1['name'] + "<br />attack first.</h2>";
 		var firstUnitCombatCalculated = CombatFight(unit1,unit2,modelsLost);
 		modelsLost = firstUnitCombatCalculated[7];
-		var secondUnitAttacks = "<h2>" + unit2['name'] + " attack second.</h2>";
+		var secondUnitAttacks = "<h2>" + unit2['name'] + "<br />attack second.</h2>";
 		var secondUnitCombatCalculated = CombatFight(unit2,unit1,modelsLost);
 		var combatResults = combatResultsCalculation(unit1,firstUnitCombatCalculated[7],unit2,secondUnitCombatCalculated[7]);
 	}
 	else 
 		if (secondUnitFirst == 1) {
 			var modelsLost = 0;
-			var firstUnitAttacks = "<h2>" + unit2['name'] + " attack first.</h2>";
+			var firstUnitAttacks = "<h2>" + unit2['name'] + "<br />attack first.</h2>";
 			var firstUnitCombatCalculated = CombatFight(unit2,unit1,modelsLost);
 			modelsLost = firstUnitCombatCalculated[7];
-			var secondUnitAttacks = "<h2"> + unit1['name'] + " attack second.</h2>";
+			var secondUnitAttacks = "<h2>" + unit1['name'] + "<br />attack second.</h2>";
 			var secondUnitCombatCalculated = CombatFight(unit1,unit2,modelsLost);
 			var combatResults = combatResultsCalculation(unit2,firstUnitCombatCalculated[7],unit1,secondUnitCombatCalculated[7]);
 		}
 		else 
 			if (simoAttacks == 1) {
 				var modelsLost = 0;
-				var firstUnitAttacks = "<h2>" + unit1['name'] + " attacks simultaneously.</h2>";
+				var firstUnitAttacks = "<h2>" + unit1['name'] + "<br />attack simultaneously.</h2>";
 				var firstUnitCombatCalculated = CombatFight(unit1,unit2,modelsLost);
-				var secondUnitAttacks = "<h2"> + unit2['name'] + " attacks simultaneously.</h2>";
+				var secondUnitAttacks = "<h2>" + unit2['name'] + "<br />attack simultaneously.</h2>";
 				var secondUnitCombatCalculated = CombatFight(unit2,unit1,modelsLost);
 				var combatResults = combatResultsCalculation(unit1,firstUnitCombatCalculated[7],unit2,secondUnitCombatCalculated[7]);
 			}
@@ -252,6 +252,7 @@ function CombatFight(unit, oppunit, woundsTaken){
 			unitCombatResults[5] = oppunitWoundsSavedByWardText;
 			unitCombatResults[6] = oppunitWoundsSavedByRegenText;
 			unitCombatResults[7] = unitTotalWounds.toFixed(1); // wounds caused - used to reduce unitcount on units attacking second 
+			unitCombatResults[8] = unit['name'];
 		
 		return unitCombatResults;
 		
@@ -347,36 +348,36 @@ function combatResultsCalculation(firstUnit,firstUnitWounds,secondUnit,secondUni
 	
 	//##############################
 	if (firstUnitCombatCalculated[3] != ''){ 
-		var firstUnitFightTextArmorSaves = '<tr class="armor"><td>Armor Saves</td><td>' + firstUnitCombatCalculated[3] + '</td></tr>';
+		var firstUnitFightTextArmorSaves = '<tr class="armor"><td class="label">Armor Saves</td><td class="value">' + firstUnitCombatCalculated[3] + '</td></tr>';
 		}
 	else var firstUnitFightTextArmorSaves = '';
 	if (firstUnitCombatCalculated[4] != ''){ 
-		var firstUnitFightTextParrySaves = '<tr class="parry"><td>Parry Saves</td><td>' + firstUnitCombatCalculated[4] + '</td></tr>';
+		var firstUnitFightTextParrySaves = '<tr class="parry"><td class="label">Parry Saves</td><td class="value">' + firstUnitCombatCalculated[4] + '</td></tr>';
 		}
 	else var firstUnitFightTextParrySaves = '';
 	if (firstUnitCombatCalculated[5] != ''){ 
-		var firstUnitFightTextWardSaves = '<tr class="ward"><td>Ward Saves</td><td>' + firstUnitCombatCalculated[5] + '</td></tr>';
+		var firstUnitFightTextWardSaves = '<tr class="ward"><td class="label">Ward Saves</td><td class="value">' + firstUnitCombatCalculated[5] + '</td></tr>';
 		}
 	else var firstUnitFightTextWardSaves = '';
 	if (firstUnitCombatCalculated[6] != ''){ 
-		var firstUnitFightTextRegenSaves = '<tr class="regen"><td>Regen Saves</td><td>' + firstUnitCombatCalculated[6] + '</td></tr>';
+		var firstUnitFightTextRegenSaves = '<tr class="regen"><td class="label">Regen Saves</td><td class="value">' + firstUnitCombatCalculated[6] + '</td></tr>';
 		}
 	else var firstUnitFightTextRegenSaves = '';
 	
 	if (secondUnitCombatCalculated[3] != ''){ 
-		var secondUnitFightTextArmorSaves = '<tr class="armor"><td>Armor Saves</td><td>' + secondUnitCombatCalculated[3] + '</td></tr>';
+		var secondUnitFightTextArmorSaves = '<tr class="armor"><td class="label">Armor Saves</td><td class="value">' + secondUnitCombatCalculated[3] + '</td></tr>';
 		}
 	else var secondUnitFightTextArmorSaves = '';
 	if (secondUnitCombatCalculated[4] != ''){ 
-		var secondUnitFightTextParrySaves = '<tr class="parry"><td>Parry Saves</td><td>' + secondUnitCombatCalculated[4] + '</td></tr>';
+		var secondUnitFightTextParrySaves = '<tr class="parry"><td class="label">Parry Saves</td><td class="value">' + secondUnitCombatCalculated[4] + '</td></tr>';
 		}
 	else var secondUnitFightTextParrySaves = '';
 	if (secondUnitCombatCalculated[5] != ''){ 
-		var secondUnitFightTextWardSaves = '<tr class="ward"><td>Ward Saves</td><td>' + secondUnitCombatCalculated[5] + '</td></tr>';
+		var secondUnitFightTextWardSaves = '<tr class="ward"><td class="label">Ward Saves</td><td class="value">' + secondUnitCombatCalculated[5] + '</td></tr>';
 		}
 	else var secondUnitFightTextWardSaves = '';
 	if (secondUnitCombatCalculated[6] != ''){ 
-		var secondUnitFightTextRegenSaves = '<tr class="regen"><td>Regen Saves</td><td>' + secondUnitCombatCalculated[6] + '</td></tr>';
+		var secondUnitFightTextRegenSaves = '<tr class="regen"><td class="label">Regen Saves</td><td class="value">' + secondUnitCombatCalculated[6] + '</td></tr>';
 		}
 	else var secondUnitFightTextRegenSaves = '';
 	
@@ -384,37 +385,43 @@ function combatResultsCalculation(firstUnit,firstUnitWounds,secondUnit,secondUni
 	// build text and tables to print attacks
 	var firstUnitFightText = new Array();
 		firstUnitFightText[0] = firstUnitAttacks;
-		firstUnitFightText[1] = '<table><tr><td>Attacks</td><td>' + firstUnitCombatCalculated[0] + '</td></tr>';
-		firstUnitFightText[2] = '<tr><td>Hits</td><td>' + firstUnitCombatCalculated[1] + '</td></tr>';
-		firstUnitFightText[3] = firstUnitFightTextArmorSaves;
-		firstUnitFightText[4] = firstUnitFightTextParrySaves;
-		firstUnitFightText[5] = firstUnitFightTextWardSaves;
-		firstUnitFightText[6] = firstUnitFightTextRegenSaves;
-		firstUnitFightText[7] = '<tr><td>Wounds</td><td>' + firstUnitCombatCalculated[7] + '</td></tr>';
-		firstUnitFightText[8] = '</table>';
+		firstUnitFightText[1] = '<table><tr><td class="label">Attacks</td><td class="value">' + firstUnitCombatCalculated[0] + '</td></tr>';
+		firstUnitFightText[2] = '<tr><td class="label">Hits</td><td class="value">' + firstUnitCombatCalculated[1] + '</td></tr>';
+		firstUnitFightText[3] = '<tr><td class="label">Wounds Rolled</td><td class="value">' + firstUnitCombatCalculated[2] + '</td></tr>';
+		firstUnitFightText[4] = firstUnitFightTextArmorSaves;
+		firstUnitFightText[5] = firstUnitFightTextParrySaves;
+		firstUnitFightText[6] = firstUnitFightTextWardSaves;
+		firstUnitFightText[7] = firstUnitFightTextRegenSaves;
+		firstUnitFightText[8] = '<tr><td class="label">Wounds</td><td class="value">' + firstUnitCombatCalculated[7] + '</td></tr>';
+		firstUnitFightText[9] = '</table>';
 	
 	var secondUnitFightText = new Array();
 		secondUnitFightText[0] = secondUnitAttacks;
-		secondUnitFightText[1] = '<table><tr><td>Attacks</td><td>' + secondUnitCombatCalculated[0] + '</td></tr>';
-		secondUnitFightText[2] = '<tr><td>Hits</td><td>' + secondUnitCombatCalculated[1] + '</td></tr>';
-		secondUnitFightText[3] = secondUnitFightTextArmorSaves;
-		secondUnitFightText[4] = secondUnitFightTextParrySaves;
-		secondUnitFightText[5] = secondUnitFightTextWardSaves;
-		secondUnitFightText[6] = secondUnitFightTextRegenSaves;
-		secondUnitFightText[7] = '<tr><td>Wounds</td><td>' + secondUnitCombatCalculated[7] + '</td></tr>';
-		secondUnitFightText[8] = '</table>';
-		
+		secondUnitFightText[1] = '<table><tr><td class="label">Attacks</td><td class="value">' + secondUnitCombatCalculated[0] + '</td></tr>';
+		secondUnitFightText[2] = '<tr><td class="label">Hits</td><td class="value">' + secondUnitCombatCalculated[1] + '</td></tr>';
+		secondUnitFightText[3] = '<tr><td class="label">Wounds Rolled</td><td class="value">' + secondUnitCombatCalculated[2] + '</td></tr>';
+		secondUnitFightText[4] = secondUnitFightTextArmorSaves;
+		secondUnitFightText[5] = secondUnitFightTextParrySaves;
+		secondUnitFightText[6] = secondUnitFightTextWardSaves;
+		secondUnitFightText[7] = secondUnitFightTextRegenSaves;
+		secondUnitFightText[8] = '<tr><td class="label">Wounds</td><td class="value">' + secondUnitCombatCalculated[7] + '</td></tr>';
+		secondUnitFightText[9] = '</table>';
+	
+	// get unit image for draw-icons
+	var unitImageTop = '<img src="images/unitmodels/'+firstUnitCombatCalculated[8]+'.jpg">';
+	var unitImageBottom = '<img src="images/unitmodels/'+secondUnitCombatCalculated[8]+'.jpg">';
+	
 	//##############################				
 	// print the attack 
 		// first unit to strike on top
 	document.getElementById("fight-intro").innerHTML = intro;
 	document.getElementById("fight-text-top").innerHTML = firstUnitFightText.join("");
 	document.getElementById("draw-ranks-top").innerHTML = combatResults[3];
-	document.getElementById("draw-icons-top").innerHTML = 'icons hold';
+	document.getElementById("draw-icons-top").innerHTML = unitImageTop;
 		// second unit to strike on bottom
 	document.getElementById("fight-text-bottom").innerHTML = secondUnitFightText.join("");
 	document.getElementById("draw-ranks-bottom").innerHTML = combatResults[4];
-	document.getElementById("draw-icons-bottom").innerHTML = 'icons hold';
+	document.getElementById("draw-icons-bottom").innerHTML = unitImageBottom;
 }
 //###############################
 // Calulation Functions

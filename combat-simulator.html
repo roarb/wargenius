@@ -10,7 +10,8 @@
 <link rel="stylesheet" type="text/css" href="css/combat-sim.css" />
 </head>
 
-<body class="combatSim">
+<body>
+<div class="combatSim">
 	<form name="countsoptions" action="">
 	<div id="armyChoice">
         <strong>Your Army Choice</strong><br />
@@ -29,6 +30,7 @@
                 Unit Count: <input type="text" name="unitcount1" maxlength="3" width="2" /><br />
                 Unit Width: <input type="text" name="unitwidth1" maxlength="2" width="2" /><br />
             </div>
+            <div id="armyIcon"></div>
     </div>
   	<div class="draw-box"><a name="fight-text"></a>
     	<div id="fight-intro"></div>
@@ -58,10 +60,12 @@
                 Unit Count: <input type="text" name="unitcount2" maxlength="3" width="2" /><br />
                 Unit Width: <input type="text" name="unitwidth2" maxlength="2" width="2" /><br />
             </div>
+            <div id="oppArmyIcon"></div>
     </div>
     <div class="clearer"></div>
     <div id="fight">
         <input type="button" onclick="fight();" value="Battle Royal!" />
     </form></div>	
+ </div>
 </body>
 </html>

@@ -12,6 +12,7 @@ function armyChoice() {
 			}
 		var End = '</select>';
 		document.getElementById("unitChoice").innerHTML = Start + Mid + End;
+		document.getElementById("armyIcon").innerHTML = '<img src="images/armys/dwarfs.jpg">';
 	}
 	if (armyChoice == "Bretonnia"){
 		$('#unitChoice').empty();
@@ -23,6 +24,7 @@ function armyChoice() {
 			}
 		var End = '</select>';
 		document.getElementById("unitChoice").innerHTML = Start + Mid + End;
+		document.getElementById("armyIcon").innerHTML = '<img src="images/armys/bretonia.jpg">';
 	}
 	if (armyChoice == "The Empire"){
 		$('#unitChoice').empty();
@@ -34,6 +36,7 @@ function armyChoice() {
 			}
 		var End = '</select>';
 		document.getElementById("unitChoice").innerHTML = Start + Mid + End;
+		document.getElementById("armyIcon").innerHTML = '<img src="images/armys/empire.jpg">';
 	}
 	if (armyChoice == "Beastmen"){
 		$('#unitChoice').empty();
@@ -45,6 +48,7 @@ function armyChoice() {
 			}
 		var End = '</select>';
 		document.getElementById("unitChoice").innerHTML = Start + Mid + End;
+		document.getElementById("armyIcon").innerHTML = '<img src="images/armys/beastmen.jpg">';
 	}
 	if (armyChoice == "Chaos Dwarfs"){
 		$('#unitChoice').empty();
@@ -67,6 +71,7 @@ function armyChoice() {
 			}
 		var End = '</select>';
 		document.getElementById("unitChoice").innerHTML = Start + Mid + End;
+		document.getElementById("armyIcon").innerHTML = '<img src="images/armys/deamons.jpg">';
 	}
 	if (armyChoice == "Dark Elves"){
 		$('#unitChoice').empty();
@@ -78,6 +83,7 @@ function armyChoice() {
 			}
 		var End = '</select>';
 		document.getElementById("unitChoice").innerHTML = Start + Mid + End;
+		document.getElementById("armyIcon").innerHTML = '<img src="images/armys/darkelves.jpg">';
 	}
 	if (armyChoice == "High Elves"){
 		$('#unitChoice').empty();
@@ -89,6 +95,7 @@ function armyChoice() {
 			}
 		var End = '</select>';
 		document.getElementById("unitChoice").innerHTML = Start + Mid + End;
+		document.getElementById("armyIcon").innerHTML = '<img src="images/armys/highelves.jpg">';
 	}
 	if (armyChoice == "Wood Elves"){
 		$('#unitChoice').empty();
@@ -100,6 +107,7 @@ function armyChoice() {
 			}
 		var End = '</select>';
 		document.getElementById("unitChoice").innerHTML = Start + Mid + End;
+		document.getElementById("armyIcon").innerHTML = '<img src="images/armys/woodelves.jpg">';
 	}
 	if (armyChoice == "Lizardmen"){
 		$('#unitChoice').empty();
@@ -111,6 +119,7 @@ function armyChoice() {
 			}
 		var End = '</select>';
 		document.getElementById("unitChoice").innerHTML = Start + Mid + End;
+		document.getElementById("armyIcon").innerHTML = '<img src="images/armys/lizardmen.jpg">';
 	}
 	if (armyChoice == "Ogre Kingdoms"){
 		$('#unitChoice').empty();
@@ -122,6 +131,7 @@ function armyChoice() {
 			}
 		var End = '</select>';
 		document.getElementById("unitChoice").innerHTML = Start + Mid + End;
+		document.getElementById("armyIcon").innerHTML = '<img src="images/armys/ogres.jpg">';
 	}
 	if (armyChoice == "Orcs and Goblins"){
 		$('#unitChoice').empty();
@@ -133,6 +143,7 @@ function armyChoice() {
 			}
 		var End = '</select>';
 		document.getElementById("unitChoice").innerHTML = Start + Mid + End;
+		document.getElementById("armyIcon").innerHTML = '<img src="images/armys/orcsgoblins.jpg">';
 	}
 	if (armyChoice == "Skaven"){
 		$('#unitChoice').empty();
@@ -144,6 +155,7 @@ function armyChoice() {
 			}
 		var End = '</select>';
 		document.getElementById("unitChoice").innerHTML = Start + Mid + End;
+		document.getElementById("armyIcon").innerHTML = '<img src="images/armys/skaven.jpg">';
 	}
 	if (armyChoice == "Tomb Kings"){
 		$('#unitChoice').empty();
@@ -155,6 +167,7 @@ function armyChoice() {
 			}
 		var End = '</select>';
 		document.getElementById("unitChoice").innerHTML = Start + Mid + End;
+		document.getElementById("armyIcon").innerHTML = '<img src="images/armys/tombkings.jpg">';
 	}
 	if (armyChoice == "Vampire Counts"){
 		$('#unitChoice').empty();
@@ -166,6 +179,7 @@ function armyChoice() {
 			}
 		var End = '</select>';
 		document.getElementById("unitChoice").innerHTML = Start + Mid + End;
+		document.getElementById("armyIcon").innerHTML = '<img src="images/armys/vampirecounts.jpg">';
 	}
 	if (armyChoice == "Warriors of Chaos"){
 		$('#unitChoice').empty();
@@ -177,6 +191,7 @@ function armyChoice() {
 			}
 		var End = '</select>';
 		document.getElementById("unitChoice").innerHTML = Start + Mid + End;
+		document.getElementById("armyIcon").innerHTML = '<img src="images/armys/warriorsofchaos.jpg">';
 	}
 	else{}
 }
@@ -194,6 +209,7 @@ function opparmyChoice() {
 			}
 		var End = '</select>';
 		document.getElementById("oppunitChoice").innerHTML = Start + Mid + End;
+		document.getElementById("oppArmyIcon").innerHTML = '<img src="images/armys/dwarfs.jpg">';
 	}
 	if (opparmyChoice == "Bretonnia"){
 		$('#oppunitChoice').empty();
@@ -205,6 +221,7 @@ function opparmyChoice() {
 			}
 		var End = '</select>';
 		document.getElementById("oppunitChoice").innerHTML = Start + Mid + End;
+		document.getElementById("oppArmyIcon").innerHTML = '<img src="images/armys/bretonia.jpg">';
 	}
 	if (opparmyChoice == "The Empire"){
 		$('#oppunitChoice').empty();
@@ -216,6 +233,7 @@ function opparmyChoice() {
 			}
 		var End = '</select>';
 		document.getElementById("oppunitChoice").innerHTML = Start + Mid + End;
+		document.getElementById("oppArmyIcon").innerHTML = '<img src="images/armys/empire.jpg">';
 	}
 	if (opparmyChoice == "Beastmen"){
 		$('#oppunitChoice').empty();
@@ -227,6 +245,7 @@ function opparmyChoice() {
 			}
 		var End = '</select>';
 		document.getElementById("oppunitChoice").innerHTML = Start + Mid + End;
+		document.getElementById("oppArmyIcon").innerHTML = '<img src="images/armys/beastmen.jpg">';
 	}
 	if (opparmyChoice == "Chaos Dwarfs"){
 		$('#oppunitChoice').empty();
@@ -249,6 +268,7 @@ function opparmyChoice() {
 			}
 		var End = '</select>';
 		document.getElementById("oppunitChoice").innerHTML = Start + Mid + End;
+		document.getElementById("oppArmyIcon").innerHTML = '<img src="images/armys/deamons.jpg">';
 	}
 	if (opparmyChoice == "Dark Elves"){
 		$('#oppunitChoice').empty();
@@ -260,6 +280,7 @@ function opparmyChoice() {
 			}
 		var End = '</select>';
 		document.getElementById("oppunitChoice").innerHTML = Start + Mid + End;
+		document.getElementById("oppArmyIcon").innerHTML = '<img src="images/armys/darkelves.jpg">';
 	}
 	if (opparmyChoice == "High Elves"){
 		$('#oppunitChoice').empty();
@@ -271,6 +292,7 @@ function opparmyChoice() {
 			}
 		var End = '</select>';
 		document.getElementById("oppunitChoice").innerHTML = Start + Mid + End;
+		document.getElementById("oppArmyIcon").innerHTML = '<img src="images/armys/highelves.jpg">';
 	}
 	if (opparmyChoice == "Wood Elves"){
 		$('#oppunitChoice').empty();
@@ -282,6 +304,7 @@ function opparmyChoice() {
 			}
 		var End = '</select>';
 		document.getElementById("oppunitChoice").innerHTML = Start + Mid + End;
+		document.getElementById("oppArmyIcon").innerHTML = '<img src="images/armys/woodelves.jpg">';
 	}
 	if (opparmyChoice == "Lizardmen"){
 		$('#oppunitChoice').empty();
@@ -293,6 +316,7 @@ function opparmyChoice() {
 			}
 		var End = '</select>';
 		document.getElementById("oppunitChoice").innerHTML = Start + Mid + End;
+		document.getElementById("oppArmyIcon").innerHTML = '<img src="images/armys/lizardmen.jpg">';
 	}
 	if (opparmyChoice == "Ogre Kingdoms"){
 		$('#oppunitChoice').empty();
@@ -304,6 +328,7 @@ function opparmyChoice() {
 			}
 		var End = '</select>';
 		document.getElementById("oppunitChoice").innerHTML = Start + Mid + End;
+		document.getElementById("oppArmyIcon").innerHTML = '<img src="images/armys/ogres.jpg">';
 	}
 	if (opparmyChoice == "Orcs and Goblins"){
 		$('#oppunitChoice').empty();
@@ -315,6 +340,7 @@ function opparmyChoice() {
 			}
 		var End = '</select>';
 		document.getElementById("oppunitChoice").innerHTML = Start + Mid + End;
+		document.getElementById("oppArmyIcon").innerHTML = '<img src="images/armys/orcsgoblins.jpg">';
 	}
 	if (opparmyChoice == "Skaven"){
 		$('#oppunitChoice').empty();
@@ -326,6 +352,7 @@ function opparmyChoice() {
 			}
 		var End = '</select>';
 		document.getElementById("oppunitChoice").innerHTML = Start + Mid + End;
+		document.getElementById("oppArmyIcon").innerHTML = '<img src="images/armys/skaven.jpg">';
 	}
 	if (opparmyChoice == "Tomb Kings"){
 		$('#oppunitChoice').empty();
@@ -337,6 +364,7 @@ function opparmyChoice() {
 			}
 		var End = '</select>';
 		document.getElementById("oppunitChoice").innerHTML = Start + Mid + End;
+		document.getElementById("oppArmyIcon").innerHTML = '<img src="images/armys/tombkings.jpg">';
 	}
 	if (opparmyChoice == "Vampire Counts"){
 		$('#oppunitChoice').empty();
@@ -348,6 +376,7 @@ function opparmyChoice() {
 			}
 		var End = '</select>';
 		document.getElementById("oppunitChoice").innerHTML = Start + Mid + End;
+		document.getElementById("oppArmyIcon").innerHTML = '<img src="images/armys/vampirecounts.jpg">';
 	}
 	if (opparmyChoice == "Warriors of Chaos"){
 		$('#oppunitChoice').empty();
@@ -359,6 +388,7 @@ function opparmyChoice() {
 			}
 		var End = '</select>';
 		document.getElementById("oppunitChoice").innerHTML = Start + Mid + End;
+		document.getElementById("oppArmyIcon").innerHTML = '<img src="images/armys/warriorsofchaos.jpg">';
 	}
 	else {}
 }
