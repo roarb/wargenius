@@ -125,7 +125,7 @@ function reloadPage()
 						"<h2>Cairn:</h2> <em>A huge pile of boulders, probably marking the burial place of a formidable Orc warrior.</em> Bane Stone."
 					);
 				chart[4] = ("<h2>Scrub:</h2> <em>An area of tangled scrub, thorn bushes, and stunted trees mingled with boulders.</em> Forest.");
-				chart[5] = ("<h2>Choose Scrub or Hill.</h2>");
+				chart[5] = ("<h2>Choose Scrub or Hill.</h2> Choose wiesly my friend.");
 				chart[6] = ("<h2>Hill:</h2> <em>A long, low hill.</em>");
 				chart[7] = ("<h2>Boulders:</h2> <em>Pile of rocks or standing stones.</em> Treat as non‐mysterious forest, with hard cover.");
 				chart[8] = new Array ("<h2>Sinister Structure:</h2> Altar of Khaine",
@@ -183,7 +183,7 @@ function reloadPage()
 					"<h2>Gnarled Wood:</h2> <em>A copse of old dead gnarled trees lacking any leaves.</em> Blood Forest",
 					"<h2>Gnarled Wood:</h2> <em>A copse of old dead gnarled trees lacking any leaves.</em> Blood Forest"
 					);
-				chart[5] = ("<h2>Choose gnarled wood or plateau.</h2>");
+				chart[5] = ("<h2>Choose gnarled wood or plateau</h2> Choose wiesly my friend.");
 				chart[6] = ("<h2>Plateau:</h2> <em>A low flat‐topped hill of bare, weatherd rock.</em>");
 				chart[7] = ("<h2>Malignant Marsh:</h2> <em>A vile, stagnant, foul‐smelling marsh surrounded by tangled scrub.</em> Marshland");
 				chart[8] = new Array ("<h2>Chaos Monolith:</h2> <em>A colossal standing stone on its own, decorated with skulls or other debris.</em> Sinister Statue",
@@ -247,7 +247,7 @@ function reloadPage()
 						"<h2>Pine Forest:</h2> <em>A dense forest of fir trees.</em> Wildwood",
 						"<h2>Pine Forest:</h2> <em>A dense forest of fir trees.</em> Wildwood"
 						);
-					chart[5] = ("<h2>Choose pine forest or rocky ridge</h2>");
+					chart[5] = ("<h2>Choose pine forest or rocky ridge</h2> Choose wiesly my friend.");
 					chart[6] = ("<h2>Rocky Ridge:</h2> <em>A long, narrow steep sided hill with a jagged ridge a top it.</em> Medium hill.");
 					chart[7] = ("<h2>Scree:</h2> <em>Area of loose rocks.</em> Scree Slope.");
 					chart[8] = new Array ("<h2>Watchtower:</h2> <em>A stone watchtower</em> A building and 1 wall",
@@ -305,7 +305,7 @@ function reloadPage()
 				chart[2] = ("<h2>Boulders:</h2> <em>A scattering of boulders and loose rocks, fallen statues, or rubble from tombs.</em> As forest with hard cover.");
 				chart[3] = ("<h2>Jebel:</h2> <em>A rugged desert hill of bare weathered rock.</em> A Hill");
 				chart[4] = ("<h2>Sand Dune:</h2> <em>Gently sloping hills made of wind blown sand.</em> A Hill, unable to march on it.");
-				chart[5] = ("<h2>Choose Jebel (hill) or Sand Dune (hill w/o marching over).</h2>");
+				chart[5] = ("<h2>Choose Jebel (hill) or Sand Dune (hill w/o marching over).</h2> Choose wiesly my friend.");
 				chart[6] = new Array ("<h2>Palm Grove or Scrub:</h2> <em>Can also be thorn bushes or cacti.</em> Normal Forest",
 					"<h2>Palm Grove or Scrub:</h2> <em>Can also be thorn bushes or cacti.</em> Normal Forest",
 					"<h2>Palm Grove or Scrub:</h2> <em>Can also be thorn bushes or cacti.</em> Venom Thicket",
@@ -369,7 +369,7 @@ function reloadPage()
 				chart[2] = ("<h2>Boulders:</h2> <em>An are of large boulders embedded in vegetation.</em> As forest, hard cover.");
 				chart[3] = ("<h2>Tangled Scrub:</h2> <em>An area covered in bushes and small stunted thorn trees; possibly tall cactus, bamboo, or pampasgrass.</em> Mysterious Forest.");
 				chart[4] = ("<h2>Swamp:</h2> <em>An area of shallow water full of mangrove trees or similar tropical plants.</em> Marshland, impassable to war machines (cannot deploy here)");
-				chart[5] = ("<h2>Dense Jungle:</h2>. <em>An area of dense, tangled jungle.</em> Mysterious forest, impassable to chariots, cavalry, and monstrous cavalry. Monsters may not march through it. Terradons are fine.");
+				chart[5] = ("<h2>Dense Jungle:</h2> <em>An area of dense, tangled jungle.</em> Mysterious forest, impassable to chariots, cavalry, and monstrous cavalry. Monsters may not march through it. Terradons are fine.");
 				chart[6] = ("<h2>Tall Rainforest Trees:</h2> <em>Blocks line of sight through it, can see in and out.</em> Mysterious Forest");
 				chart[7] = ("<h2>Hill:</h2> <em>A low hill with gentle slopes, entirely covered in scrub vegetation.</em> Small Hill that provides Soft Cover");
 				chart[8] = new Array ("<h2>Overgrown Temple or Shrine:</h2> <em>Lizardmen hate non lizardmen units within 6 inches of temple.</em> Temple of Sotek (Altar of Khaine)",
@@ -433,7 +433,7 @@ function reloadPage()
 					"<h2>Field Boundaries:</h2> Ghost Fence"
 					);
 				chart[4] = ("<h2>Woods:</h2> Mysterious Forests");
-				chart[5] = ("<h2>Choose Hill or Woods</h2>");
+				chart[5] = ("<h2>Choose Hill or Woods</h2> Choose wiesly my friend.");
 				chart[6] = ("<h2>Hill:</h2> A small Hill");
 				chart[7] = new Array ("<h2>Building:</h2> A Regular 1 Story Building",
 					"<h2>Building:</h2> A Regular 1 Story Building",
@@ -497,7 +497,7 @@ function reloadPage()
 					"<h2>Ancient Wall:</h2> choose Blessed Bulwark (Ulthuan) or Cursed Bulwark (Naggaroth) [Cursed is Identical to Blessed but affects forces of Order]"
 					);
 				chart[4] = ("<h2>Deep Forest:</h2> Mysterious Forest");
-				chart[5] = ("<h2>Choose hill or deep forest.</h2>");
+				chart[5] = ("<h2>Choose hill or deep forest.</h2> Choose wiesly my friend.");
 				chart[6] = ("<h2>Hill:</h2> A Small Hill.");
 				chart[7] = ("<h2>Elven Waystone:</h2> An Elven Waystone.");
 				chart[8] = ("<h2>Watchtower:</h2> A Three story building.");

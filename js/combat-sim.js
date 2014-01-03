@@ -395,7 +395,7 @@ function rankDisplay(unit, wounds, order) {
 	}
 	boxes[unit['count']] = '</div>';
 	var replaceColor = /\#000;/g
-	var newColor =  '#000; background:url(/images/death.jpg); background-size:'+unit['basesize']+'px;';
+	var newColor =  '#000; background:url(images/death.jpg); background-size:'+unit['basesize']+'px;';
 	
 	if (order == "bottom") {
 		for (var x = unit['count']; x >= (unit['count']-wounds); x--) {
