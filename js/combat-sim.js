@@ -72,31 +72,31 @@ function fight(){
 	
 	if (simoAttacks == 0 && secondUnitFirst == 0) {
 		var modelsLost = 0;
-		var firstUnitAttacks = '<tr><td colspan="6">' + unit1['name'] + " attack first.</td></tr>";
+		var firstUnitAttacks = "<h2>" + unit1['name'] + " attack first.</h2>";
 		var firstUnitCombatCalculated = CombatFight(unit1,unit2,modelsLost);
-		modelsLost = firstUnitCombatCalculated[1];
-		var secondUnitAttacks = '<tr><td colspan="6">' + unit2['name'] + " attack second.</td></tr>";
+		modelsLost = firstUnitCombatCalculated[7];
+		var secondUnitAttacks = "<h2>" + unit2['name'] + " attack second.</h2>";
 		var secondUnitCombatCalculated = CombatFight(unit2,unit1,modelsLost);
-		var combatResults = combatResultsCalculation(unit1,firstUnitCombatCalculated[1],unit2,secondUnitCombatCalculated[1]);
+		var combatResults = combatResultsCalculation(unit1,firstUnitCombatCalculated[7],unit2,secondUnitCombatCalculated[7]);
 	}
 	else 
 		if (secondUnitFirst == 1) {
 			var modelsLost = 0;
-			var firstUnitAttacks = '<tr><td colspan="6">' + unit2['name'] + " attack first.</td></tr>";
+			var firstUnitAttacks = "<h2>" + unit2['name'] + " attack first.</h2>";
 			var firstUnitCombatCalculated = CombatFight(unit2,unit1,modelsLost);
-			modelsLost = firstUnitCombatCalculated[1];
-			var secondUnitAttacks = '<tr><td colspan="6">' + unit1['name'] + " attack second.</td></tr>";
+			modelsLost = firstUnitCombatCalculated[7];
+			var secondUnitAttacks = "<h2"> + unit1['name'] + " attack second.</h2>";
 			var secondUnitCombatCalculated = CombatFight(unit1,unit2,modelsLost);
-			var combatResults = combatResultsCalculation(unit2,firstUnitCombatCalculated[1],unit1,secondUnitCombatCalculated[1]);
+			var combatResults = combatResultsCalculation(unit2,firstUnitCombatCalculated[7],unit1,secondUnitCombatCalculated[7]);
 		}
 		else 
 			if (simoAttacks == 1) {
 				var modelsLost = 0;
-				var firstUnitAttacks = '<tr><td colspan="6">' + unit1['name'] + " attacks simultaneously.</td></tr>";
+				var firstUnitAttacks = "<h2>" + unit1['name'] + " attacks simultaneously.</h2>";
 				var firstUnitCombatCalculated = CombatFight(unit1,unit2,modelsLost);
-				var secondUnitAttacks = '<tr><td colspan="6">' + unit2['name'] + " attacks simultaneously.</td></tr>";
+				var secondUnitAttacks = "<h2"> + unit2['name'] + " attacks simultaneously.</h2>";
 				var secondUnitCombatCalculated = CombatFight(unit2,unit1,modelsLost);
-				var combatResults = combatResultsCalculation(unit1,firstUnitCombatCalculated[1],unit2,secondUnitCombatCalculated[1]);
+				var combatResults = combatResultsCalculation(unit1,firstUnitCombatCalculated[7],unit2,secondUnitCombatCalculated[7]);
 			}
 
 //*****************************************************	
@@ -203,7 +203,7 @@ function CombatFight(unit, oppunit, woundsTaken){
 		var oppunitWoundsSavedByArmor = 0;
 		oppunitWoundsSavedByArmor = oppunitWoundsBeforeSaves * oppunitArmorChance;
 		if (oppunitWoundsSavedByArmor > 0) {
-			oppunitWoundsSavedByArmorText = oppunitWoundsSavedByArmor.toFixed(1) + " Armor Saves<br />";
+			oppunitWoundsSavedByArmorText = oppunitWoundsSavedByArmor.toFixed(1);
 		}
 		else {
 			oppunitWoundsSavedByArmorText = '';
@@ -213,7 +213,7 @@ function CombatFight(unit, oppunit, woundsTaken){
 		if (oppunit['ward'] >= 1) {
 			var oppunitWardChance = wardSaveCalc(oppunit['ward']);
 			oppunitWoundsSavedByWard = (oppunitWardChance * (oppunitWoundsBeforeSaves - oppunitWoundsSavedByArmor));
-			oppunitWoundsSavedByWardText = oppunitWoundsSavedByWard.toFixed(1) + " Ward Saves<br />";
+			oppunitWoundsSavedByWardText = oppunitWoundsSavedByWard.toFixed(1);
 		}
 		else {
 			oppunitWoundsSavedByWardText = '';
@@ -222,11 +222,11 @@ function CombatFight(unit, oppunit, woundsTaken){
 		var oppunitWoundsSavedByParry = 0;
 		if (oppunit['parry'] == 1 && oppunitWoundsSavedByWard == 0 && oppunit['op-greatWep'] < 1 && oppunit['op-adHandWep'] ==0) {
 			oppunitWoundsSavedByParry = (.167 * (oppunitWoundsBeforeSaves - oppunitWoundsSavedByArmor));
-			oppunitWoundsSavedByParryText = oppunitWoundsSavedByParry.toFixed(1) + " Parry Saves<br />";
+			oppunitWoundsSavedByParryText = oppunitWoundsSavedByParry.toFixed(1);
 		}
 		else if (oppunit['parry'] == 2 && oppunit['op-shield'] == 1 && oppunitWoundsSavedByWard == 0 && oppunit['op-greatWep'] < 1 && oppunit['op-adHandWep'] ==0) {
 				oppunitWoundsSavedByParry = (.167 * (oppunitWoundsBeforeSaves - oppunitWoundsSavedByArmor));
-				oppunitWoundsSavedByParryText = oppunitWoundsSavedByParry.toFixed(1) + " Parry Saves<br />";
+				oppunitWoundsSavedByParryText = oppunitWoundsSavedByParry.toFixed(1);
 			}
 		else {
 				oppunitWoundsSavedByParryText = '';
@@ -244,8 +244,14 @@ function CombatFight(unit, oppunit, woundsTaken){
 	// combat results returned
 			
 		var unitCombatResults = new Array();
-			unitCombatResults[0] = '<tr><td>'+unitTotalAttacks.toFixed(1)+'</td><td>'+unitTotalHits.toFixed(1)+'</td><td>'+oppunitWoundsBeforeSaves.toFixed(1)+'</td><td><span class="armorSaves">'+oppunitWoundsSavedByArmorText+'</span><span class="parrySaves">'+oppunitWoundsSavedByParryText+'</span><span class="wardSaves">'+oppunitWoundsSavedByWardText+'</span><span class="regenSaves">'+oppunitWoundsSavedByRegenText+'</span></td><td>'+unitTotalWounds.toFixed(1)+' dead '+oppunit['name']+'</td>';
-			unitCombatResults[1] = unitTotalWounds.toFixed(1); // wounds caused - used to reduce unitcount on units attacking second 
+			unitCombatResults[0] = unitTotalAttacks.toFixed(1);
+			unitCombatResults[1] = unitTotalHits.toFixed(1);
+			unitCombatResults[2] = oppunitWoundsBeforeSaves.toFixed(1); 
+			unitCombatResults[3] = oppunitWoundsSavedByArmorText;
+			unitCombatResults[4] = oppunitWoundsSavedByParryText;
+			unitCombatResults[5] = oppunitWoundsSavedByWardText;
+			unitCombatResults[6] = oppunitWoundsSavedByRegenText;
+			unitCombatResults[7] = unitTotalWounds.toFixed(1); // wounds caused - used to reduce unitcount on units attacking second 
 		
 		return unitCombatResults;
 		
@@ -339,20 +345,76 @@ function combatResultsCalculation(firstUnit,firstUnitWounds,secondUnit,secondUni
 	// end of combat results calculations	
 	}
 	
+	//##############################
+	if (firstUnitCombatCalculated[3] != ''){ 
+		var firstUnitFightTextArmorSaves = '<tr class="armor"><td>Armor Saves</td><td>' + firstUnitCombatCalculated[3] + '</td></tr>';
+		}
+	else var firstUnitFightTextArmorSaves = '';
+	if (firstUnitCombatCalculated[4] != ''){ 
+		var firstUnitFightTextParrySaves = '<tr class="parry"><td>Parry Saves</td><td>' + firstUnitCombatCalculated[4] + '</td></tr>';
+		}
+	else var firstUnitFightTextParrySaves = '';
+	if (firstUnitCombatCalculated[5] != ''){ 
+		var firstUnitFightTextWardSaves = '<tr class="ward"><td>Ward Saves</td><td>' + firstUnitCombatCalculated[5] + '</td></tr>';
+		}
+	else var firstUnitFightTextWardSaves = '';
+	if (firstUnitCombatCalculated[6] != ''){ 
+		var firstUnitFightTextRegenSaves = '<tr class="regen"><td>Regen Saves</td><td>' + firstUnitCombatCalculated[6] + '</td></tr>';
+		}
+	else var firstUnitFightTextRegenSaves = '';
 	
+	if (secondUnitCombatCalculated[3] != ''){ 
+		var secondUnitFightTextArmorSaves = '<tr class="armor"><td>Armor Saves</td><td>' + secondUnitCombatCalculated[3] + '</td></tr>';
+		}
+	else var secondUnitFightTextArmorSaves = '';
+	if (secondUnitCombatCalculated[4] != ''){ 
+		var secondUnitFightTextParrySaves = '<tr class="parry"><td>Parry Saves</td><td>' + secondUnitCombatCalculated[4] + '</td></tr>';
+		}
+	else var secondUnitFightTextParrySaves = '';
+	if (secondUnitCombatCalculated[5] != ''){ 
+		var secondUnitFightTextWardSaves = '<tr class="ward"><td>Ward Saves</td><td>' + secondUnitCombatCalculated[5] + '</td></tr>';
+		}
+	else var secondUnitFightTextWardSaves = '';
+	if (secondUnitCombatCalculated[6] != ''){ 
+		var secondUnitFightTextRegenSaves = '<tr class="regen"><td>Regen Saves</td><td>' + secondUnitCombatCalculated[6] + '</td></tr>';
+		}
+	else var secondUnitFightTextRegenSaves = '';
+	
+	
+	// build text and tables to print attacks
+	var firstUnitFightText = new Array();
+		firstUnitFightText[0] = firstUnitAttacks;
+		firstUnitFightText[1] = '<table><tr><td>Attacks</td><td>' + firstUnitCombatCalculated[0] + '</td></tr>';
+		firstUnitFightText[2] = '<tr><td>Hits</td><td>' + firstUnitCombatCalculated[1] + '</td></tr>';
+		firstUnitFightText[3] = firstUnitFightTextArmorSaves;
+		firstUnitFightText[4] = firstUnitFightTextParrySaves;
+		firstUnitFightText[5] = firstUnitFightTextWardSaves;
+		firstUnitFightText[6] = firstUnitFightTextRegenSaves;
+		firstUnitFightText[7] = '<tr><td>Wounds</td><td>' + firstUnitCombatCalculated[7] + '</td></tr>';
+		firstUnitFightText[8] = '</table>';
+	
+	var secondUnitFightText = new Array();
+		secondUnitFightText[0] = secondUnitAttacks;
+		secondUnitFightText[1] = '<table><tr><td>Attacks</td><td>' + secondUnitCombatCalculated[0] + '</td></tr>';
+		secondUnitFightText[2] = '<tr><td>Hits</td><td>' + secondUnitCombatCalculated[1] + '</td></tr>';
+		secondUnitFightText[3] = secondUnitFightTextArmorSaves;
+		secondUnitFightText[4] = secondUnitFightTextParrySaves;
+		secondUnitFightText[5] = secondUnitFightTextWardSaves;
+		secondUnitFightText[6] = secondUnitFightTextRegenSaves;
+		secondUnitFightText[7] = '<tr><td>Wounds</td><td>' + secondUnitCombatCalculated[7] + '</td></tr>';
+		secondUnitFightText[8] = '</table>';
+		
 	//##############################				
 	// print the attack 
-	var tableStart = '<table>';
-	var firstUnitHeader = '<tr><td>Total Attacks</td><td>Total Hits</td><td>Wounds</td><td>Wounds Saved</td><td>Total Kills</td><td>Combat Points</td></tr>';
-	var secondUnitHeader = '<tr><td>Total Attacks</td><td>Total Hits</td><td>Wounds</td><td>Wounds Saved</td><td>Total Kills</td><td>Combat Points</td></tr>';
-	var tableEnd = '</table>';
-	document.getElementById("fight-text").innerHTML = intro + tableStart + firstUnitAttacks + firstUnitHeader + firstUnitCombatCalculated[0] + combatResults[0] + secondUnitAttacks + secondUnitHeader + secondUnitCombatCalculated[0] + combatResults[1] + tableEnd + combatResults[2];
-	
-	//################################
-	// draw ranks 
-
+		// first unit to strike on top
+	document.getElementById("fight-intro").innerHTML = intro;
+	document.getElementById("fight-text-top").innerHTML = firstUnitFightText.join("");
 	document.getElementById("draw-ranks-top").innerHTML = combatResults[3];
+	document.getElementById("draw-icons-top").innerHTML = 'icons hold';
+		// second unit to strike on bottom
+	document.getElementById("fight-text-bottom").innerHTML = secondUnitFightText.join("");
 	document.getElementById("draw-ranks-bottom").innerHTML = combatResults[4];
+	document.getElementById("draw-icons-bottom").innerHTML = 'icons hold';
 }
 //###############################
 // Calulation Functions

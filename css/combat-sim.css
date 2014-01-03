@@ -8,20 +8,23 @@ body { background:#fff; }
 #opparmyChoice { width:200px; float:left; }
 #unitChoice { width:200px; float:left; min-height:24px; }
 #oppunitChoice { width:200px; float:left; }
-#unitOptions { width:200px; float:left; }
-#oppunitOptions { width:200px; float:left; }
+#unitOptions { width:200px; float:left; display:block; }
+#oppunitOptions { width:200px; float:left; display:block; }
 .count { width:200px; float:left; }
 .oppcount { width:200px; float:left; }
-#fight { width:400px; text-align:center; padding:10px; }
+#fight { width:100px; text-align:center; padding:10px; }
 
 .clearer { clear:both; }
 
-table td { text-align:center; border:1px #d1d1d1 solid; padding:5px; }
+table td { text-align:center; border:1px #d1d1d1 solid; padding:1px; }
 .armorSaves { color:#333; }
 .parrySaves { color:#690; }
 .wardSaves { color:#009; }
 .regenSaves { color:#F00; }
 
-.draw-box { width:300px; text-align:center; }
-#draw-ranks-top { padding-bottom:2px; }
-#draw-ranks-bottom { padding-top:2px; }
+.draw-box { min-width:400px; max-width:100%; }
+#fight-text-top, #fight-text-bottom { float:left; width:200px; }
+#draw-ranks-top, #draw-ranks-bottom { padding-top:40px; min-width:250px; float:left; text-align:center; }
+#draw-icons-top, #draw-ranks-bottom { padding-top:40px; float:left; max-width:200px; }
+
+h2 { font-size: 1.2em; line-height:1em; }
