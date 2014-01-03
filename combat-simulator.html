@@ -11,6 +11,7 @@
 </head>
 
 <body class="combatSim">
+	<form name="countsoptions" action="">
 	<div id="armyChoice">
         <strong>Your Army Choice</strong><br />
         <select id="army1" onchange="armyChoice()">
@@ -22,7 +23,24 @@
             } 	
         </script>
         </select>
+        	 <div id="unitChoice"></div>
+             <div id="unitOptions"></div>
+            <div class="count">
+                Unit Count: <input type="text" name="unitcount1" maxlength="3" width="2" /><br />
+                Unit Width: <input type="text" name="unitwidth1" maxlength="2" width="2" /><br />
+            </div>
     </div>
+  	<div class="draw-box"><a name="fight-text"></a>
+    	<div id="fight-intro"></div>
+        <div class="clearer"></div>
+    	<div id="fight-text-top"></div>
+		<div id="draw-ranks-top"></div>
+        <div id="draw-icons-top"></div>
+        <div class="clearer"></div>
+        <div id="fight-text-bottom"></div>
+		<div id="draw-ranks-bottom"></div>
+        <div id="draw-icons-bottom"></div>
+	</div>
     <div id="opparmyChoice">
     	<strong>Opponent Army Choice</strong><br />
         <select id="army2" onchange="opparmyChoice()">
@@ -34,38 +52,16 @@
             } 	
         </script>
         </select>
-    </div>
-    <div class="clearer"></div>
-    <form name="countsoptions" action="">
-    <div id="unitChoice"></div>
-    <div id="oppunitChoice"></div>
-    <div class="clearer"></div>
-    <div id="unitOptions"></div>
-    <div id="oppunitOptions"></div>
-    <div class="clearer"></div>
-    <div class="count">
-    	Unit Count: <input type="text" name="unitcount1" maxlength="3" width="2" /><br />
-        Unit Width: <input type="text" name="unitwidth1" maxlength="2" width="2" /><br />
-    </div>
-    <div class="oppcount">
-    	Unit Count: <input type="text" name="unitcount2" maxlength="3" width="2" /><br />
-        Unit Width: <input type="text" name="unitwidth2" maxlength="2" width="2" /><br />
+        	<div id="oppunitChoice"></div>
+            <div id="oppunitOptions"></div>
+            <div class="oppcount">
+                Unit Count: <input type="text" name="unitcount2" maxlength="3" width="2" /><br />
+                Unit Width: <input type="text" name="unitwidth2" maxlength="2" width="2" /><br />
+            </div>
     </div>
     <div class="clearer"></div>
     <div id="fight">
         <input type="button" onclick="fight();" value="Battle Royal!" />
-    </form></div>
-	<div class="draw-box"><a name="fight-text"></a>
-    	<div id="fight-intro"></div>
-        <div class="clearer"></div>
-    	<div id="fight-text-top"></div>
-		<div id="draw-ranks-top"></div>
-        <div id="draw-icons-top"></div>
-        <div class="clearer"></div>
-        <div id="fight-text-bottom"></div>
-		<div id="draw-ranks-bottom"></div>
-        <div id="draw-icons-bottom"></div>
-	</div>
-	
+    </form></div>	
 </body>
 </html>

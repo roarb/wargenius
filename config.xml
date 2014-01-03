@@ -5,7 +5,7 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.wargenius.terrain-battle"
-        version   = "0.0.1">
+        version   = "0.0.11">
  
     <name>WarGenius</name>
  
@@ -29,6 +29,7 @@
     <preference name="orientation"                value="landscape" />        <!-- all: default means both landscape and portrait are enabled -->
     <preference name="target-device"              value="universal" />      <!-- all: possible values handset, tablet, or universal -->
     <preference name="fullscreen"                 value="true" />           <!-- all: hides the status bar at the top of the screen -->
+	<preference name="scrollable"				  value="true" />       <!-- guessing at the pref name - trying to make this app scrollable -->
 	<preference name="KeepRunning" 				  value="false"/>		<!--KeepRunning (boolean, defaults to true): Determines whether the application stays running in the background even after a pause event fires. Note: setting this to false will not kill the app after a pause event, it will only halt execution of code in the cordova webview while the app is in the background. -->
     <!--<preference name="prerendered-icon"           value="true" />           <!-- ios: if icon is prerendered, iOS will not apply it's gloss to the app's icon on the user's home screen -->
     <!--<preference name="ios-statusbarstyle"         value="black-opaque" />   <!-- ios: black-translucent will appear black because the PhoneGap webview doesn't go beneath the status bar -->

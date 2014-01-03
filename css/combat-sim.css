@@ -2,17 +2,17 @@
 /* CSS Document */
 
 /* combat simulator */
-body { background:#fff; }
+body { background:#fff; width:960px; }
 
 #armyChoice { width:200px; float:left; }
-#opparmyChoice { width:200px; float:left; }
-#unitChoice { width:200px; float:left; min-height:24px; }
-#oppunitChoice { width:200px; float:left; }
-#unitOptions { width:200px; float:left; display:block; }
-#oppunitOptions { width:200px; float:left; display:block; }
-.count { width:200px; float:left; }
-.oppcount { width:200px; float:left; }
-#fight { width:100px; text-align:center; padding:10px; }
+#opparmyChoice { width:200px; float:right; }
+#unitChoice { width:200px; min-height:24px; }
+#oppunitChoice { width:200px; }
+#unitOptions { width:200px; display:block; }
+#oppunitOptions { width:200px; display:block; }
+.count { width:200px; }
+.oppcount { width:200px; }
+#fight { width:100px; text-align:center; margin:auto; padding:20px; }
 
 .clearer { clear:both; }
 
@@ -22,9 +22,10 @@ table td { text-align:center; border:1px #d1d1d1 solid; padding:1px; }
 .wardSaves { color:#009; }
 .regenSaves { color:#F00; }
 
-.draw-box { min-width:400px; max-width:100%; }
+.draw-box { min-width:560px; float:left; }
+#fight-intro { text-align:center; border-bottom:1px dashed #d1d1d1; margin:0 20px; font-size:1.2em; height:26px; }
 #fight-text-top, #fight-text-bottom { float:left; width:200px; }
-#draw-ranks-top, #draw-ranks-bottom { padding-top:40px; min-width:250px; float:left; text-align:center; }
-#draw-icons-top, #draw-ranks-bottom { padding-top:40px; float:left; max-width:200px; }
+#draw-ranks-top, #draw-ranks-bottom { padding-top:40px; min-width:260px; float:left; text-align:center; }
+#draw-icons-top, #draw-icons-bottom { padding-top:40px; float:left; max-width:100px; color:#fff; }
 
 h2 { font-size: 1.2em; line-height:1em; }
