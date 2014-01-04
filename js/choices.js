@@ -474,11 +474,11 @@ function unitChoice() {
 			unit1 = savageOrc;
 			unit1Options();
 			}
-		if (unit1Choice == "Orc Big 'Unz"){
+		if (unit1Choice == "Orc Big Unz"){
 			unit1 = orcBigUnz;
 			unit1Options();
 			}
-		if (unit1Choice == "Savage Orc Big 'Unz"){
+		if (unit1Choice == "Savage Orc Big Unz"){
 			unit1 = savageOrcsBigUnz;
 			unit1Options();
 			}
@@ -621,11 +621,11 @@ function oppunitChoice() {
 			unit2 = savageOrc;
 			unit2Options();
 			}
-		if (unit2Choice == "Orc Big 'Unz"){
+		if (unit2Choice == "Orc Big Unz"){
 			unit2 = orcBigUnz;
 			unit2Options();
 			}
-		if (unit2Choice == "Savage Orc Big 'Unz"){
+		if (unit2Choice == "Savage Orc Big Unz"){
 			unit2 = savageOrcsBigUnz;
 			unit2Options();
 			}

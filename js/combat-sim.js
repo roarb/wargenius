@@ -72,29 +72,29 @@ function fight(){
 	
 	if (simoAttacks == 0 && secondUnitFirst == 0) {
 		var modelsLost = 0;
-		var firstUnitAttacks = "<h2>" + unit1['name'] + "<br />attack first.</h2>";
+		var firstUnitAttacks = "<h2>" + unit1['name'] + "<br />attack first</h2>";
 		var firstUnitCombatCalculated = CombatFight(unit1,unit2,modelsLost);
 		modelsLost = firstUnitCombatCalculated[7];
-		var secondUnitAttacks = "<h2>" + unit2['name'] + "<br />attack second.</h2>";
+		var secondUnitAttacks = "<h2>" + unit2['name'] + "<br />attack second</h2>";
 		var secondUnitCombatCalculated = CombatFight(unit2,unit1,modelsLost);
 		var combatResults = combatResultsCalculation(unit1,firstUnitCombatCalculated[7],unit2,secondUnitCombatCalculated[7]);
 	}
 	else 
 		if (secondUnitFirst == 1) {
 			var modelsLost = 0;
-			var firstUnitAttacks = "<h2>" + unit2['name'] + "<br />attack first.</h2>";
+			var firstUnitAttacks = "<h2>" + unit2['name'] + "<br />attack first</h2>";
 			var firstUnitCombatCalculated = CombatFight(unit2,unit1,modelsLost);
 			modelsLost = firstUnitCombatCalculated[7];
-			var secondUnitAttacks = "<h2>" + unit1['name'] + "<br />attack second.</h2>";
+			var secondUnitAttacks = "<h2>" + unit1['name'] + "<br />attack second</h2>";
 			var secondUnitCombatCalculated = CombatFight(unit1,unit2,modelsLost);
 			var combatResults = combatResultsCalculation(unit2,firstUnitCombatCalculated[7],unit1,secondUnitCombatCalculated[7]);
 		}
 		else 
 			if (simoAttacks == 1) {
 				var modelsLost = 0;
-				var firstUnitAttacks = "<h2>" + unit1['name'] + "<br />attack simultaneously.</h2>";
+				var firstUnitAttacks = "<h2>" + unit1['name'] + "<br />attack simultaneously</h2>";
 				var firstUnitCombatCalculated = CombatFight(unit1,unit2,modelsLost);
-				var secondUnitAttacks = "<h2>" + unit2['name'] + "<br />attack simultaneously.</h2>";
+				var secondUnitAttacks = "<h2>" + unit2['name'] + "<br />attack simultaneously</h2>";
 				var secondUnitCombatCalculated = CombatFight(unit2,unit1,modelsLost);
 				var combatResults = combatResultsCalculation(unit1,firstUnitCombatCalculated[7],unit2,secondUnitCombatCalculated[7]);
 			}
@@ -296,6 +296,8 @@ function combatResultsCalculation(firstUnit,firstUnitWounds,secondUnit,secondUni
 			var breakChance = breakChanceCalc(breakTest,coldBlooded) + " chance to avoid crumbling that results in " + wonByAmount.toFixed(1) + " more dead.";
 		}
 		else  var breakChance = breakChanceCalc(breakTest,coldBlooded) + " chance to stick around and fight some more";
+		
+		var wonByText = wonBy + " won the combat by " + wonByAmount + "<br />" + lostBy + " lost and have a " + breakChance;
 	}
 	else if (secondUnitCombatResolutionTotal > firstUnitCombatResolutionTotal){
 		var wonByAmount = (secondUnitCombatResolutionTotal - firstUnitCombatResolutionTotal);
@@ -315,16 +317,12 @@ function combatResultsCalculation(firstUnit,firstUnitWounds,secondUnit,secondUni
 			var coldBlooded = 0;
 		}
 		// undead and deamons crumble instead of breaking
-		var wonByText = "Stalemate";
-		if (wonByAmount > 0) {
-			wonByAmount = wonByAmount.toFixed(1)
-			var wonByText = wonBy + " won the combat by " + wonByAmount + "<br />" + lostBy + " lost and have a " + breakChance;
-		}
-		
 		if (firstUnit['crumble'] == 1){
 			var breakChance = breakChanceCalc(breakTest,coldBlooded) + " chance to avoid crumbling that results in " + wonByAmount + " more dead.";
 		}
 		else var breakChance = breakChanceCalc(breakTest,coldBlooded) + " chance to stick around and fight some more";
+			
+		var wonByText = wonBy + " won the combat by " + wonByAmount + "<br />" + lostBy + " lost and have a " + breakChance;
 	}
 	//function to return display values for visual ranks First Unit
 	var order = "top";
@@ -336,8 +334,8 @@ function combatResultsCalculation(firstUnit,firstUnitWounds,secondUnit,secondUni
 	
 	// returning the combat results
 	var combatResults = new Array();
-			combatResults[0] = "<td>" + firstUnitCombatResolutionTotal.toFixed(1) + "</td></tr>";
-			combatResults[1] = "<td>" + secondUnitCombatResolutionTotal.toFixed(1) + "</td></tr>";
+			combatResults[0] = firstUnitCombatResolutionTotal.toFixed(1);
+			combatResults[1] = secondUnitCombatResolutionTotal.toFixed(1);
 			combatResults[2] = wonByText;
 			combatResults[3] = firstUnitRankDisplay.join("");
 			combatResults[4] = secondUnitRankDisplay.join("");
@@ -393,7 +391,8 @@ function combatResultsCalculation(firstUnit,firstUnitWounds,secondUnit,secondUni
 		firstUnitFightText[6] = firstUnitFightTextWardSaves;
 		firstUnitFightText[7] = firstUnitFightTextRegenSaves;
 		firstUnitFightText[8] = '<tr><td class="label">Wounds</td><td class="value">' + firstUnitCombatCalculated[7] + '</td></tr>';
-		firstUnitFightText[9] = '</table>';
+		firstUnitFightText[9] = '<tr><td class="label">Combat Points</td><td class="value">' + combatResults[0] + '</td></tr>';
+		firstUnitFightText[10] = '</table>';
 	
 	var secondUnitFightText = new Array();
 		secondUnitFightText[0] = secondUnitAttacks;
@@ -405,7 +404,10 @@ function combatResultsCalculation(firstUnit,firstUnitWounds,secondUnit,secondUni
 		secondUnitFightText[6] = secondUnitFightTextWardSaves;
 		secondUnitFightText[7] = secondUnitFightTextRegenSaves;
 		secondUnitFightText[8] = '<tr><td class="label">Wounds</td><td class="value">' + secondUnitCombatCalculated[7] + '</td></tr>';
-		secondUnitFightText[9] = '</table>';
+		secondUnitFightText[9] = '<tr><td class="label">Combat Points</td><td class="value">' + combatResults[1] + '</td></tr>';
+		secondUnitFightText[10] = '</table>';
+		
+	var conclusion = combatResults[2];
 	
 	// get unit image for draw-icons
 	var unitImageTop = '<img src="images/unitmodels/'+firstUnitCombatCalculated[8]+'.jpg">';
@@ -422,6 +424,7 @@ function combatResultsCalculation(firstUnit,firstUnitWounds,secondUnit,secondUni
 	document.getElementById("fight-text-bottom").innerHTML = secondUnitFightText.join("");
 	document.getElementById("draw-ranks-bottom").innerHTML = combatResults[4];
 	document.getElementById("draw-icons-bottom").innerHTML = unitImageBottom;
+	document.getElementById("fight-conclusion").innerHTML = conclusion;
 }
 //###############################
 // Calulation Functions

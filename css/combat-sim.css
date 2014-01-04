@@ -1,4 +1,3 @@
-@charset "utf-8";
 /* CSS Document */
 
 /* combat simulator */
@@ -26,11 +25,12 @@ tr.regen { color:#f33; }
 td.label { text-align:right; font-weight:bold; }
 td.value { text-align:left; padding-left:4px;}
 
-.draw-box { min-width:500px; float:left; }
+.draw-box { width:540px; float:left; }
 #fight-intro { text-align:center; border-bottom:1px dashed #333; margin:5px 20px; font-size:1.2em; }
+#fight-conclusion { text-align:center; border-top:1px dashed #333; margin:5px 20px; font-size:1.2em; }
 #fight-text-top, #fight-text-bottom { float:left; width:175px; }
 #draw-ranks-top, #draw-ranks-bottom { padding-top:40px; min-width:260px; float:left; text-align:center; }
-#draw-icons-top, #draw-icons-bottom { padding-top:40px; float:left; max-width:65px; color:#fff; }
+#draw-icons-top, #draw-icons-bottom { padding-top:40px; float:left; max-width:105px; color:#fff; }
 
 h2 { font-size: 1.2em; line-height:1em; text-align:center; margin:4px 0; border-bottom:1px solid #666; }
 
