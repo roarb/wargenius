@@ -197,11 +197,19 @@ function CombatFight(unit, oppunit, woundsTaken){
 		var unitChanceToWound = toWound(unitCombinedStrength, oppunit['T']);
 		var oppunitWoundsBeforeSaves = (unitChanceToWound * unitTotalHits);
 		
+		// killing blow check
+		var killingBlowWounds = 0;
+		if (unit['killingblow'] == 1){
+			killingBlowWounds = oppunitWoundsBeforeSaves/6;
+			var oppunitWoundsBeforeSavesArmorSave = oppunitWoundsBeforeSaves - killingBlowWounds;
+		}
+		else var oppunitWoundsBeforeSavesArmorSave = oppunitWoundsBeforeSaves;
+		
 		// wounds saved
 		// armor
 		var oppunitArmorChance = armorSaveCalc(unitCombinedStrength, oppunitArmorSave);
 		var oppunitWoundsSavedByArmor = 0;
-		oppunitWoundsSavedByArmor = oppunitWoundsBeforeSaves * oppunitArmorChance;
+		oppunitWoundsSavedByArmor = oppunitWoundsBeforeSavesArmorSave * oppunitArmorChance;
 		if (oppunitWoundsSavedByArmor > 0) {
 			oppunitWoundsSavedByArmorText = oppunitWoundsSavedByArmor.toFixed(1);
 		}
