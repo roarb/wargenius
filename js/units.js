@@ -94,7 +94,10 @@ var vampireCounts = new Array();
 	//vampireCounts[10] = ("Cairn Wraiths"); // cairnWraiths
 	
 var chaosWarriors = new Array();
-	chaosWarriors[0] = ("Chosen"); // chosen
+	chaosWarriors[0] = ("Chaos Warriors"); //chaosWarriors
+	chaosWarriors[1] = ("Chaos Marauderes"); //chaosMarauders
+	//chaosWarriors[2] = ("Forsaken"); //forsaken
+	//chaosWarriors[3] = ("Chosen"); // chosen
 	
 var woodElves = new Array();
 	woodElves[0] = ("Dryads");
@@ -152,6 +155,7 @@ var masterUnit = new Array ();
 		masterUnit['options']['adHandWep'] = (1); // unit has additional hand weapon 0 not an option 1 is an option
 		masterUnit['options']['shield'] = (1); // unit has shields 0 not an option 1 is an option
 		masterUnit['options']['greatWep'] = (1); // unit has great weapons 0 not an option 1 is an option
+		masterUnit['options']['halberd'] = (1); // unit has halberds 0 not an option 1 is an option
 		masterUnit['options']['barding'] = (1); // mount has barding 0 no 1 yes
 		masterUnit['options']['lance'] = (1); // unit has lances 0 no 1 yes
 		
@@ -645,6 +649,31 @@ var blackOrcs = new Array ();
 		
 //*********************************
 // Chaos Warriors
+var chaosWarriors = new Array ();
+	chaosWarriors['name'] = ("Chaos Warriors"); // user friendly name
+	chaosWarriors['WS'] = (5); // weapon skill
+	chaosWarriors['S'] = (4); // normal strength
+	chaosWarriors['WepS'] = (0); // strength added by the weapon
+	chaosWarriors['charge'] = new Array ();
+		chaosWarriors['charge']['spears'] = (0);
+	chaosWarriors['T'] = (4); // toughness
+	chaosWarriors['W'] = (1); // wounds
+	chaosWarriors['I'] = (5); // initiaive
+	chaosWarriors['A'] = (2); // attacks
+	chaosWarriors['AS'] = (5); // armor save amount
+	chaosWarriors['rank'] = (2); // how many ranks deep can attack
+	chaosWarriors['basesize'] = (25); // base width in mm 20, 25, 40, 50
+	chaosWarriors['LD'] = (8); // leadership
+	chaosWarriors['options'] = new Array();
+		chaosWarriors['options']['charge'] = (1);
+		chaosWarriors['options']['champion'] = (1); // chamption 0 not an option 1 is an option
+		chaosWarriors['options']['musician'] = (1); // musician 0 not an option 1 is an option
+		chaosWarriors['options']['standard'] = (1); // standard 0 not an option 1 is an option
+		chaosWarriors['options']['shield'] = (1);
+		chaosWarriors['options']['adHandWep'] = (1);
+		chaosWarriors['options']['greatWep'] = (1);
+		chaosWarriors['options']['halberd'] = (1);
+
 var chosen = new Array ();
 	chosen['name'] = ("Chosen"); // user friendly name
 	chosen['WS'] = (6); // weapon skill

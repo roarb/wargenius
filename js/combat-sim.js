@@ -261,6 +261,7 @@ function CombatFight(unit, oppunit, woundsTaken){
 			unitCombatResults[6] = oppunitWoundsSavedByRegenText;
 			unitCombatResults[7] = unitTotalWounds.toFixed(1); // wounds caused - used to reduce unitcount on units attacking second 
 			unitCombatResults[8] = unit['name'];
+			unitCombatResults[9] = killingBlowWounds.toFixed(1);
 		
 		return unitCombatResults;
 		
@@ -305,7 +306,7 @@ function combatResultsCalculation(firstUnit,firstUnitWounds,secondUnit,secondUni
 		}
 		else  var breakChance = breakChanceCalc(breakTest,coldBlooded) + " chance to stick around and fight some more";
 		
-		var wonByText = wonBy + " won the combat by " + wonByAmount + "<br />" + lostBy + " lost and have a " + breakChance;
+		var wonByText = wonBy + " won the combat by " + wonByAmount.toFixed(1) + "<br />" + lostBy + " lost and have a " + breakChance;
 	}
 	else if (secondUnitCombatResolutionTotal > firstUnitCombatResolutionTotal){
 		var wonByAmount = (secondUnitCombatResolutionTotal - firstUnitCombatResolutionTotal);
@@ -326,12 +327,24 @@ function combatResultsCalculation(firstUnit,firstUnitWounds,secondUnit,secondUni
 		}
 		// undead and deamons crumble instead of breaking
 		if (firstUnit['crumble'] == 1){
-			var breakChance = breakChanceCalc(breakTest,coldBlooded) + " chance to avoid crumbling that results in " + wonByAmount + " more dead.";
+			var breakChance = breakChanceCalc(breakTest,coldBlooded) + " chance to avoid crumbling that results in " + wonByAmount.toFixed(1) + " more dead.";
 		}
 		else var breakChance = breakChanceCalc(breakTest,coldBlooded) + " chance to stick around and fight some more";
 			
-		var wonByText = wonBy + " won the combat by " + wonByAmount + "<br />" + lostBy + " lost and have a " + breakChance;
+		var wonByText = wonBy + " won the combat by " + wonByAmount.toFixed(1) + "<br />" + lostBy + " lost and have a " + breakChance;
 	}
+	else if (secondUnitCombatResolutionTotal == firstUnitCombatResolutionTotal){			
+		var wonByText = "This combat results in a tie. ";
+	}
+	// steadfast and stubborn notices
+	if (secondUnitRanks > firstUnitRanks) { var secondUnitSteadfast = 'steadfast' }
+		else var secondUnitSteadfast = '';
+		if (secondUnit['stubborn'] == 1) { var secondUnitStubborn = 'stubborn' }
+		else var secondUnitStubborn = '';
+	if (firstUnitRanks > secondUnitRanks) { var firstUnitSteadfast = 'steadfast' }
+		else var firstUnitSteadfast = '';
+		if (firstUnit['stubborn'] == 1) { var firstUnitStubborn = 'stubborn' }
+		else var firstUnitStubborn = '';
 	//function to return display values for visual ranks First Unit
 	var order = "top";
 	var firstUnitRankDisplay = rankDisplay(firstUnit, secondUnitWounds, order)
@@ -347,6 +360,10 @@ function combatResultsCalculation(firstUnit,firstUnitWounds,secondUnit,secondUni
 			combatResults[2] = wonByText;
 			combatResults[3] = firstUnitRankDisplay.join("");
 			combatResults[4] = secondUnitRankDisplay.join("");
+			combatResults[5] = firstUnitSteadfast;
+			combatResults[6] = firstUnitStubborn;
+			combatResults[7] = secondUnitSteadfast;
+			combatResults[8] = secondUnitStubborn;
 	
 	return combatResults;
 	// end of combat results calculations	
@@ -418,8 +435,19 @@ function combatResultsCalculation(firstUnit,firstUnitWounds,secondUnit,secondUni
 	var conclusion = combatResults[2];
 	
 	// get unit image for draw-icons
-	var unitImageTop = '<img src="images/unitmodels/'+firstUnitCombatCalculated[8]+'.jpg">';
-	var unitImageBottom = '<img src="images/unitmodels/'+secondUnitCombatCalculated[8]+'.jpg">';
+	if (firstUnitCombatCalculated[9] == 0.0){firstUnitCombatCalculated[9] = ''}
+	if (secondUnitCombatCalculated[9] == 0.0){secondUnitCombatCalculated[9] = ''}
+	
+	var unitImageTop = new Array();
+		unitImageTop[0] = '<img src="images/unitmodels/'+firstUnitCombatCalculated[8]+'.jpg"><br />';
+		unitImageTop[1] = 'Killing Blow = '+firstUnitCombatCalculated[9]; // killing blow
+		unitImageTop[2] = combatResults[5]; // steadfast
+		unitImageTop[3] = combatResults[6]; // stubborn
+	var unitImageBottom = new Array();
+		unitImageBottom[0] = '<img src="images/unitmodels/'+secondUnitCombatCalculated[8]+'.jpg"><br />';
+		unitImageBottom[1] = 'Killing Blow = '+secondUnitCombatCalculated[9]; // killing blow
+		unitImageBottom[2] = combatResults[7]; // steadfast
+		unitImageBottom[3] = combatResults[8]; // stubborn
 	
 	//##############################				
 	// print the attack 
@@ -427,11 +455,11 @@ function combatResultsCalculation(firstUnit,firstUnitWounds,secondUnit,secondUni
 	document.getElementById("fight-intro").innerHTML = intro;
 	document.getElementById("fight-text-top").innerHTML = firstUnitFightText.join("");
 	document.getElementById("draw-ranks-top").innerHTML = combatResults[3];
-	document.getElementById("draw-icons-top").innerHTML = unitImageTop;
+	document.getElementById("draw-icons-top").innerHTML = unitImageTop.join("");
 		// second unit to strike on bottom
 	document.getElementById("fight-text-bottom").innerHTML = secondUnitFightText.join("");
 	document.getElementById("draw-ranks-bottom").innerHTML = combatResults[4];
-	document.getElementById("draw-icons-bottom").innerHTML = unitImageBottom;
+	document.getElementById("draw-icons-bottom").innerHTML = unitImageBottom.join("");
 	document.getElementById("fight-conclusion").innerHTML = conclusion;
 }
 //###############################
