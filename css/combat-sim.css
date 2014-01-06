@@ -30,7 +30,7 @@ td.value { text-align:left; padding-left:4px;}
 #fight-conclusion { text-align:center; border-top:1px dashed #333; margin:5px 20px; font-size:1.2em; }
 #fight-text-top, #fight-text-bottom { float:left; width:175px; }
 #draw-ranks-top, #draw-ranks-bottom { padding-top:40px; min-width:260px; float:left; text-align:center; }
-#draw-icons-top, #draw-icons-bottom { padding-top:40px; float:left; max-width:105px; }
+#draw-icons-top, #draw-icons-bottom { padding-top:40px; float:left; max-width:105px; text-align:left; }
 
 h2 { font-size: 1.2em; line-height:1em; text-align:center; margin:4px 0; border-bottom:1px solid #666; }
 

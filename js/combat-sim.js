@@ -337,13 +337,13 @@ function combatResultsCalculation(firstUnit,firstUnitWounds,secondUnit,secondUni
 		var wonByText = "This combat results in a tie. ";
 	}
 	// steadfast and stubborn notices
-	if (secondUnitRanks > firstUnitRanks) { var secondUnitSteadfast = 'steadfast' }
+	if (secondUnitRanks > firstUnitRanks) { var secondUnitSteadfast = '<img src="images/steadfast.jpg">' }
 		else var secondUnitSteadfast = '';
-		if (secondUnit['stubborn'] == 1) { var secondUnitStubborn = 'stubborn' }
+		if (secondUnit['stubborn'] == 1) { var secondUnitStubborn = '<img src="images/stubborn.jpg">' }
 		else var secondUnitStubborn = '';
-	if (firstUnitRanks > secondUnitRanks) { var firstUnitSteadfast = 'steadfast' }
+	if (firstUnitRanks > secondUnitRanks) { var firstUnitSteadfast = '<img src="images/steadfast.jpg">' }
 		else var firstUnitSteadfast = '';
-		if (firstUnit['stubborn'] == 1) { var firstUnitStubborn = 'stubborn' }
+		if (firstUnit['stubborn'] == 1) { var firstUnitStubborn = '<img src="images/stubborn.jpg">' }
 		else var firstUnitStubborn = '';
 	//function to return display values for visual ranks First Unit
 	var order = "top";
@@ -436,16 +436,18 @@ function combatResultsCalculation(firstUnit,firstUnitWounds,secondUnit,secondUni
 	
 	// get unit image for draw-icons
 	if (firstUnitCombatCalculated[9] == 0.0){firstUnitCombatCalculated[9] = ''}
+	else firstUnitCombatCalculated[9] = '<img src="images/killingblow.jpg">';
 	if (secondUnitCombatCalculated[9] == 0.0){secondUnitCombatCalculated[9] = ''}
+	else secondUnitCombatCalculated[9] = '<img src="images/killingblow.jpg">';
 	
 	var unitImageTop = new Array();
 		unitImageTop[0] = '<img src="images/unitmodels/'+firstUnitCombatCalculated[8]+'.jpg"><br />';
-		unitImageTop[1] = 'Killing Blow = '+firstUnitCombatCalculated[9]; // killing blow
+		unitImageTop[1] = firstUnitCombatCalculated[9]; // killing blow
 		unitImageTop[2] = combatResults[5]; // steadfast
 		unitImageTop[3] = combatResults[6]; // stubborn
 	var unitImageBottom = new Array();
 		unitImageBottom[0] = '<img src="images/unitmodels/'+secondUnitCombatCalculated[8]+'.jpg"><br />';
-		unitImageBottom[1] = 'Killing Blow = '+secondUnitCombatCalculated[9]; // killing blow
+		unitImageBottom[1] = secondUnitCombatCalculated[9]; // killing blow
 		unitImageBottom[2] = combatResults[7]; // steadfast
 		unitImageBottom[3] = combatResults[8]; // stubborn
 	

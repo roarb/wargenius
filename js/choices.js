@@ -488,7 +488,7 @@ function unitChoice() {
 			}
 		// Chaos Warriors
 		if (unit1Choice == "Chaos Warriors"){
-			unit1 = chaosWarriors;
+			unit1 = chaosWarriorsUnit;
 			unit1Options();
 			}
 		if (unit1Choice == "Chosen"){
@@ -639,7 +639,7 @@ function oppunitChoice() {
 			}
 		// Chaos Warriors
 		if (unit2Choice == "Chaos Warriors"){
-			unit2 = chaosWarriors;
+			unit2 = chaosWarriorsUnit;
 			unit2Options();
 			}
 		if (unit2Choice == "Chosen"){
