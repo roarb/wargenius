@@ -198,9 +198,19 @@ function CombatFight(unit, oppunit, woundsTaken){
 			}
 		}
 		
+		// poison wounds
+		var poisonWounds = 0;
+		var poisonWoundsPrint = '';
+		if (unit['poison'] == 1){
+			poisonWounds = unitTotalHits/6;
+			unitTotalHits = unitTotalHits - poisonWounds;
+			poisonWoundsPrint = '<img src="images/poison.jpg">';
+		}
+		
+		
 		// wounds caused - before saves
 		var unitChanceToWound = toWound(unitCombinedStrength, oppunit['T']);
-		var oppunitWoundsBeforeSaves = (unitChanceToWound * unitTotalHits);
+		var oppunitWoundsBeforeSaves = (unitChanceToWound * unitTotalHits) + poisonWounds;
 		
 		// killing blow check
 		var killingBlowWounds = 0;
@@ -267,6 +277,7 @@ function CombatFight(unit, oppunit, woundsTaken){
 			unitCombatResults[7] = unitTotalWounds.toFixed(1); // wounds caused - used to reduce unitcount on units attacking second 
 			unitCombatResults[8] = unit['name'];
 			unitCombatResults[9] = killingBlowWounds.toFixed(1);
+			unitCombatResults[10] = poisonWoundsPrint;
 		
 		return unitCombatResults;
 		
@@ -280,11 +291,13 @@ function combatResultsCalculation(firstUnit,firstUnitWounds,secondUnit,secondUni
 	// need for unit 1 ranks, width, basesize, kills, charge, standard = total CR  musician, stubborn, unbreakable, frenzy = extras affected
 	var firstUnitRanksTemp = ((firstUnit['count']-secondUnitWounds) / firstUnit['width'])-1;
 	var firstUnitRanks = Math.floor(firstUnitRanksTemp);
+	if (firstUnitRanks > 3){firstUnitRanks=3}
 	var firstUnitCombatResolutionTotal = (firstUnitRanks + Number(firstUnitWounds) + firstUnit['op-charged'] + firstUnit['op-standard']);
 	
 	// need for unit 2 ranks, width, basesize, kills, charge, standard = total CR  musician, stubborn, unbreakable, frenzy = extras affected
 	var secondUnitRanksTemp = ((secondUnit['count']-firstUnitWounds) / secondUnit['width'])-1;
 	var secondUnitRanks = Math.floor(secondUnitRanksTemp);
+	if (secondUnitRanks > 3){secondUnitRanks=3}
 	var secondUnitCombatResolutionTotal = (secondUnitRanks + Number(secondUnitWounds) + secondUnit['op-charged'] + secondUnit['op-standard']);
 	
 	// determine winner and calculate break chance
@@ -448,13 +461,15 @@ function combatResultsCalculation(firstUnit,firstUnitWounds,secondUnit,secondUni
 	var unitImageTop = new Array();
 		unitImageTop[0] = '<img src="images/unitmodels/'+firstUnitCombatCalculated[8]+'.jpg"><br />';
 		unitImageTop[1] = firstUnitCombatCalculated[9]; // killing blow
-		unitImageTop[2] = combatResults[5]; // steadfast
-		unitImageTop[3] = combatResults[6]; // stubborn
+		unitImageTop[2] = firstUnitCombatCalculated[10]; // poison
+		unitImageTop[3] = combatResults[5]; // steadfast
+		unitImageTop[4] = combatResults[6]; // stubborn
 	var unitImageBottom = new Array();
 		unitImageBottom[0] = '<img src="images/unitmodels/'+secondUnitCombatCalculated[8]+'.jpg"><br />';
 		unitImageBottom[1] = secondUnitCombatCalculated[9]; // killing blow
-		unitImageBottom[2] = combatResults[7]; // steadfast
-		unitImageBottom[3] = combatResults[8]; // stubborn
+		unitImageBottom[2] = secondUnitCombatCalculated[10]; // poison
+		unitImageBottom[3] = combatResults[7]; // steadfast
+		unitImageBottom[4] = combatResults[8]; // stubborn
 	
 	//##############################				
 	// print the attack 
