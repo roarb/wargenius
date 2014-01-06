@@ -69,12 +69,11 @@ function fight(){
 	}
 	else 
 		if (unit2['ASF'] == 1 && unit1['ASF'] == null) {secondUnitFirst = 1}
-		else if (unit1['I'] == unit2['I'] && unit1ASL == unit2ASL) {simoAttacks = 1}
+		else if (unit1['I'] == unit2['I'] && unit1ASL > 0 && unit2ASL > 0) {simoAttacks = 1}
 		else if (unit2['I'] > unit1['I'] && unit1ASL >= unit2ASL) {secondUnitFirst = 1}
 		else if (unit1['I'] > unit2['I'] && unit1ASL > 0 && unit2ASL == 0) {secondUnitFirst = 1}
 		else if (unit1ASL >= 1 && unit2ASL == 0) {secondUnitFirst = 1}
 				
-	
 	if (simoAttacks == 0 && secondUnitFirst == 0) {
 		var modelsLost = 0;
 		var firstUnitAttacks = "<h2>" + unit1['name'] + "<br />attack first</h2>";
