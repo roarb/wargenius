@@ -58,17 +58,22 @@ function fight(){
 	// which unit is 1 which is 2 - initiative based attacks
 	var simoAttacks = 0;
 	var secondUnitFirst = 0;
+		// calculate unit ASL
+	var unit1ASL = unit1['op-greatWep']; var unit2ASL = unit2['op-greatWep'];
+	if (unit1['ASL'] == 1) {unit1ASL = unit1['ASL']}
+	if (unit2['ASL'] == 1) {unit2ASL = unit2['ASL']}
+		// handle ASF Units
 	if (unit1['ASF'] == 1 && unit2['ASF'] == 1) {
 		if (unit1['I'] == unit2['I']) {simoAttacks = 1;}
-		else 
-			if (unit1['I'] < unit2['I']) {secondUnitFirst = 1}
+		else if (unit1['I'] < unit2['I']) {secondUnitFirst = 1}
 	}
 	else 
 		if (unit2['ASF'] == 1 && unit1['ASF'] == null) {secondUnitFirst = 1}
-		else 
-			if (unit1['I'] == unit2['I']) {	simoAttacks = 1;}
-			else 
-				if (unit2['I'] > unit1['I']) {secondUnitFirst = 1}
+		else if (unit1['I'] == unit2['I'] && unit1ASL == unit2ASL) {simoAttacks = 1}
+		else if (unit2['I'] > unit1['I'] && unit1ASL >= unit2ASL) {secondUnitFirst = 1}
+		else if (unit1['I'] > unit2['I'] && unit1ASL > 0 && unit2ASL == 0) {secondUnitFirst = 1}
+		else if (unit1ASL >= 1 && unit2ASL == 0) {secondUnitFirst = 1}
+				
 	
 	if (simoAttacks == 0 && secondUnitFirst == 0) {
 		var modelsLost = 0;
