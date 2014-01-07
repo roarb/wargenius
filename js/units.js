@@ -123,6 +123,7 @@ var masterUnit = new Array ();
 	masterUnit['etheral'] = (1); // etheral unit 0 no 1 yes
 	masterUnit['rank'] = (2); // how many ranks deep can attack
 	masterUnit['basesize'] = (20); // base width in mm 20, 25, 40, 50
+	masterUnit['cavbase'] = (1); // cav base size 0 no 1 yes == multiplies basesize height by 3 for box rendering
 	masterUnit['LD'] = (7); // leadership
 	masterUnit['stubborn'] = (1); // stubborn 0 no 1 yes
 	masterUnit['unbreakable'] = (1); // unbreakable 0 no 1 yes
@@ -775,6 +776,7 @@ var direWolves = new Array ();
 	direWolves['AS'] = (7); // armor save amount
 	direWolves['rank'] = (2); // how many ranks deep can attack
 	direWolves['basesize'] = (25); // base width in mm 20, 25, 40, 50
+	direWolves['cavbase'] = (1);
 	direWolves['LD'] = (3); // leadership
 	direWolves['crumble'] = (1);
 	direWolves['options'] = new Array();

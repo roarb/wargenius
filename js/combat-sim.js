@@ -495,14 +495,32 @@ function rankDisplay(unit, wounds, order) {
 			var x = (i / unit['width'])
 			if (x === parseInt(x)) {
 				if (x > 0) {
-					boxes[i] = '</div><div class="' + order + '-' + x + '"><canvas id="unitBox' + i + '" width="' + unit['basesize'] + '" height="' + unit['basesize'] + '" style="border:1px solid #000;"></canvas>'
+					if (unit['cavbase'] == 1){
+						var cavbase = unit['basesize'] * 2;
+						boxes[i] = '</div><div class="' + order + '-' + x + '"><canvas id="unitBox' + i + '" width="' + unit['basesize'] + '" height="' + cavbase + '" style="border:1px solid #000;"></canvas>'
+					}
+					else {
+						boxes[i] = '</div><div class="' + order + '-' + x + '"><canvas id="unitBox' + i + '" width="' + unit['basesize'] + '" height="' + unit['basesize'] + '" style="border:1px solid #000;"></canvas>'
+					}
 				}
 				else {
-					boxes[i] = '<div class="' + order + '-' + x + '"><canvas id="unitBox' + i + '" width="' + unit['basesize'] + '" height="' + unit['basesize'] + '" style="border:1px solid #000;"></canvas>'
+					if (unit['cavbase'] == 1){
+						var cavbase = unit['basesize'] * 2;
+						boxes[i] = '<div class="' + order + '-' + x + '"><canvas id="unitBox' + i + '" width="' + unit['basesize'] + '" height="' + cavbase + '" style="border:1px solid #000;"></canvas>'
+					}
+					else {
+						boxes[i] = '<div class="' + order + '-' + x + '"><canvas id="unitBox' + i + '" width="' + unit['basesize'] + '" height="' + unit['basesize'] + '" style="border:1px solid #000;"></canvas>'
+					}
 				}
 			}
 			else {
-				boxes[i] = '<canvas id="unitBox' + i + '" width="' + unit['basesize'] + '" height="' + unit['basesize'] + '" style="border:1px solid #000;"></canvas>'
+				if (unit['cavbase'] == 1){
+					var cavbase = unit['basesize'] * 2;
+					boxes[i] = '<canvas id="unitBox' + i + '" width="' + unit['basesize'] + '" height="' + cavbase + '" style="border:1px solid #000;"></canvas>'
+					}
+				else {
+					boxes[i] = '<canvas id="unitBox' + i + '" width="' + unit['basesize'] + '" height="' + unit['basesize'] + '" style="border:1px solid #000;"></canvas>'
+				}
 			}
 		}
 	}
@@ -511,14 +529,32 @@ function rankDisplay(unit, wounds, order) {
 			var x = (i / unit['width'])
 			if (x === parseInt(x)) {
 				if (x > 0) {
-					boxes[i] = '</div><div class="' + order + '-' + x + '"><canvas id="unitBox' + i + '" width="' + unit['basesize'] + '" height="' + unit['basesize'] + '" style="border:1px solid #000;"></canvas>'
+					if (unit['cavbase'] == 1){
+						var cavbase = unit['basesize'] * 2;
+						boxes[i] = '</div><div class="' + order + '-' + x + '"><canvas id="unitBox' + i + '" width="' + unit['basesize'] + '" height="' + cavbase + '" style="border:1px solid #000;"></canvas>'
+					}
+					else {
+						boxes[i] = '</div><div class="' + order + '-' + x + '"><canvas id="unitBox' + i + '" width="' + unit['basesize'] + '" height="' + unit['basesize'] + '" style="border:1px solid #000;"></canvas>'
+					}
 				}
 				else {
-					boxes[i] = '<div class="' + order + '-' + x + '"><canvas id="unitBox' + i + '" width="' + unit['basesize'] + '" height="' + unit['basesize'] + '" style="border:1px solid #000;"></canvas>'
+					if (unit['cavbase'] == 1){
+						var cavbase = unit['basesize'] * 2;
+						boxes[i] = '<div class="' + order + '-' + x + '"><canvas id="unitBox' + i + '" width="' + unit['basesize'] + '" height="' + cavbase + '" style="border:1px solid #000;"></canvas>'
+					}
+					else {
+						boxes[i] = '<div class="' + order + '-' + x + '"><canvas id="unitBox' + i + '" width="' + unit['basesize'] + '" height="' + unit['basesize'] + '" style="border:1px solid #000;"></canvas>'
+					}
 				}
 			}
 			else {
-				boxes[i] = '<canvas id="unitBox' + i + '" width="' + unit['basesize'] + '" height="' + unit['basesize'] + '" style="border:1px solid #000;"></canvas>'
+				if (unit['cavbase'] == 1){
+					var cavbase = unit['basesize'] * 2;
+					boxes[i] = '<canvas id="unitBox' + i + '" width="' + unit['basesize'] + '" height="' + cavbase + '" style="border:1px solid #000;"></canvas>'
+					}
+				else {
+					boxes[i] = '<canvas id="unitBox' + i + '" width="' + unit['basesize'] + '" height="' + unit['basesize'] + '" style="border:1px solid #000;"></canvas>'
+				}
 			}
 		}
 	}
