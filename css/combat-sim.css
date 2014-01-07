@@ -30,9 +30,9 @@ td.value { text-align:left; padding-left:4px;}
 #fight-conclusion { text-align:center; margin:5px 20px; font-size:1.2em; background:#fff; border-radius:12px; }
 #fight-text-top, #fight-text-bottom { float:left; width:175px; }
 #draw-ranks-top, #draw-ranks-bottom { padding-top:40px; min-width:260px; float:left; text-align:center; }
-#draw-icons-top, #draw-icons-bottom { padding-top:40px; float:left; max-width:105px; text-align:left; }
+#draw-icons-top, #draw-icons-bottom { padding-top:40px; float:right; width:105px; text-align:left; }
 
-h2 { font-size: 1.2em; line-height:1em; text-align:center; margin:4px 0; border-bottom:1px solid #666; font-weight:normal;}
+h2 { font-size: 1.2em; line-height:1em; text-align:center; margin:4px 6px; border-bottom:1px solid #666; font-weight:normal;}
 
 #armyIcon, #oppArmyIcon { padding-top:10px; text-align:center; }
 #armyIcon img, #oppArmyIcon img { border:1px solid #333; }

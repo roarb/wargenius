@@ -353,6 +353,7 @@ function combatResultsCalculation(firstUnit,firstUnitWounds,secondUnit,secondUni
 	else if (secondUnitCombatResolutionTotal == firstUnitCombatResolutionTotal){			
 		var wonByText = "This combat results in a tie. ";
 	}
+	
 	// steadfast and stubborn notices
 	if (secondUnitRanks > firstUnitRanks) { var secondUnitSteadfast = '<img src="images/steadfast.jpg">' }
 		else var secondUnitSteadfast = '';
