@@ -322,7 +322,7 @@ function combatResultsCalculation(firstUnit,firstUnitWounds,secondUnit,secondUni
 		if (secondUnit['crumble'] == 1){
 			var breakChance = breakChanceCalc(breakTest,coldBlooded) + " chance to avoid crumbling that results in " + wonByAmount.toFixed(1) + " more dead.";
 		}
-		else  var breakChance = breakChanceCalc(breakTest,coldBlooded) + " chance to stick around and fight some more";
+		else  var breakChance = breakChanceCalc(breakTest,coldBlooded) + " chance to stick around and keep fighting.";
 		
 		var wonByText = wonBy + " won the combat by " + wonByAmount.toFixed(1) + "<br />" + lostBy + " lost and have a " + breakChance;
 	}
