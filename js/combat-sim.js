@@ -25,6 +25,8 @@ function fight(){
 	if (!$('#greatWeapon1').attr('checked')){unit1['op-greatWep'] = (0);}
 	if ($('#shield1').attr('checked'))	 	{unit1['op-shield'] = (1);}
 	if (!$('#shield1').attr('checked'))	 	{unit1['op-shield'] = (0);}
+	if ($('#lightArmor1').attr('checked'))	{unit1['op-lightArmor'] = (1);}
+	if (!$('#lightArmor1').attr('checked'))	{unit1['op-lightArmor'] = (0);}
 	if ($('#barding1').attr('checked'))	 	{unit1['op-barding'] = (1);}
 	if (!$('#barding1').attr('checked'))	{unit1['op-barding'] = (0);}
 	if ($('#lance1').attr('checked'))	 	{unit1['op-lance'] = (1);}
@@ -47,6 +49,8 @@ function fight(){
 	if (!$('#greatWeapon2').attr('checked')){unit2['op-greatWep'] = (0);}
 	if ($('#shield2').attr('checked')) 		{unit2['op-shield'] = (1);}
 	if (!$('#shield2').attr('checked')) 	{unit2['op-shield'] = (0);}
+	if ($('#lightArmor2').attr('checked'))	{unit2['op-lightArmor'] = (1);}
+	if (!$('#lightArmor2').attr('checked'))	{unit2['op-lightArmor'] = (0);}
 	if ($('#barding2').attr('checked'))	 	{unit2['op-barding'] = (1);}
 	if (!$('#barding2').attr('checked'))	{unit2['op-barding'] = (0);}
 	if ($('#lance2').attr('checked'))	 	{unit2['op-lance'] = (1);}
@@ -70,6 +74,7 @@ function fight(){
 	else 
 		if (unit2['ASF'] == 1 && unit1['ASF'] == null) {secondUnitFirst = 1}
 		else if (unit1['I'] == unit2['I'] && unit1ASL > 0 && unit2ASL > 0) {simoAttacks = 1}
+		else if (unit1['I'] == unit2['I'] && unit1ASL == 0 && unit2ASL == 0) {simoAttacks = 1}
 		else if (unit2['I'] > unit1['I'] && unit1ASL >= unit2ASL) {secondUnitFirst = 1}
 		else if (unit1['I'] > unit2['I'] && unit1ASL > 0 && unit2ASL == 0) {secondUnitFirst = 1}
 		else if (unit1ASL >= 1 && unit2ASL == 0) {secondUnitFirst = 1}
@@ -131,10 +136,10 @@ function CombatFight(unit, oppunit, woundsTaken){
 		unitCombinedStrength = unitCombinedStrength + unit['op-greatWep'];
 		
 		//armor saves after options		
-		if (oppunit['AS'] == null){oppunitArmorSave = 7 - oppunit['op-shield']}
-		else if (oppunit['AS'] == null && oppunit['op-shield'] == null){oppunitArmorSave = 7}
-		else if (oppunit['op-shield'] ==1) {oppunitArmorSave = (oppunit['AS'] - oppunit['op-shield'])}
-		else oppunitArmorSave = oppunit['AS'];
+		if (oppunit['AS'] == null){oppunitArmorSave = 7 - oppunit['op-shield'] - oppunit['op-lightArmor']}
+		//else if (oppunit['AS'] == null && oppunit['op-shield'] == 0 && oppunit['op-lightArmor'] == 0){oppunitArmorSave = 7}
+		//else if (oppunit['op-shield'] ==1) {oppunitArmorSave = (oppunit['AS'] - oppunit['op-shield'])}
+		else oppunitArmorSave = oppunit['AS'] - oppunit['op-shield'] - oppunit['op-lightArmor'];
 		
 		//horde checks
 			// unit 1
@@ -304,7 +309,7 @@ function combatResultsCalculation(firstUnit,firstUnitWounds,secondUnit,secondUni
 		var wonByAmount = (firstUnitCombatResolutionTotal - secondUnitCombatResolutionTotal);
 		var wonBy = firstUnit['name'];
 		var lostBy = secondUnit['name'];
-		if (secondUnitRanks > firstUnitRanks || secondUnit['stubborn'] == 1) {
+		if (secondUnitRanks > firstUnitRanks || secondUnit['stubborn'] == 1 || secondUnit['unbreakable'] == 1) {
 			var breakTest = (secondUnit['LD'])
 		}
 		else {
@@ -329,7 +334,7 @@ function combatResultsCalculation(firstUnit,firstUnitWounds,secondUnit,secondUni
 		var wonByAmount = (secondUnitCombatResolutionTotal - firstUnitCombatResolutionTotal);
 		var wonBy = secondUnit['name'];
 		var lostBy = firstUnit['name'];
-		if (firstUnitRanks > secondUnitRanks || firstUnit['stubborn'] == 1) {
+		if (firstUnitRanks > secondUnitRanks || firstUnit['stubborn'] == 1 || firstUnit['unbreakable'] == 1) {
 			var breakTest = (firstUnit['LD'])
 		}
 		else {
@@ -357,12 +362,16 @@ function combatResultsCalculation(firstUnit,firstUnitWounds,secondUnit,secondUni
 	// steadfast and stubborn notices
 	if (secondUnitRanks > firstUnitRanks) { var secondUnitSteadfast = '<img src="images/steadfast.jpg">' }
 		else var secondUnitSteadfast = '';
-		if (secondUnit['stubborn'] == 1) { var secondUnitStubborn = '<img src="images/stubborn.jpg">' }
+	if (secondUnit['stubborn'] == 1) { var secondUnitStubborn = '<img src="images/stubborn.jpg">' }
 		else var secondUnitStubborn = '';
+	if (secondUnit['unbreakable'] == 1) { var secondUnitUnbreakable = '<img src="images/unbreakable.jpg">' }
+		else var secondUnitUnbreakable = '';	
 	if (firstUnitRanks > secondUnitRanks) { var firstUnitSteadfast = '<img src="images/steadfast.jpg">' }
 		else var firstUnitSteadfast = '';
-		if (firstUnit['stubborn'] == 1) { var firstUnitStubborn = '<img src="images/stubborn.jpg">' }
+	if (firstUnit['stubborn'] == 1) { var firstUnitStubborn = '<img src="images/stubborn.jpg">' }
 		else var firstUnitStubborn = '';
+	if (firstUnit['unbreakable'] == 1) { var firstUnitUnbreakable = '<img src="images/unbreakable.jpg">' }
+		else var firstUnitUnbreakable = '';
 	//function to return display values for visual ranks First Unit
 	var order = "top";
 	var firstUnitRankDisplay = rankDisplay(firstUnit, secondUnitWounds, order)
@@ -382,6 +391,8 @@ function combatResultsCalculation(firstUnit,firstUnitWounds,secondUnit,secondUni
 			combatResults[6] = firstUnitStubborn;
 			combatResults[7] = secondUnitSteadfast;
 			combatResults[8] = secondUnitStubborn;
+			combatResults[9] = firstUnitUnbreakable;
+			combatResults[10] = secondUnitUnbreakable;
 	
 	return combatResults;
 	// end of combat results calculations	
@@ -464,12 +475,14 @@ function combatResultsCalculation(firstUnit,firstUnitWounds,secondUnit,secondUni
 		unitImageTop[2] = firstUnitCombatCalculated[10]; // poison
 		unitImageTop[3] = combatResults[5]; // steadfast
 		unitImageTop[4] = combatResults[6]; // stubborn
+		unitImageTop[5] = combatResults[9]; // unbreakable
 	var unitImageBottom = new Array();
 		unitImageBottom[0] = '<img src="images/unitmodels/'+secondUnitCombatCalculated[8]+'.jpg"><br />';
 		unitImageBottom[1] = secondUnitCombatCalculated[9]; // killing blow
 		unitImageBottom[2] = secondUnitCombatCalculated[10]; // poison
 		unitImageBottom[3] = combatResults[7]; // steadfast
 		unitImageBottom[4] = combatResults[8]; // stubborn
+		unitImageBottom[5] = combatResults[10]; // unbreakable
 	
 	//##############################				
 	// print the attack 

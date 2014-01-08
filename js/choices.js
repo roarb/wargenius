@@ -491,6 +491,14 @@ function unitChoice() {
 			unit1 = chaosWarriorsUnit;
 			unit1Options();
 			}
+		if (unit1Choice == "Chaos Marauders"){
+			unit1 = chaosMarauders;
+			unit1Options();
+			}
+		if (unit1Choice == "Forsaken"){
+			unit1 = forsaken;
+			unit1Options();
+			}
 		if (unit1Choice == "Chosen"){
 			unit1 = chosen;
 			unit1Options();
@@ -642,6 +650,14 @@ function oppunitChoice() {
 			unit2 = chaosWarriorsUnit;
 			unit2Options();
 			}
+		if (unit2Choice == "Chaos Marauders"){
+			unit2 = chaosMarauders;
+			unit2Options();
+			}
+		if (unit2Choice == "Forsaken"){
+			unit2 = forsaken;
+			unit2Options();
+			}
 		if (unit2Choice == "Chosen"){
 			unit2 = chosen;
 			unit2Options();
@@ -706,6 +722,7 @@ function unit1Options(){
 	if (unit1['options']['greatWep'] == 1){ unit1Options = unit1Options + 'Great Weapon: <input type="checkbox" id="greatWeapon1" /><br />';}
 	if (unit1['options']['halberd'] == 1){ unit1Options = unit1Options + 'Halberd: <input type="checkbox" id="halbred1" /><br />';}
 	if (unit1['options']['shield'] == 1){ unit1Options = unit1Options + 'Shield: <input type="checkbox" id="shield1" /><br />';}
+	if (unit1['options']['lightArmor'] == 1){ unit1Options = unit1Options + 'Light Armor: <input type="checkbox" id="lightArmor1" /><br />';}
 	if (unit1['options']['barding'] == 1){ unit1Options = unit1Options + 'Barding: <input type="checkbox" id="barding1" /><br />';}
 	if (unit1['options']['lance'] == 1){ unit1Options = unit1Options + 'Lances: <input type="checkbox" id="lance1" /><br />';}
 	document.getElementById("unitOptions").innerHTML = unit1Options;
@@ -722,6 +739,7 @@ function unit2Options(){
 	if (unit2['options']['greatWep'] == 1){ unit2Options = unit2Options + 'Great Weapon: <input type="checkbox" id="greatWeapon2" /><br />';}
 	if (unit2['options']['halberd'] == 1){ unit2Options = unit2Options + 'Halberd: <input type="checkbox" id="halbred2" /><br />';}
 	if (unit2['options']['shield'] == 1){ unit2Options = unit2Options + 'Shield: <input type="checkbox" id="shield2" /><br />';}
+	if (unit2['options']['lightArmor'] == 1){ unit2Options = unit2Options + 'Light Armor: <input type="checkbox" id="lightArmor2" /><br />';}
 	if (unit2['options']['barding'] == 1){ unit2Options = unit2Options + 'Barding: <input type="checkbox" id="barding2" /><br />';}
 	if (unit2['options']['lance'] == 1){ unit2Options = unit2Options + 'Lances: <input type="checkbox" id="lance2" /><br />';}
 	document.getElementById("oppunitOptions").innerHTML = unit2Options;
