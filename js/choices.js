@@ -503,6 +503,10 @@ function unitChoice() {
 			unit1 = chaosWarhounds;
 			unit1Options();
 			}
+		if (unit1Choice == "Marauder Horsemen"){
+			unit1 = marauderHorsemen;
+			unit1Options();
+			}
 		if (unit1Choice == "Chosen"){
 			unit1 = chosen;
 			unit1Options();
@@ -664,6 +668,10 @@ function oppunitChoice() {
 			}
 		if (unit2Choice == "Chaos Warhounds"){
 			unit2 = chaosWarhounds;
+			unit2Options();
+			}
+		if (unit2Choice == "Marauder Horsemen"){
+			unit2 = marauderHorsemen;
 			unit2Options();
 			}
 		if (unit2Choice == "Chosen"){
