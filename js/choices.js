@@ -746,7 +746,7 @@ function unit1Options(){
 
 function unit2Options(){
 	var unit2Options = ""
-	if (unit2['options']['charge'] == 1){ unit2Options = unit2Options + 'Charged: <input type="checkbox" id="charge2" /><br />'; }
+	if (unit2['options']['charge'] == 1){ unit2Options = unit2Options + 'Charged: <div class="squaredThree"><input type="checkbox" value="None" id="charge2" /><label for="squaredThree"></label></div><br />'; }
 	if (unit2['options']['champion'] == 1){ unit2Options = unit2Options + 'Champion: <input type="checkbox" id="champion2" /><br />'; }
 	if (unit2['options']['standard'] == 1){	unit2Options = unit2Options + 'Standard: <input type="checkbox" id="standard2" /><br />';}
 	if (unit2['options']['musician'] == 1){	unit2Options = unit2Options + 'Musician: <input type="checkbox" id="musician2" /><br />';}

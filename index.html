@@ -2,33 +2,72 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Battlefield Terrain Generation</title>
-<script type="text/javascript" src="js/terraingen.js"></script>
+<title>Fantasy Combat Simulator</title>
+<script type="text/javascript" src="js/combat-sim.js"></script>
+<script type="text/javascript" src="js/units.js"></script>
+<script type="text/javascript" src="js/choices.js"></script>
 <script type="text/javascript" src="js/jquery/jquery.min.js"></script>
-<link rel="stylesheet" type="text/css" href="css/styles.css" />
+<link rel="stylesheet" type="text/css" href="css/combat-sim.css" />
 </head>
-<body id="body">
-<div class="buttons">
-	<button onclick="scenario()">Scenario to Play</button><br />
-    <button onclick="standardChart()">Standard 8th Edition</button><br />
-    <button onclick="wildernessChart()">Badlands / Wilderness</button><br />
-    <button onclick="chaoswastesChart()">Chaos Wastes</button><br />
-    <button onclick="mountainChart()">Mountainous / Dwarf Realm</button><br />
-    <button onclick="desertChart()">Deserts</button><br />
-    <button onclick="jungleChart()">Jungle / Lustria</button><br />
-    <button onclick="menChart()">The Realms of Men</button><br />
-    <button onclick="islandsChart()">Islands / Ulthuan / Naggaroth</button><br />
-    <button onclick="forestGen()">Mysterious Forest Generation</button><br />
-    <br />
-    <div class="combat-sim-button">
-   	 <a href="combat-simulator.html"><img src="images/battle-sim.jpg" /></a>
+
+<body>
+<div class="combatSim">
+	<form name="countsoptions" action="">
+	<div id="armyChoice">
+        <strong>Your Army Choice</strong><br />
+        <select id="army1" onchange="armyChoice()">
+        <option value="">Choose Your Army</option>
+        <script type="text/javascript">
+            for (var i=0;i<army.length;i++)
+            { 
+            document.write("<option value=\""+army[i]+"\">"+ army[i] + "</option>");
+            } 	
+        </script>
+        </select>
+        	 <div id="unitChoice"></div>
+             <div id="unitOptions"></div>
+            <div class="count">
+                Unit Count: <input type="text" name="unitcount1" maxlength="3" width="2" /><br />
+                Unit Width: <input type="text" name="unitwidth1" maxlength="2" width="2" /><br />
+            </div>
+            <div id="armyIcon"></div>
     </div>
-</div > 
-<div id="results_pane">
-<div id="scenario"></div>
-<div id="title">Choose your battlefield!</div>
-<div id="results"></div>
-<div id="forest"></div>
-</div>
+  	<div class="draw-box"><a name="fight-text"></a>
+    	<div id="fight-intro"></div>
+        <div class="clearer"></div>
+    	<div id="fight-text-top"></div>
+		<div id="draw-ranks-top"></div>
+        <div id="draw-icons-top"></div>
+        <div class="clearer"></div>
+        <div id="fight-text-bottom"></div>
+		<div id="draw-ranks-bottom"></div>
+        <div id="draw-icons-bottom"></div>
+        <div class="clearer"></div>
+        <div id="fight-conclusion"></div>
+	</div>
+    <div id="opparmyChoice">
+    	<strong>Opponent Army Choice</strong><br />
+        <select id="army2" onchange="opparmyChoice()">
+        <option value="">Choose Opponents Army</option>
+        <script type="text/javascript">
+            for (var i=0;i<army.length;i++)
+            { 
+            document.write("<option value=\""+army[i]+"\">"+ army[i] + "</option>");
+            } 	
+        </script>
+        </select>
+        	<div id="oppunitChoice"></div>
+            <div id="oppunitOptions"></div>
+            <div class="oppcount">
+                Unit Count: <input type="text" name="unitcount2" maxlength="3" width="2" /><br />
+                Unit Width: <input type="text" name="unitwidth2" maxlength="2" width="2" /><br />
+            </div>
+            <div id="oppArmyIcon"></div>
+    </div>
+    <div class="clearer"></div>
+    <div id="fight">
+        <input type="button" id="fightButton" onclick="fight();" value="Battle Royal!" />
+    </form></div>	
+ </div>
 </body>
 </html>
