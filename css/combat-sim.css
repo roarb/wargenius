@@ -3,16 +3,16 @@
 /* combat simulator */
 body { background:url(../images/battle-sim-bg.jpg) no-repeat 0 0 #000; }
 div { z-index:1; position:relative; }
-.combatSim { width:940px; margin:auto; background-color: rgba(255, 255, 255,0.7); padding:5px; border-radius:13px; }
-#armyChoice { width:200px; float:left; }
-#opparmyChoice { width:200px; float:right; }
+.combatSim { width:940px; margin:auto; background:url(../images/combat-sim-bg.png) repeat-y 0 0; border-radius:13px; }
+#armyChoice { width:200px; float:left; margin:5px; }
+#opparmyChoice { width:200px; float:right; margin:5px; }
 #unitChoice, #oppunitChoice { width:200px; min-height:24px; }
 #unitOptions { width:200px; display:block; }
 #oppunitOptions { width:200px; display:block; }
 .count { width:200px; }
 .oppcount { width:200px; }
 #fight { width:100px; text-align:center; margin:auto; padding:20px; }
-#fightButton { padding:10px; font-weight:bold; color:#fff;  border:none; background:url(images/death.jpg) no-repeat #333; margin-top:-20px; }
+#fightButton { padding:10px; font-weight:bold; color:#fff;  border-radius:10px; background:url(images/death.jpg) no-repeat #333; margin-top:-20px; }
 
 .clearer { clear:both; }
 
@@ -25,11 +25,11 @@ tr.regen { color:#f33; }
 td.label { text-align:right; font-weight:bold; }
 td.value { text-align:left; padding-left:4px;}
 
-.draw-box { width:540px; float:left; }
-#fight-intro { text-align:center; border-bottom:2px #d1d1d1; margin:5px 20px; font-size:1.2em; font-weight:bold; background:#fff; border-radius:12px; }
+.draw-box { width:520px; float:left; }
+#fight-intro { text-align:center; margin:5px 20px; font-size:1.2em; font-weight:bold; background:#fff; border-radius:12px; padding:4px; }
 #fight-conclusion { text-align:center; margin:5px 20px; font-size:1.2em; background:#fff; border-radius:12px; }
 #fight-text-top, #fight-text-bottom { float:left; width:175px; }
-#draw-ranks-top, #draw-ranks-bottom { padding-top:40px; min-width:260px; float:left; text-align:center; }
+#draw-ranks-top, #draw-ranks-bottom { padding-top:40px; min-width:240px; float:left; text-align:center; }
 #draw-icons-top, #draw-icons-bottom { padding-top:40px; float:right; width:105px; text-align:left; }
 
 h2 { font-size: 1.2em; line-height:1em; text-align:center; margin:4px 6px; border-bottom:1px solid #666; font-weight:normal;}
