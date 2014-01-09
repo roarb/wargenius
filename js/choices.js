@@ -499,6 +499,10 @@ function unitChoice() {
 			unit1 = forsaken;
 			unit1Options();
 			}
+		if (unit1Choice == "Chaos Warhounds"){
+			unit1 = chaosWarhounds;
+			unit1Options();
+			}
 		if (unit1Choice == "Chosen"){
 			unit1 = chosen;
 			unit1Options();
@@ -656,6 +660,10 @@ function oppunitChoice() {
 			}
 		if (unit2Choice == "Forsaken"){
 			unit2 = forsaken;
+			unit2Options();
+			}
+		if (unit2Choice == "Chaos Warhounds"){
+			unit2 = chaosWarhounds;
 			unit2Options();
 			}
 		if (unit2Choice == "Chosen"){

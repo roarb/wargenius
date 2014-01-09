@@ -97,7 +97,8 @@ var chaosWarriors = new Array();
 	chaosWarriors[0] = ("Chaos Warriors"); //chaosWarriors
 	chaosWarriors[1] = ("Chaos Marauders"); //chaosMarauders
 	chaosWarriors[2] = ("Forsaken"); //forsaken
-	chaosWarriors[3] = ("Chosen"); // chosen
+	chaosWarriors[3] = ("Chaos Warhounds"); //chaosWarhounds
+	chaosWarriors[4] = ("Chosen"); // chosen
 	
 var woodElves = new Array();
 	woodElves[0] = ("Dryads");
@@ -725,6 +726,26 @@ var forsaken = new Array ();
 	forsaken['unbreakable'] = (1); 
 	forsaken['options'] = new Array();
 		forsaken['options']['charge'] = (1);
+		
+var chaosWarhounds = new Array ();
+	chaosWarhounds['name'] = ("Chaos Warhounds"); // user friendly name
+	chaosWarhounds['WS'] = (4); // weapon skill
+	chaosWarhounds['S'] = (3); // normal strength
+	chaosWarhounds['WepS'] = (0); // strength added by the weapon
+	chaosWarhounds['charge'] = new Array ();
+		chaosWarhounds['charge']['spears'] = (0);
+	chaosWarhounds['T'] = (3); // toughness
+	chaosWarhounds['W'] = (1); // wounds
+	chaosWarhounds['I'] = (3); // initiaive
+	chaosWarhounds['A'] = (1); // attacks
+	chaosWarhounds['AS'] = (7); // armor save amount
+	chaosWarhounds['rank'] = (2); // how many ranks deep can attack
+	chaosWarhounds['basesize'] = (25); // base width in mm 20, 25, 40, 50
+	chaosWarhounds['cavbase'] = (1);
+	chaosWarhounds['LD'] = (5); // leadership
+	chaosWarhounds['options'] = new Array();
+		chaosWarhounds['options']['charge'] = (1);
+		chaosWarhounds['options']['lightArmor'] = (1);
 
 
 var chosen = new Array ();
