@@ -4,13 +4,13 @@
 
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.wargenius.terrain-battle"
+        id        = "com.wargenius.battle"
         version   = "0.0.16">
  
     <name>WarGenius</name>
  
     <description>
-       WarGenius Terrain Generator and Battlefield Simulator
+       WarGenius Battlefield Simulator
     </description>
  
     <author href="http://www.wargenius.com" email="rob@wargenius.com">
