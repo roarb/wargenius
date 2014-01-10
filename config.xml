@@ -5,9 +5,9 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.wargenius.battle"
-        version   = "0.0.16">
+        version   = "0.1.1">
  
-    <name>WarGenius</name>
+    <name>WarGenius Battlefield Simulator</name>
  
     <description>
        WarGenius Battlefield Simulator

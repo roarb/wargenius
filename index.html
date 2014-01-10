@@ -8,27 +8,37 @@
 <script type="text/javascript" src="js/choices.js"></script>
 <script type="text/javascript" src="js/jquery/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css/combat-sim.css" />
+<script type="text/javascript">
+	function isNumberKey(evt){
+		var charCode = (evt.which) ? evt.which : event.keyCode
+		if (charCode > 31 && (charCode < 48 || charCode > 57))
+			return false;
+		return true;
+	}
+</script>
 </head>
 
 <body>
 <div class="combatSim">
 	<form name="countsoptions" action="">
 	<div id="armyChoice">
-        <strong>Your Army Choice</strong><br />
-        <select id="army1" onchange="armyChoice()">
-        <option value="">Choose Your Army</option>
-        <script type="text/javascript">
-            for (var i=0;i<army.length;i++)
-            { 
-            document.write("<option value=\""+army[i]+"\">"+ army[i] + "</option>");
-            } 	
-        </script>
-        </select>
+    	<div class="army-select">
+        	
+        	<select id="army1" onchange="armyChoice()">
+            <option value="">Your Army</option>
+            <script type="text/javascript">
+                for (var i=0;i<army.length;i++)
+                { 
+                document.write("<option value=\""+army[i]+"\">"+ army[i] + "</option>");
+                } 	
+            </script>
+            </select>
+         </div>
         	 <div id="unitChoice"></div>
              <div id="unitOptions"></div>
             <div class="count">
-                Unit Count: <input type="text" name="unitcount1" maxlength="3" width="2" /><br />
-                Unit Width: <input type="text" name="unitwidth1" maxlength="2" width="2" /><br />
+                <input type="text" name="unitcount1" maxlength="3" width="2" placeholder="Enter Unit Models" onkeypress="return isNumberKey(event)" /><br />
+                <input type="text" name="unitwidth1" maxlength="2" width="2" placeholder="Enter Rank Width" onkeypress="return isNumberKey(event)" /><br />
             </div>
             <div id="armyIcon"></div>
     </div>
@@ -46,21 +56,23 @@
         <div id="fight-conclusion"></div>
 	</div>
     <div id="opparmyChoice">
-    	<strong>Opponent Army Choice</strong><br />
-        <select id="army2" onchange="opparmyChoice()">
-        <option value="">Choose Opponents Army</option>
-        <script type="text/javascript">
-            for (var i=0;i<army.length;i++)
-            { 
-            document.write("<option value=\""+army[i]+"\">"+ army[i] + "</option>");
-            } 	
-        </script>
-        </select>
+    	<div class="army-select">
+            
+            <select id="army2" onchange="opparmyChoice()">
+            <option value="">Opponents Army</option>
+            <script type="text/javascript">
+                for (var i=0;i<army.length;i++)
+                { 
+                document.write("<option value=\""+army[i]+"\">"+ army[i] + "</option>");
+                } 	
+            </script>
+            </select>
+        </div>
         	<div id="oppunitChoice"></div>
             <div id="oppunitOptions"></div>
             <div class="oppcount">
-                Unit Count: <input type="text" name="unitcount2" maxlength="3" width="2" /><br />
-                Unit Width: <input type="text" name="unitwidth2" maxlength="2" width="2" /><br />
+                <input type="text" name="unitcount2" maxlength="3" width="2" placeholder="Enter Unit Models" onkeypress="return isNumberKey(event)" /><br />
+                <input type="text" name="unitwidth2" maxlength="2" width="2" placeholder="Enter Rank Width" onkeypress="return isNumberKey(event)" /><br />
             </div>
             <div id="oppArmyIcon"></div>
     </div>

@@ -3,6 +3,11 @@
 function fight(){
 	// get unit counts and widths and options
 	
+	var introDiv = document.getElementById('fight-intro');
+	introDiv.className = 'display';
+	var outroDiv = document.getElementById('fight-conclusion');
+	outroDiv.className = 'display';
+	
 	unit1['count'] = document.countsoptions.unitcount1.value;
 	unit2['count'] = document.countsoptions.unitcount2.value;
 	unit1['width'] = document.countsoptions.unitwidth1.value;

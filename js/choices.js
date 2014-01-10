@@ -728,35 +728,41 @@ function oppunitChoice() {
 }
 
 function unit1Options(){
-	var unit1Options = ""
-	if (unit1['options']['charge'] == 1){ unit1Options = unit1Options + 'Charged: <input type="checkbox" id="charge1" /><br />'; }
-	if (unit1['options']['champion'] == 1){ unit1Options = unit1Options + 'Champion: <input type="checkbox" id="champion1" /><br />'; }
-	if (unit1['options']['standard'] == 1){	unit1Options = unit1Options + 'Standard: <input type="checkbox" id="standard1" /><br />';}
-	if (unit1['options']['musician'] == 1){	unit1Options = unit1Options + 'Musician: <input type="checkbox" id="musician1" /><br />';}
-	if (unit1['options']['spears'] == 1){ unit1Options = unit1Options + 'Spears: <input type="checkbox" id="spears1" /><br />';}
-	if (unit1['options']['adHandWep'] == 1){ unit1Options = unit1Options + 'Additional Hand Weapon: <input type="checkbox" id="adHandWep1" /><br />';}
-	if (unit1['options']['greatWep'] == 1){ unit1Options = unit1Options + 'Great Weapon: <input type="checkbox" id="greatWeapon1" /><br />';}
-	if (unit1['options']['halberd'] == 1){ unit1Options = unit1Options + 'Halberd: <input type="checkbox" id="halbred1" /><br />';}
-	if (unit1['options']['shield'] == 1){ unit1Options = unit1Options + 'Shield: <input type="checkbox" id="shield1" /><br />';}
-	if (unit1['options']['lightArmor'] == 1){ unit1Options = unit1Options + 'Light Armor: <input type="checkbox" id="lightArmor1" /><br />';}
-	if (unit1['options']['barding'] == 1){ unit1Options = unit1Options + 'Barding: <input type="checkbox" id="barding1" /><br />';}
-	if (unit1['options']['lance'] == 1){ unit1Options = unit1Options + 'Lances: <input type="checkbox" id="lance1" /><br />';}
+	var a = '<div class="choice-button"><label><input type="checkbox" id="';
+	var b = '1" /><span>';
+	var c = '</span></label></div>';
+	var unit1Options = "";
+	if (unit1['options']['charge'] == 1){ unit1Options = unit1Options + a + 'charge' + b + 'Charged' + c;}
+	if (unit1['options']['champion'] == 1){ unit1Options = unit1Options + a + 'champion' + b + 'Champion' + c;}
+	if (unit1['options']['standard'] == 1){	unit1Options = unit1Options + a + 'standard' + b + 'Standard' + c;}
+	if (unit1['options']['musician'] == 1){	unit1Options = unit1Options + a + 'musician' + b + 'Musician' + c;}
+	if (unit1['options']['spears'] == 1){ unit1Options = unit1Options + a + 'spears' + b + 'Spears' + c;}
+	if (unit1['options']['adHandWep'] == 1){ unit1Options = unit1Options + a + 'adHandWep' + b + 'Additional Hand Weapon' + c;}
+	if (unit1['options']['greatWep'] == 1){ unit1Options = unit1Options + a + 'greatWeapon' + b + 'Great Weapon' + c;}
+	if (unit1['options']['halberd'] == 1){ unit1Options = unit1Options + a + 'halbred' + b + 'Halberd' + c;}
+	if (unit1['options']['shield'] == 1){ unit1Options = unit1Options + a + 'shield' + b + 'Shield' + c;}
+	if (unit1['options']['lightArmor'] == 1){ unit1Options = unit1Options + a + 'lightArmor' + b + 'Light Armor' + c;}
+	if (unit1['options']['barding'] == 1){ unit1Options = unit1Options + a + 'barding' + b + 'Barding' + c;}
+	if (unit1['options']['lance'] == 1){ unit1Options = unit1Options + a + 'lance' + b + 'Lances' + c;}
 	document.getElementById("unitOptions").innerHTML = unit1Options;
 }
 
 function unit2Options(){
+	var a = '<div class="choice-button"><label><input type="checkbox" id="';
+	var b = '2" /><span>';
+	var c = '</span></label></div>';
 	var unit2Options = ""
-	if (unit2['options']['charge'] == 1){ unit2Options = unit2Options + 'Charged: <div class="squaredThree"><input type="checkbox" value="None" id="charge2" /><label for="squaredThree"></label></div><br />'; }
-	if (unit2['options']['champion'] == 1){ unit2Options = unit2Options + 'Champion: <input type="checkbox" id="champion2" /><br />'; }
-	if (unit2['options']['standard'] == 1){	unit2Options = unit2Options + 'Standard: <input type="checkbox" id="standard2" /><br />';}
-	if (unit2['options']['musician'] == 1){	unit2Options = unit2Options + 'Musician: <input type="checkbox" id="musician2" /><br />';}
-	if (unit2['options']['spears'] == 1){ unit2Options = unit2Options + 'Spears: <input type="checkbox" id="spears2" /><br />';}
-	if (unit2['options']['adHandWep'] == 1){ unit2Options = unit2Options + 'Additional Hand Weapon: <input type="checkbox" id="adHandWep2" /><br />';}
-	if (unit2['options']['greatWep'] == 1){ unit2Options = unit2Options + 'Great Weapon: <input type="checkbox" id="greatWeapon2" /><br />';}
-	if (unit2['options']['halberd'] == 1){ unit2Options = unit2Options + 'Halberd: <input type="checkbox" id="halbred2" /><br />';}
-	if (unit2['options']['shield'] == 1){ unit2Options = unit2Options + 'Shield: <input type="checkbox" id="shield2" /><br />';}
-	if (unit2['options']['lightArmor'] == 1){ unit2Options = unit2Options + 'Light Armor: <input type="checkbox" id="lightArmor2" /><br />';}
-	if (unit2['options']['barding'] == 1){ unit2Options = unit2Options + 'Barding: <input type="checkbox" id="barding2" /><br />';}
-	if (unit2['options']['lance'] == 1){ unit2Options = unit2Options + 'Lances: <input type="checkbox" id="lance2" /><br />';}
+	if (unit2['options']['charge'] == 1){ unit2Options = unit2Options + a + 'charge' + b + 'Charged' + c;}
+	if (unit2['options']['champion'] == 1){ unit2Options = unit2Options + a + 'champion' + b + 'Champion' + c;}
+	if (unit2['options']['standard'] == 1){	unit2Options = unit2Options + a + 'standard' + b + 'Standard' + c;}
+	if (unit2['options']['musician'] == 1){	unit2Options = unit2Options + a + 'musician' + b + 'Musician' + c;}
+	if (unit2['options']['spears'] == 1){ unit2Options = unit2Options + a + 'spears' + b + 'Spears' + c;}
+	if (unit2['options']['adHandWep'] == 1){ unit2Options = unit2Options + a + 'adHandWep' + b + 'Additional Hand Weapon' + c;}
+	if (unit2['options']['greatWep'] == 1){ unit2Options = unit2Options + a + 'greatWeapon' + b + 'Great Weapon' + c;}
+	if (unit2['options']['halberd'] == 1){ unit2Options = unit2Options + a + 'halbred' + b + 'Halberd' + c;}
+	if (unit2['options']['shield'] == 1){ unit2Options = unit2Options + a + 'shield' + b + 'Shield' + c;}
+	if (unit2['options']['lightArmor'] == 1){ unit2Options = unit2Options + a + 'lightArmor' + b + 'Light Armor' + c;}
+	if (unit2['options']['barding'] == 1){ unit2Options = unit2Options + a + 'barding' + b + 'Barding' + c;}
+	if (unit2['options']['lance'] == 1){ unit2Options = unit2Options + a + 'lance' + b + 'Lances' + c;}
 	document.getElementById("oppunitOptions").innerHTML = unit2Options;
 }
