@@ -4,18 +4,25 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Fantasy Combat Simulator</title>
 <script type="text/javascript" src="js/combat-sim.js"></script>
-<script type="text/javascript" src="js/units.js"></script>
 <script type="text/javascript" src="js/choices.js"></script>
+<script type="text/javascript" src="js/army/beastmen.js"></script>
+<script type="text/javascript" src="js/army/bretonnia.js"></script>
+<script type="text/javascript" src="js/army/chaosDwarfs.js"></script>
+<script type="text/javascript" src="js/army/daemons.js"></script>
+<script type="text/javascript" src="js/army/darkElves.js"></script>
+<script type="text/javascript" src="js/army/dwarfs.js"></script>
+<script type="text/javascript" src="js/army/empire.js"></script>
+<script type="text/javascript" src="js/army/lizardmen.js"></script>
+<script type="text/javascript" src="js/army/ogres.js"></script>
+<script type="text/javascript" src="js/army/orcsGoblins.js"></script>
+<script type="text/javascript" src="js/army/skaven.js"></script>
+<script type="text/javascript" src="js/army/tombKings.js"></script>
+<script type="text/javascript" src="js/army/vampireCounts.js"></script>
+<script type="text/javascript" src="js/army/chaosWarriors.js"></script>
+<script type="text/javascript" src="js/army/woodElves.js"></script>
+
 <script type="text/javascript" src="js/jquery/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css/combat-sim.css" />
-<script type="text/javascript">
-	function isNumberKey(evt){
-		var charCode = (evt.which) ? evt.which : event.keyCode
-		if (charCode > 31 && (charCode < 48 || charCode > 57))
-			return false;
-		return true;
-	}
-</script>
 <script type="text/javascript" charset="utf-8">
 
     // Call onDeviceReady when PhoneGap is loaded.
@@ -63,8 +70,8 @@
         	 <div id="unitChoice"></div>
              <div id="unitOptions"></div>
             <div class="count">
-                <input type="text" name="unitcount1" maxlength="3" width="2" placeholder="Enter Unit Models" onkeypress="return isNumberKey(event)" /><br />
-                <input type="text" name="unitwidth1" maxlength="2" width="2" placeholder="Enter Rank Width" onkeypress="return isNumberKey(event)" /><br />
+                <input type="text" name="unitcount1" maxlength="3" width="2" placeholder="Enter Unit Models" /><br />
+                <input type="text" name="unitwidth1" maxlength="2" width="2" placeholder="Enter Rank Width" /><br />
             </div>
             <div id="armyIcon"></div>
     </div>
@@ -97,8 +104,8 @@
         	<div id="oppunitChoice"></div>
             <div id="oppunitOptions"></div>
             <div class="oppcount">
-                <input type="text" name="unitcount2" maxlength="3" width="2" placeholder="Enter Unit Models" onkeypress="return isNumberKey(event)" /><br />
-                <input type="text" name="unitwidth2" maxlength="2" width="2" placeholder="Enter Rank Width" onkeypress="return isNumberKey(event)" /><br />
+                <input type="text" name="unitcount2" maxlength="3" width="2" placeholder="Enter Unit Models" /><br />
+                <input type="text" name="unitwidth2" maxlength="2" width="2" placeholder="Enter Rank Width" /><br />
             </div>
             <div id="oppArmyIcon"></div>
     </div>

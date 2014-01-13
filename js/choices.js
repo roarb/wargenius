@@ -1,4 +1,22 @@
 // JavaScript Document
+var army = new Array ();
+	//army[0] = ("Beastmen"); //beastmen
+	//army[1] = ("Bretonnia"); //bretonnia
+	//army[2] = ("Chaos Dwarfs"); //chaosDwarfs
+	//army[3] = ("Daemons of Chaos"); //daemons
+	//army[4] = ("Dark Elves"); //darkElves
+	//army[5] = ("Dwarfs"); //dwarfs
+	army[0] = ("The Empire"); //empire
+	army[1] = ("High Elves"); //highElves
+	//army[8] = ("Lizardmen"); //lizardmen
+	//army[9] = ("Ogre Kingdoms"); //ogres
+	army[2] = ("Orcs and Goblins"); //orcsGoblins
+	//army[11] = ("Skaven"); //skaven
+	//army[12] = ("Tomb Kings"); //tombKings
+	army[3] = ("Vampire Counts"); //vampireCounts
+	army[4] = ("Warriors of Chaos"); //chaosWarriors
+	//army[15] = ("Wood Elves"); //woodElves
+
 function armyChoice() {
 	var armyChoice = (document.getElementById("army1").value);
 
