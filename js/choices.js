@@ -416,163 +416,163 @@ function unitChoice() {
 		// the Empire
 		if (unit1Choice == "Halberdiers"){
 			unit1 = empireHalberdiers;
-			unit1Options();
+			unit1Options(unit1);
 			}
 		if (unit1Choice == "Spearmen"){
 			unit1 = empireSpearmen;
-			unit1Options();
+			unit1Options(unit1);
 			}
 		if (unit1Choice == "Swordsmen"){
 			unit1 = empireSwordsmen;
-			unit1Options();
+			unit1Options(unit1);
 			}
 		if (unit1Choice == "Crossbowmen"){
 			unit1 = empireCrossbowmen;
-			unit1Options();
+			unit1Options(unit1);
 			}
 		if (unit1Choice == "Handgunners"){
 			unit1 = empireHandgunners;
-			unit1Options();
+			unit1Options(unit1);
 			}
 		if (unit1Choice == "Empire Archers"){
 			unit1 = empireArchers;
-			unit1Options();
+			unit1Options(unit1);
 			}
 		if (unit1Choice == "Free Company Militia"){
 			unit1 = freeCompany;
-			unit1Options();
+			unit1Options(unit1);
 			}
 		if (unit1Choice == "Greatswords"){
 			unit1 = greatSwords;
-			unit1Options();
+			unit1Options(unit1);
 			}
 		if (unit1Choice == "Flagellants"){
 			unit1 = flagellants;
-			unit1Options();
+			unit1Options(unit1);
 			}			
 		// High Elves
 		if (unit1Choice == "Spear Elves"){
 			unit1 = spearElf;
-			unit1Options();
+			unit1Options(unit1);
 			}
 		if (unit1Choice == "Archers"){
 			unit1 = archerElf;
-			unit1Options();
+			unit1Options(unit1);
 			}
 		if (unit1Choice == "Lothern Sea Guard"){
 			unit1 = seaGuard;
-			unit1Options();
+			unit1Options(unit1);
 			}
 		if (unit1Choice == "White Lions of Chrace"){
 			unit1 = whiteLions;
-			unit1Options();
+			unit1Options(unit1);
 			}
 		if (unit1Choice == "Swordmasters of Hoeth"){
 			unit1 = swordMasters;
-			unit1Options();
+			unit1Options(unit1);
 			}
 		if (unit1Choice == "Phoenix Guard"){
 			unit1 = phoenixGuard;
-			unit1Options();
+			unit1Options(unit1);
 			}
 		// Orcs and Goblins
 		if (unit1Choice == "Goblins"){
 			unit1 = commonGoblin;
-			unit1Options();
+			unit1Options(unit1);
 			}
 		if (unit1Choice == "Night Goblins"){
 			unit1 = nightGoblin;
-			unit1Options();
+			unit1Options(unit1);
 			}
 		if (unit1Choice == "Orc Boyz"){
 			unit1 = orc;
-			unit1Options();
+			unit1Options(unit1);
 			}
 		if (unit1Choice == "Savage Orcs"){
 			unit1 = savageOrc;
-			unit1Options();
+			unit1Options(unit1);
 			}
 		if (unit1Choice == "Orc Big Unz"){
 			unit1 = orcBigUnz;
-			unit1Options();
+			unit1Options(unit1);
 			}
 		if (unit1Choice == "Savage Orc Big Unz"){
 			unit1 = savageOrcsBigUnz;
-			unit1Options();
+			unit1Options(unit1);
 			}
 		if (unit1Choice == "Black Orcs"){
 			unit1 = blackOrcs;
-			unit1Options();
+			unit1Options(unit1);
 			}
 		// Chaos Warriors
 		if (unit1Choice == "Chaos Warriors"){
 			unit1 = chaosWarriorsUnit;
-			unit1Options();
+			unit1Options(unit1);
 			}
 		if (unit1Choice == "Chaos Marauders"){
 			unit1 = chaosMarauders;
-			unit1Options();
+			unit1Options(unit1);
 			}
 		if (unit1Choice == "Forsaken"){
 			unit1 = forsaken;
-			unit1Options();
+			unit1Options(unit1);
 			}
 		if (unit1Choice == "Chaos Warhounds"){
 			unit1 = chaosWarhounds;
-			unit1Options();
+			unit1Options(unit1);
 			}
 		if (unit1Choice == "Marauder Horsemen"){
 			unit1 = marauderHorsemen;
-			unit1Options();
+			unit1Options(unit1);
 			}
 		if (unit1Choice == "Chosen"){
 			unit1 = chosen;
-			unit1Options();
+			unit1Options(unit1);
 			}
 		// Vampire Counts
 		if (unit1Choice == "Zombies"){
 			unit1 = zombies;
-			unit1Options();
+			unit1Options(unit1);
 			}
 		if (unit1Choice == "Skeleton Warriors"){
 			unit1 = skeletonWarriors;
-			unit1Options();
+			unit1Options(unit1);
 			}
 		if (unit1Choice == "Crypt Ghouls"){
 			unit1 = cryptGhouls;
-			unit1Options();
+			unit1Options(unit1);
 			}
 		if (unit1Choice == "Dire Wolves"){
 			unit1 = direWolves;
-			unit1Options();
+			unit1Options(unit1);
 			}
 		if (unit1Choice == "Grave Guard"){
 			unit1 = graveGuard;
-			unit1Options();
+			unit1Options(unit1);
 			}
 		if (unit1Choice == "Black Knights"){
 			unit1 = blackKnights;
-			unit1Options();
+			unit1Options(unit1);
 			}
 		if (unit1Choice == "Crypt Horrors"){
 			unit1 = cryptHorrors;
-			unit1Options();
+			unit1Options(unit1);
 			}
 		if (unit1Choice == "Hexwraiths"){
 			unit1 = hexwraiths;
-			unit1Options();
+			unit1Options(unit1);
 			}
 		if (unit1Choice == "Vargheists"){
 			unit1 = vargheists;
-			unit1Options();
+			unit1Options(unit1);
 			}
 		if (unit1Choice == "Blood Knights"){
 			unit1 = bloodKnights;
-			unit1Options();
+			unit1Options(unit1);
 			}
 		if (unit1Choice == "Cairn Wraiths"){
 			unit1 = cairnWraiths;
-			unit1Options();
+			unit1Options(unit1);
 			}
 		else {}
 		
@@ -583,169 +583,192 @@ function oppunitChoice() {
 		// the Empire
 		if (unit2Choice == "Halberdiers"){
 			unit2 = empireHalberdiers;
-			unit2Options();
+			unit2Options(unit2);
 			}
 		if (unit2Choice == "Spearmen"){
 			unit2 = empireSpearmen;
-			unit2Options();
+			unit2Options(unit2);
 			}
 		if (unit2Choice == "Swordsmen"){
 			unit2 = empireSwordsmen;
-			unit2Options();
+			unit2Options(unit2);
 			}
 		if (unit2Choice == "Crossbowmen"){
 			unit2 = empireCrossbowmen;
-			unit2Options();
+			unit2Options(unit2);
 			}
 		if (unit2Choice == "Handgunners"){
 			unit2 = empireHandgunners;
-			unit2Options();
+			unit2Options(unit2);
 			}
 		if (unit2Choice == "Empire Archers"){
 			unit2 = empireArchers;
-			unit2Options();
+			unit2Options(unit2);
 			}
 		if (unit2Choice == "Free Company Militia"){
 			unit2 = freeCompany;
-			unit2Options();
+			unit2Options(unit2);
 			}
 		if (unit2Choice == "Greatswords"){
 			unit2 = greatSwords;
-			unit2Options();
+			unit2Options(unit2);
 			}
 		if (unit2Choice == "Flagellants"){
 			unit2 = flagellants;
-			unit2Options();
+			unit2Options(unit2);
 			}
 		// High Elves
 		if (unit2Choice == "Spear Elves"){
 			unit2 = spearElf;
-			unit2Options();
+			unit2Options(unit2);
 			}
 		if (unit2Choice == "Archers"){
 			unit2 = archerElf;
-			unit2Options();
+			unit2Options(unit2);
 			}
 		if (unit2Choice == "Lothern Sea Guard"){
 			unit2 = seaGuard;
-			unit2Options();
+			unit2Options(unit2);
 			}
 		if (unit2Choice == "White Lions of Chrace"){
 			unit2 = whiteLions;
-			unit2Options();
+			unit2Options(unit2);
 			}
 		if (unit2Choice == "Swordmasters of Hoeth"){
 			unit2 = swordMasters;
-			unit2Options();
+			unit2Options(unit2);
 			}
 		if (unit2Choice == "Phoenix Guard"){
 			unit2 = phoenixGuard;
-			unit2Options();
+			unit2Options(unit2);
 			}
 		// Orcs and Goblins
 		if (unit2Choice == "Goblins"){
 			unit2 = commonGoblin;
-			unit2Options();
+			unit2Options(unit2);
 			}
 		if (unit2Choice == "Night Goblins"){
 			unit2 = nightGoblin;
-			unit2Options();
+			unit2Options(unit2);
 			}
 		if (unit2Choice == "Orc Boyz"){
 			unit2 = orc;
-			unit2Options();
+			unit2Options(unit2);
 			}
 		if (unit2Choice == "Savage Orcs"){
 			unit2 = savageOrc;
-			unit2Options();
+			unit2Options(unit2);
 			}
 		if (unit2Choice == "Orc Big Unz"){
 			unit2 = orcBigUnz;
-			unit2Options();
+			unit2Options(unit2);
 			}
 		if (unit2Choice == "Savage Orc Big Unz"){
 			unit2 = savageOrcsBigUnz;
-			unit2Options();
+			unit2Options(unit2);
 			}
 		if (unit2Choice == "Black Orcs"){
 			unit2 = blackOrcs;
-			unit2Options();
+			unit2Options(unit2);
 			}
 		// Chaos Warriors
 		if (unit2Choice == "Chaos Warriors"){
 			unit2 = chaosWarriorsUnit;
-			unit2Options();
+			unit2Options(unit2);
 			}
 		if (unit2Choice == "Chaos Marauders"){
 			unit2 = chaosMarauders;
-			unit2Options();
+			unit2Options(unit2);
 			}
 		if (unit2Choice == "Forsaken"){
 			unit2 = forsaken;
-			unit2Options();
+			unit2Options(unit2);
 			}
 		if (unit2Choice == "Chaos Warhounds"){
 			unit2 = chaosWarhounds;
-			unit2Options();
+			unit2Options(unit2);
 			}
 		if (unit2Choice == "Marauder Horsemen"){
 			unit2 = marauderHorsemen;
-			unit2Options();
+			unit2Options(unit2);
 			}
 		if (unit2Choice == "Chosen"){
 			unit2 = chosen;
-			unit2Options();
+			unit2Options(unit2);
 			}
 		// Vampire Counts
 		if (unit2Choice == "Zombies"){
 			unit2 = zombies;
-			unit2Options();
+			unit2Options(unit2);
 			}
 		if (unit2Choice == "Skeleton Warriors"){
 			unit2 = skeletonWarriors;
-			unit2Options();
+			unit2Options(unit2);
 			}
 		if (unit2Choice == "Crypt Ghouls"){
 			unit2 = cryptGhouls;
-			unit2Options();
+			unit2Options(unit2);
 			}
 		if (unit2Choice == "Dire Wolves"){
 			unit2 = direWolves;
-			unit2Options();
+			unit2Options(unit2);
 			}
 		if (unit2Choice == "Grave Guard"){
 			unit2 = graveGuard;
-			unit2Options();
+			unit2Options(unit2);
 			}
 		if (unit2Choice == "Black Knights"){
 			unit2 = blackKnights;
-			unit2Options();
+			unit2Options(unit2);
 			}
 		if (unit2Choice == "Crypt Horrors"){
 			unit2 = cryptHorrors;
-			unit2Options();
+			unit2Options(unit2);
 			}
 		if (unit2Choice == "Hexwraiths"){
 			unit2 = hexwraiths;
-			unit2Options();
+			unit2Options(unit2);
 			}
 		if (unit2Choice == "Vargheists"){
 			unit2 = vargheists;
-			unit2Options();
+			unit2Options(unit2);
 			}
 		if (unit2Choice == "Blood Knights"){
 			unit2 = bloodKnights;
-			unit2Options();
+			unit2Options(unit2);
 			}
 		if (unit2Choice == "Cairn Wraiths"){
 			unit2 = cairnWraiths;
-			unit2Options();
+			unit2Options(unit2);
 			}
 		else {}
 		
 }
 
-function unit1Options(){
+function unit1Options(unitChoice){
+	var unitMax = unitChoice['maxsize'];
+	var unitMin = unitChoice['minsize'];
+	document.getElementById("unitcount1").style = "display:block;";
+	document.getElementById("unitcount1-text").style = "display:block;";
+	document.getElementById("unitwidth1").style = "display:block;";
+	document.getElementById("unitwidth1-text").style = "display:block;";
+	var select = document.getElementById('unitcount1');
+	var option = new Option(unitMin);
+	while (unitMin <= unitMax){
+		option = new Option(unitMin, unitMin);
+		select.appendChild(option);
+		unitMin++;
+	}
+	var selectRank = document.getElementById('unitwidth1');
+	var i = 1;
+	var optionRank = new Option(i);
+	while (i <= 10) {
+		optionRank = new Option(i, i);
+		selectRank.appendChild(optionRank, optionRank);
+		i++;
+	}
+	selectRank.selectedIndex = 4;
+	
 	var a = '<div class="choice-button"><label><input type="checkbox" id="';
 	var b = '1" /><span>';
 	var c = '</span></label></div>';
@@ -765,7 +788,30 @@ function unit1Options(){
 	document.getElementById("unitOptions").innerHTML = unit1Options;
 }
 
-function unit2Options(){
+function unit2Options(unitChoice){
+	var unitMax = unitChoice['maxsize'];
+	var unitMin = unitChoice['minsize'];
+	document.getElementById("unitcount2").style = "display:block;";
+	document.getElementById("unitcount2-text").style = "display:block;";
+	document.getElementById("unitwidth2").style = "display:block;";
+	document.getElementById("unitwidth2-text").style = "display:block;";
+	var select = document.getElementById('unitcount2');
+	var option = new Option(unitMin);
+	while (unitMin <= unitMax){
+		option = new Option(unitMin, unitMin);
+		select.appendChild(option);
+		unitMin++;
+	}
+	var selectRank = document.getElementById('unitwidth2');
+	var i = 1;
+	var optionRank = new Option(i);
+	while (i <= 10) {
+		optionRank = new Option(i, i);
+		selectRank.appendChild(optionRank, optionRank);
+		i++;
+	}
+	selectRank.selectedIndex = 4;
+	
 	var a = '<div class="choice-button"><label><input type="checkbox" id="';
 	var b = '2" /><span>';
 	var c = '</span></label></div>';
