@@ -114,31 +114,36 @@ function fight(){
 			}
 
 //*****************************************************	
-function CombatFight(unit, oppunit, woundsTaken){
+function CombatFight(unit1, oppunit, woundsTaken){
 
 		// pre-fight calculations
-		var unitAttacks = unit['A']; // attacks per model
+		var unitAttacks = unit1['A']; // attacks per model
 		var oppUnitWounds = (oppunit['W'] * oppunit['count']);
-		var unitRanks = unit['rank'];
-		if (unit['op-spears'] == 1 && unit['op-charged'] == 1) {
+		var unitRanks = unit1['rank'];
+		if (unit1['op-spears'] == 1 && unit1['op-charged'] == 1) {
 			unitRanks = unitRanks;
 		}
-		else if (unit['op-spears'] == 1 && unit['op-charged'] == 0) {
+		else if (unit1['op-spears'] == 1 && unit1['op-charged'] == 0) {
 				unitRanks = unitRanks + 1;
 			}
-		else if (unit['op-charged'] == 1 && unit['charge']['spears'] == 1) {
-					unitRanks = unitRanks - 1;
+		else if (unit1['op-charged'] == 1 && unit1['charge']['spears'] == 1) {
+					if (typeof unit1['charge']['spears'] == 'undefined'){
+						unitRanks = unirRanks;
+					}
+					else if (unit1['charge']['spears'] == 1) {
+						unitRanks = unitRanks - 1;
+					}
 				}
 		else unitRanks = unitRanks;
 			
 		//total strength of attack with weapon modifier
-		if (unit['WepS'] == null) {
-			unitCombinedStrength = unit['S'];
+		if (unit1['WepS'] == null) {
+			unitCombinedStrength = unit1['S'];
 		}
 		else {
-			unitCombinedStrength = unit['S'] + unit['WepS'];
+			unitCombinedStrength = unit1['S'] + unit1['WepS'];
 		}
-		unitCombinedStrength = unitCombinedStrength + unit['op-greatWep'];
+		unitCombinedStrength = unitCombinedStrength + unit1['op-greatWep'];
 		
 		//armor saves after options		
 		if (oppunit['AS'] == null){oppunitArmorSave = 7 - oppunit['op-shield'] - oppunit['op-lightArmor']}
@@ -148,59 +153,78 @@ function CombatFight(unit, oppunit, woundsTaken){
 		
 		//horde checks
 			// unit 1
-			if (unit['basesize'] < 30 && unit['width'] > 9) {unitRanks = unitRanks + 1;}
+			if (unit1['basesize'] < 30 && unit1['width'] > 9) {unitRanks = unitRanks + 1;}
 			else 
-				if (unit['basesize'] > 30 && unit['width'] > 5) {unitRanks = unitRanks + 1;	}
+				if (unit1['basesize'] > 30 && unit1['width'] > 5) {unitRanks = unitRanks + 1;	}
 				
 		// frenzy checks
-		if (unit['frenzy'] == 1) {unitAttacks = unitAttacks + 1;}
+		if (unit1['frenzy'] == 1) {unitAttacks = unitAttacks + 1;}
 		// additional hand weapons
-		if (unit['op-adHandWep'] == 1) {unitAttacks = unitAttacks + 1;}
+		if (unit1['op-adHandWep'] == 1) {unitAttacks = unitAttacks + 1;}
 		
 		// matching unit widths to max 
 		var unitFightingWidth = '';
 		var oppunitFightingWidth = '';
-		var unitTotalWidth = (unit['width'] * unit['basesize']);
-		var oppunitTotalWidth = (oppunit['width'] * unit['basesize']);
+		var unitTotalWidth = (unit1['width'] * unit1['basesize']);
+		var oppunitTotalWidth = (oppunit['width'] * unit1['basesize']);
 		// unit 1 max check
 		if (unitTotalWidth <= oppunitTotalWidth) {
 			unitFightingWidth = unitTotalWidth;
 		}
 		else 
 			if (unitTotalWidth > oppunitTotalWidth) {
-				unitFightingWidth = (oppunitTotalWidth + (unit['basesize'] * 2));
+				unitFightingWidth = (oppunitTotalWidth + (unit1['basesize'] * 2));
 				if (unitFightingWidth > unitTotalWidth) {
 					unitFightingWidth = unitTotalWidth;
 				}
 			}
 
 		// convert back to model count
-		unitFightingWidth = (Math.ceil)((unitFightingWidth / unit['basesize']));
+		unitFightingWidth = (Math.ceil)((unitFightingWidth / unit1['basesize']));
 
 		
 		// total attacks calculation
 		//unit 1
-		var unitTotalModelCount = (unit['count'] - woundsTaken);
+		var unitTotalModelCount = (unit1['count'] - woundsTaken);
 		var unitBackRanks = ((unitRanks - 1) * unitFightingWidth)
 		if (unitBackRanks > (unitTotalModelCount - unitFightingWidth)) {
 			unitBackRanks = (unitTotalModelCount - unitFightingWidth);
 		}
 		var unitTotalAttacks = ((unitFightingWidth * unitAttacks) + unitBackRanks);
-		if (unit['op-champion'] == 1) {
+		if (unit1['op-champion'] == 1) {
 			unitTotalAttacks = unitTotalAttacks + 1
 		}
 		//unit 1 calculations
-	
+		var mountWoundsPrint = '';
+		//add mounts attacks if there is a mount
+		if (typeof (unit1['mounted']) != 'undefined'){
+			var mountChanceToHit = toHit(unit1['mounted']['WS'], oppunit['WS']);
+			var mountTotalAttacks = unit1['mounted']['A'] * unitFightingWidth;
+			var mountTotalHits = mountChanceToHit * mountTotalAttacks;
+			mountWoundsPrint = '<img src="images/mounted.jpg">';
+			var mountPoisonWounds = 0;
+			var mountPoisonWoundsPrint = '';
+			if (unit1['mounted']['poison'] == 1){
+				mountPoisonWounds = mountTotalHits/6;
+				mountTotalHits = mountTotalHits - mountPoisonWounds;
+				mountPoisonWoundsPrint = '<img src="images/mount-poison.jpg">';
+			}
+			var mountChanceToWound = toWound(unit1['mounted']['S'], oppunit['T']);
+			var mountOppunitWoundsBeforeSaves = (mountChanceToWound * mountTotalHits) + mountPoisonWounds;
+		}
+		else {
+			mountOppunitWoundsBeforeSaves = 0;
+		}
 		// attacks that hit
-		var unitChanceToHit = toHit(unit['WS'], oppunit['WS']);
+		var unitChanceToHit = toHit(unit1['WS'], oppunit['WS']);
 		var unitTotalHits = unitChanceToHit * unitTotalAttacks;
-		if (unit['ASF'] == 1 && oppunit['ASF'] == null) {
+		if (unit1['ASF'] == 1 && oppunit['ASF'] == null) {
 			var rerollToHits = unitTotalAttacks - unitTotalHits;
 			unitTotalHits = (unitTotalHits + (rerollToHits * unitChanceToHit));
 		}
 		else {
-			if (unit['ASF'] == 1 && oppunit['ASF'] == 1) {
-				if (unit['I'] >= oppunit['I']) {
+			if (unit1['ASF'] == 1 && oppunit['ASF'] == 1) {
+				if (unit1['I'] >= oppunit['I']) {
 					var rerollToHits = unitTotalAttacks - unitTotalHits;
 					unitTotalHits = (unitTotalHits + (rerollToHits * unitChanceToHit));
 				}
@@ -210,7 +234,7 @@ function CombatFight(unit, oppunit, woundsTaken){
 		// poison wounds
 		var poisonWounds = 0;
 		var poisonWoundsPrint = '';
-		if (unit['poison'] == 1){
+		if (unit1['poison'] == 1){
 			poisonWounds = unitTotalHits/6;
 			unitTotalHits = unitTotalHits - poisonWounds;
 			poisonWoundsPrint = '<img src="images/poison.jpg">';
@@ -223,7 +247,7 @@ function CombatFight(unit, oppunit, woundsTaken){
 		
 		// killing blow check
 		var killingBlowWounds = 0;
-		if (unit['killingblow'] == 1){
+		if (unit1['killingblow'] == 1){
 			killingBlowWounds = oppunitWoundsBeforeSaves/6;
 			var oppunitWoundsBeforeSavesArmorSave = oppunitWoundsBeforeSaves - killingBlowWounds;
 		}
@@ -234,6 +258,18 @@ function CombatFight(unit, oppunit, woundsTaken){
 		var oppunitArmorChance = armorSaveCalc(unitCombinedStrength, oppunitArmorSave);
 		var oppunitWoundsSavedByArmor = 0;
 		oppunitWoundsSavedByArmor = oppunitWoundsBeforeSavesArmorSave * oppunitArmorChance;
+		// mounts attacks armor saves
+		if (mountOppunitWoundsBeforeSaves > 0){
+			var mountOppunitArmorChance = armorSaveCalc(unit1['mounted']['S'], oppunitArmorSave);
+			var mountOppunitWoundsSavedByArmor = 0;
+			mountOppunitWoundsSavedByArmor = mountOppunitWoundsBeforeSaves * mountOppunitArmorChance;
+		}
+		else {
+			mountOppunitWoundsSavedByArmor = 0;
+		}
+		// add mounts and units armor saves together
+		oppunitWoundsSavedByArmor = oppunitWoundsSavedByArmor + mountOppunitWoundsSavedByArmor;
+		
 		if (oppunitWoundsSavedByArmor > 0) {
 			oppunitWoundsSavedByArmorText = oppunitWoundsSavedByArmor.toFixed(1);
 		}
@@ -245,6 +281,9 @@ function CombatFight(unit, oppunit, woundsTaken){
 		if (oppunit['ward'] >= 1) {
 			var oppunitWardChance = wardSaveCalc(oppunit['ward']);
 			oppunitWoundsSavedByWard = (oppunitWardChance * (oppunitWoundsBeforeSaves - oppunitWoundsSavedByArmor));
+			if (mountOppunitWoundsBeforeSaves > 0){
+				oppunitWoundsSavedByWard = oppunitWoundsSavedByWard + (oppunitWardChance * (mountOppunitWoundsBeforeSaves - mountOppunitWoundsSavedByArmor))
+			}
 			oppunitWoundsSavedByWardText = oppunitWoundsSavedByWard.toFixed(1);
 		}
 		else {
@@ -284,9 +323,11 @@ function CombatFight(unit, oppunit, woundsTaken){
 			unitCombatResults[5] = oppunitWoundsSavedByWardText;
 			unitCombatResults[6] = oppunitWoundsSavedByRegenText;
 			unitCombatResults[7] = unitTotalWounds.toFixed(1); // wounds caused - used to reduce unitcount on units attacking second 
-			unitCombatResults[8] = unit['name'];
+			unitCombatResults[8] = unit1['name'];
 			unitCombatResults[9] = killingBlowWounds.toFixed(1);
-			unitCombatResults[10] = poisonWoundsPrint;
+			unitCombatResults[10] = poisonWoundsPrint; // poisoned attacks
+			unitCombatResults[11] = mountWoundsPrint; // mount attacks
+			unitCombatResults[12] = mountPoisonWoundsPrint; // mount had poisoned attacks
 		
 		return unitCombatResults;
 		
@@ -478,16 +519,20 @@ function combatResultsCalculation(firstUnit,firstUnitWounds,secondUnit,secondUni
 		unitImageTop[0] = '<img src="images/unitmodels/'+firstUnitCombatCalculated[8]+'.jpg"><br />';
 		unitImageTop[1] = firstUnitCombatCalculated[9]; // killing blow
 		unitImageTop[2] = firstUnitCombatCalculated[10]; // poison
-		unitImageTop[3] = combatResults[5]; // steadfast
-		unitImageTop[4] = combatResults[6]; // stubborn
-		unitImageTop[5] = combatResults[9]; // unbreakable
+		unitImageTop[3] = firstUnitCombatCalculated[11]; // mount fought
+		unitImageTop[4] = firstUnitCombatCalculated[12]; // mount had poison attacks
+		unitImageTop[5] = combatResults[5]; // steadfast
+		unitImageTop[6] = combatResults[6]; // stubborn
+		unitImageTop[7] = combatResults[9]; // unbreakable
 	var unitImageBottom = new Array();
 		unitImageBottom[0] = '<img src="images/unitmodels/'+secondUnitCombatCalculated[8]+'.jpg"><br />';
 		unitImageBottom[1] = secondUnitCombatCalculated[9]; // killing blow
 		unitImageBottom[2] = secondUnitCombatCalculated[10]; // poison
-		unitImageBottom[3] = combatResults[7]; // steadfast
-		unitImageBottom[4] = combatResults[8]; // stubborn
-		unitImageBottom[5] = combatResults[10]; // unbreakable
+		unitImageBottom[3] = secondUnitCombatCalculated[11]; // mount fought
+		unitImageBottom[4] = secondUnitCombatCalculated[12]; // mount had poison attacks
+		unitImageBottom[5] = combatResults[7]; // steadfast
+		unitImageBottom[6] = combatResults[8]; // stubborn
+		unitImageBottom[7] = combatResults[10]; // unbreakable
 	
 	//##############################				
 	// print the attack 

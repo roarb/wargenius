@@ -4,7 +4,7 @@ function armyChoice() {
 
 	if (armyChoice == "Dwarfs"){
 		$('#unitChoice').empty();
-		var Start = '<select id="unit1" onchange="unitChoice()"><option value="">Choose Your Unit</option>';
+		var Start = '<select id="unit1" onchange="unitChoice()"><option value="">Choose Unit</option>';
 		var Mid = new Array();
 		for (var i=0;i<dwarfs.length;i++)
 			{
@@ -16,7 +16,7 @@ function armyChoice() {
 	}
 	if (armyChoice == "Bretonnia"){
 		$('#unitChoice').empty();
-		var Start = '<select id="unit1" onchange="unitChoice()"><option value="">Choose Your Unit</option>';
+		var Start = '<select id="unit1" onchange="unitChoice()"><option value="">Choose Unit</option>';
 		var Mid = new Array();
 		for (var i=0;i<bretonnia.length;i++)
 			{
@@ -28,7 +28,7 @@ function armyChoice() {
 	}
 	if (armyChoice == "The Empire"){
 		$('#unitChoice').empty();
-		var Start = '<select id="unit1" onchange="unitChoice()"><option value="">Choose Your Unit</option>';
+		var Start = '<select id="unit1" onchange="unitChoice()"><option value="">Choose Unit</option>';
 		var Mid = new Array();
 		for (var i=0;i<empire.length;i++)
 			{
@@ -40,7 +40,7 @@ function armyChoice() {
 	}
 	if (armyChoice == "Beastmen"){
 		$('#unitChoice').empty();
-		var Start = '<select id="unit1" onchange="unitChoice()"><option value="">Choose Your Unit</option>';
+		var Start = '<select id="unit1" onchange="unitChoice()"><option value="">Choose Unit</option>';
 		var Mid = new Array();
 		for (var i=0;i<beastmen.length;i++)
 			{
@@ -52,7 +52,7 @@ function armyChoice() {
 	}
 	if (armyChoice == "Chaos Dwarfs"){
 		$('#unitChoice').empty();
-		var Start = '<select id="unit1" onchange="unitChoice()"><option value="">Choose Your Unit</option>';
+		var Start = '<select id="unit1" onchange="unitChoice()"><option value="">Choose Unit</option>';
 		var Mid = new Array();
 		for (var i=0;i<chaosDwarfs.length;i++)
 			{
@@ -63,7 +63,7 @@ function armyChoice() {
 	}
 	if (armyChoice == "Daemons of Chaos"){
 		$('#unitChoice').empty();
-		var Start = '<select id="unit1" onchange="unitChoice()"><option value="">Choose Your Unit</option>';
+		var Start = '<select id="unit1" onchange="unitChoice()"><option value="">Choose Unit</option>';
 		var Mid = new Array();
 		for (var i=0;i<daemons.length;i++)
 			{
@@ -75,7 +75,7 @@ function armyChoice() {
 	}
 	if (armyChoice == "Dark Elves"){
 		$('#unitChoice').empty();
-		var Start = '<select id="unit1" onchange="unitChoice()"><option value="">Choose Your Unit</option>';
+		var Start = '<select id="unit1" onchange="unitChoice()"><option value="">Choose Unit</option>';
 		var Mid = new Array();
 		for (var i=0;i<darkElves.length;i++)
 			{
@@ -87,7 +87,7 @@ function armyChoice() {
 	}
 	if (armyChoice == "High Elves"){
 		$('#unitChoice').empty();
-		var Start = '<select id="unit1" onchange="unitChoice()"><option value="">Choose Your Unit</option>';
+		var Start = '<select id="unit1" onchange="unitChoice()"><option value="">Choose Unit</option>';
 		var Mid = new Array();
 		for (var i=0;i<highElves.length;i++)
 			{
@@ -99,7 +99,7 @@ function armyChoice() {
 	}
 	if (armyChoice == "Wood Elves"){
 		$('#unitChoice').empty();
-		var Start = '<select id="unit1" onchange="unitChoice()"><option value="">Choose Your Unit</option>';
+		var Start = '<select id="unit1" onchange="unitChoice()"><option value="">Choose Unit</option>';
 		var Mid = new Array();
 		for (var i=0;i<woodElves.length;i++)
 			{
@@ -111,7 +111,7 @@ function armyChoice() {
 	}
 	if (armyChoice == "Lizardmen"){
 		$('#unitChoice').empty();
-		var Start = '<select id="unit1" onchange="unitChoice()"><option value="">Choose Your Unit</option>';
+		var Start = '<select id="unit1" onchange="unitChoice()"><option value="">Choose Unit</option>';
 		var Mid = new Array();
 		for (var i=0;i<lizardmen.length;i++)
 			{
@@ -123,7 +123,7 @@ function armyChoice() {
 	}
 	if (armyChoice == "Ogre Kingdoms"){
 		$('#unitChoice').empty();
-		var Start = '<select id="unit1" onchange="unitChoice()"><option value="">Choose Your Unit</option>';
+		var Start = '<select id="unit1" onchange="unitChoice()"><option value="">Choose Unit</option>';
 		var Mid = new Array();
 		for (var i=0;i<ogres.length;i++)
 			{
@@ -135,7 +135,7 @@ function armyChoice() {
 	}
 	if (armyChoice == "Orcs and Goblins"){
 		$('#unitChoice').empty();
-		var Start = '<select id="unit1" onchange="unitChoice()"><option value="">Choose Your Unit</option>';
+		var Start = '<select id="unit1" onchange="unitChoice()"><option value="">Choose Unit</option>';
 		var Mid = new Array();
 		for (var i=0;i<orcsGoblins.length;i++)
 			{
@@ -147,7 +147,7 @@ function armyChoice() {
 	}
 	if (armyChoice == "Skaven"){
 		$('#unitChoice').empty();
-		var Start = '<select id="unit1" onchange="unitChoice()"><option value="">Choose Your Unit</option>';
+		var Start = '<select id="unit1" onchange="unitChoice()"><option value="">Choose Unit</option>';
 		var Mid = new Array();
 		for (var i=0;i<skaven.length;i++)
 			{
@@ -159,7 +159,7 @@ function armyChoice() {
 	}
 	if (armyChoice == "Tomb Kings"){
 		$('#unitChoice').empty();
-		var Start = '<select id="unit1" onchange="unitChoice()"><option value="">Choose Your Unit</option>';
+		var Start = '<select id="unit1" onchange="unitChoice()"><option value="">Choose Unit</option>';
 		var Mid = new Array();
 		for (var i=0;i<tombKings.length;i++)
 			{
@@ -171,7 +171,7 @@ function armyChoice() {
 	}
 	if (armyChoice == "Vampire Counts"){
 		$('#unitChoice').empty();
-		var Start = '<select id="unit1" onchange="unitChoice()"><option value="">Choose Your Unit</option>';
+		var Start = '<select id="unit1" onchange="unitChoice()"><option value="">Choose Unit</option>';
 		var Mid = new Array();
 		for (var i=0;i<vampireCounts.length;i++)
 			{
@@ -183,7 +183,7 @@ function armyChoice() {
 	}
 	if (armyChoice == "Warriors of Chaos"){
 		$('#unitChoice').empty();
-		var Start = '<select id="unit1" onchange="unitChoice()"><option value="">Choose Your Unit</option>';
+		var Start = '<select id="unit1" onchange="unitChoice()"><option value="">Choose Unit</option>';
 		var Mid = new Array();
 		for (var i=0;i<chaosWarriors.length;i++)
 			{
@@ -201,7 +201,7 @@ function opparmyChoice() {
 
 	if (opparmyChoice == "Dwarfs"){
 		$('#oppunitChoice').empty();
-		var Start = '<select id="unit2" onchange="oppunitChoice()"><option value="">Choose Opponents Unit</option>';
+		var Start = '<select id="unit2" onchange="oppunitChoice()"><option value="">Choose Unit</option>';
 		var Mid = new Array();
 		for (var i=0;i<dwarfs.length;i++)
 			{
@@ -213,7 +213,7 @@ function opparmyChoice() {
 	}
 	if (opparmyChoice == "Bretonnia"){
 		$('#oppunitChoice').empty();
-		var Start = '<select id="unit2" onchange="oppunitChoice()"><option value="">Choose Opponents Unit</option>';
+		var Start = '<select id="unit2" onchange="oppunitChoice()"><option value="">Choose Unit</option>';
 		var Mid = new Array();
 		for (var i=0;i<bretonnia.length;i++)
 			{
@@ -225,7 +225,7 @@ function opparmyChoice() {
 	}
 	if (opparmyChoice == "The Empire"){
 		$('#oppunitChoice').empty();
-		var Start = '<select id="unit2" onchange="oppunitChoice()"><option value="">Choose Opponents Unit</option>';
+		var Start = '<select id="unit2" onchange="oppunitChoice()"><option value="">Choose Unit</option>';
 		var Mid = new Array();
 		for (var i=0;i<empire.length;i++)
 			{
@@ -237,7 +237,7 @@ function opparmyChoice() {
 	}
 	if (opparmyChoice == "Beastmen"){
 		$('#oppunitChoice').empty();
-		var Start = '<select id="unit2" onchange="oppunitChoice()"><option value="">Choose Opponents Unit</option>';
+		var Start = '<select id="unit2" onchange="oppunitChoice()"><option value="">Choose Unit</option>';
 		var Mid = new Array();
 		for (var i=0;i<beastmen.length;i++)
 			{
@@ -249,7 +249,7 @@ function opparmyChoice() {
 	}
 	if (opparmyChoice == "Chaos Dwarfs"){
 		$('#oppunitChoice').empty();
-		var Start = '<select id="unit2" onchange="oppunitChoice()"><option value="">Choose Opponents Unit</option>';
+		var Start = '<select id="unit2" onchange="oppunitChoice()"><option value="">Choose Unit</option>';
 		var Mid = new Array();
 		for (var i=0;i<chaosDwarfs.length;i++)
 			{
@@ -260,7 +260,7 @@ function opparmyChoice() {
 	}
 	if (opparmyChoice == "Daemons of Chaos"){
 		$('#oppunitChoice').empty();
-		var Start = '<select id="unit2" onchange="oppunitChoice()"><option value="">Choose Opponents Unit</option>';
+		var Start = '<select id="unit2" onchange="oppunitChoice()"><option value="">Choose Unit</option>';
 		var Mid = new Array();
 		for (var i=0;i<daemons.length;i++)
 			{
@@ -272,7 +272,7 @@ function opparmyChoice() {
 	}
 	if (opparmyChoice == "Dark Elves"){
 		$('#oppunitChoice').empty();
-		var Start = '<select id="unit2" onchange="oppunitChoice()"><option value="">Choose Opponents Unit</option>';
+		var Start = '<select id="unit2" onchange="oppunitChoice()"><option value="">Choose Unit</option>';
 		var Mid = new Array();
 		for (var i=0;i<darkElves.length;i++)
 			{
@@ -284,7 +284,7 @@ function opparmyChoice() {
 	}
 	if (opparmyChoice == "High Elves"){
 		$('#oppunitChoice').empty();
-		var Start = '<select id="unit2" onchange="oppunitChoice()"><option value="">Choose Opponents Unit</option>';
+		var Start = '<select id="unit2" onchange="oppunitChoice()"><option value="">Choose Unit</option>';
 		var Mid = new Array();
 		for (var i=0;i<highElves.length;i++)
 			{
@@ -296,7 +296,7 @@ function opparmyChoice() {
 	}
 	if (opparmyChoice == "Wood Elves"){
 		$('#oppunitChoice').empty();
-		var Start = '<select id="unit2" onchange="oppunitChoice()"><option value="">Choose Opponents Unit</option>';
+		var Start = '<select id="unit2" onchange="oppunitChoice()"><option value="">Choose Unit</option>';
 		var Mid = new Array();
 		for (var i=0;i<woodElves.length;i++)
 			{
@@ -308,7 +308,7 @@ function opparmyChoice() {
 	}
 	if (opparmyChoice == "Lizardmen"){
 		$('#oppunitChoice').empty();
-		var Start = '<select id="unit2" onchange="oppunitChoice()"><option value="">Choose Opponents Unit</option>';
+		var Start = '<select id="unit2" onchange="oppunitChoice()"><option value="">Choose Unit</option>';
 		var Mid = new Array();
 		for (var i=0;i<lizardmen.length;i++)
 			{
@@ -320,7 +320,7 @@ function opparmyChoice() {
 	}
 	if (opparmyChoice == "Ogre Kingdoms"){
 		$('#oppunitChoice').empty();
-		var Start = '<select id="unit2" onchange="oppunitChoice()"><option value="">Choose Opponents Unit</option>';
+		var Start = '<select id="unit2" onchange="oppunitChoice()"><option value="">Choose Unit</option>';
 		var Mid = new Array();
 		for (var i=0;i<ogres.length;i++)
 			{
@@ -332,7 +332,7 @@ function opparmyChoice() {
 	}
 	if (opparmyChoice == "Orcs and Goblins"){
 		$('#oppunitChoice').empty();
-		var Start = '<select id="unit2" onchange="oppunitChoice()"><option value="">Choose Opponents Unit</option>';
+		var Start = '<select id="unit2" onchange="oppunitChoice()"><option value="">Choose Unit</option>';
 		var Mid = new Array();
 		for (var i=0;i<orcsGoblins.length;i++)
 			{
@@ -344,7 +344,7 @@ function opparmyChoice() {
 	}
 	if (opparmyChoice == "Skaven"){
 		$('#oppunitChoice').empty();
-		var Start = '<select id="unit2" onchange="oppunitChoice()"><option value="">Choose Opponents Unit</option>';
+		var Start = '<select id="unit2" onchange="oppunitChoice()"><option value="">Choose Unit</option>';
 		var Mid = new Array();
 		for (var i=0;i<skaven.length;i++)
 			{
@@ -356,7 +356,7 @@ function opparmyChoice() {
 	}
 	if (opparmyChoice == "Tomb Kings"){
 		$('#oppunitChoice').empty();
-		var Start = '<select id="unit2" onchange="oppunitChoice()"><option value="">Choose Opponents Unit</option>';
+		var Start = '<select id="unit2" onchange="oppunitChoice()"><option value="">Choose Unit</option>';
 		var Mid = new Array();
 		for (var i=0;i<tombKings.length;i++)
 			{
@@ -368,7 +368,7 @@ function opparmyChoice() {
 	}
 	if (opparmyChoice == "Vampire Counts"){
 		$('#oppunitChoice').empty();
-		var Start = '<select id="unit2" onchange="oppunitChoice()"><option value="">Choose Opponents Unit</option>';
+		var Start = '<select id="unit2" onchange="oppunitChoice()"><option value="">Choose Unit</option>';
 		var Mid = new Array();
 		for (var i=0;i<vampireCounts.length;i++)
 			{
@@ -380,7 +380,7 @@ function opparmyChoice() {
 	}
 	if (opparmyChoice == "Warriors of Chaos"){
 		$('#oppunitChoice').empty();
-		var Start = '<select id="unit2" onchange="oppunitChoice()"><option value="">Choose Opponents Unit</option>';
+		var Start = '<select id="unit2" onchange="oppunitChoice()"><option value="">Choose Unit</option>';
 		var Mid = new Array();
 		for (var i=0;i<chaosWarriors.length;i++)
 			{
