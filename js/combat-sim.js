@@ -15,51 +15,51 @@ function fight(){
 		
 	// options unit 1
 	if ($('#charge1').attr('checked'))		{unit1['op-charged'] = (1);}
-		else {unit1['op-charged'] = 0;}
+	if (!$('#charged1').attr('checked'))	{unit1['op-charged'] = (0);}
 	if ($('#champion1').attr('checked'))	{unit1['op-champion'] = (1);}
-		else {unit1['op-champion'] = (0);}
+	if (!$('#champion1').attr('checked')) 	{unit1['op-champion'] = (0);}
 	if ($('#standard1').attr('checked'))	{unit1['op-standard'] = (1);}
-		else {unit1['op-standard'] = (0);}
+	if (!$('#standard1').attr('checked'))	{unit1['op-standard'] = (0);}
 	if ($('#musician1').attr('checked'))	{unit1['op-musician'] = (1);}
-		else {unit1['op-musician'] = (0);}
+	if (!$('#musician1').attr('checked'))	{unit1['op-musician'] = (0);}
 	if ($('#spears1').attr('checked')) 		{unit1['op-spears'] = (1);}
-		else {unit1['op-spears'] = (0);}
+	if (!$('#spears1').attr('checked')) 	{unit1['op-spears'] = (0);}
 	if ($('#adHandWep1').attr('checked')) 	{unit1['op-adHandWep'] = (1);}
-		else {unit1['op-adHandWep'] = (0);}
+	if (!$('#adHandWep1').attr('checked')) 	{unit1['op-adHandWep'] = (0);}
 	if ($('#greatWeapon1').attr('checked')) {unit1['op-greatWep'] = (2);}
-		else {unit1['op-greatWep'] = (0);}
+	if (!$('#greatWeapon1').attr('checked')){unit1['op-greatWep'] = (0);}
 	if ($('#shield1').attr('checked'))	 	{unit1['op-shield'] = (1);}
-		else {unit1['op-shield'] = (0);}
+	if (!$('#shield1').attr('checked'))	 	{unit1['op-shield'] = (0);}
 	if ($('#lightArmor1').attr('checked'))	{unit1['op-lightArmor'] = (1);}
-		else {unit1['op-lightArmor'] = (0);}
+	if (!$('#lightArmor1').attr('checked'))	{unit1['op-lightArmor'] = (0);}
 	if ($('#barding1').attr('checked'))	 	{unit1['op-barding'] = (1);}
-		else {unit1['op-barding'] = (0);}
+	if (!$('#barding1').attr('checked'))	{unit1['op-barding'] = (0);}
 	if ($('#lance1').attr('checked'))	 	{unit1['op-lance'] = (1);}
-		else {unit1['op-lance'] = (0);}
+	if (!$('#lance1').attr('checked'))	 	{unit1['op-lance'] = (0);}
 	
 	// options unit 2
 	if ($('#charge2').attr('checked'))		{unit2['op-charged'] = (1);}
-		else {unit2['op-charged'] = 0;}
+	if (!$('#charge2').attr('checked'))		{unit2['op-charged'] = (0);}
 	if ($('#champion2').attr('checked')) 	{unit2['op-champion'] = (1);}
-		else {unit2['op-champion'] = (0);}
+	if (!$('#champion2').attr('checked')) 	{unit2['op-champion'] = (0);}
 	if ($('#standard2').attr('checked')) 	{unit2['op-standard'] = (1);}
-		else {unit2['op-standard'] = (0);}
+	if (!$('#standard2').attr('checked')) 	{unit2['op-standard'] = (0);}
 	if ($('#musician2').attr('checked')) 	{unit2['op-musician'] = (1);}
-		else {unit2['op-musician'] = (0);}
+	if (!$('#musician2').attr('checked')) 	{unit2['op-musician'] = (0);}
 	if ($('#spears2').attr('checked')) 		{unit2['op-spears'] = (1);}
-		else {unit2['op-spears'] = (0);}
+	if (!$('#spears2').attr('checked')) 	{unit2['op-spears'] = (0);}
 	if ($('#adHandWep2').attr('checked')) 	{unit2['op-adHandWep'] = (1);}
-		else {unit2['op-adHandWep'] = (0);}
+	if (!$('#adHandWep2').attr('checked')) 	{unit2['op-adHandWep'] = (0);}
 	if ($('#greatWeapon2').attr('checked')) {unit2['op-greatWep'] = (2);}
-		else {unit2['op-greatWep'] = (0);}
+	if (!$('#greatWeapon2').attr('checked')){unit2['op-greatWep'] = (0);}
 	if ($('#shield2').attr('checked')) 		{unit2['op-shield'] = (1);}
-		else {unit2['op-shield'] = (0);}
+	if (!$('#shield2').attr('checked')) 	{unit2['op-shield'] = (0);}
 	if ($('#lightArmor2').attr('checked'))	{unit2['op-lightArmor'] = (1);}
-		else {unit2['op-lightArmor'] = (0);}
+	if (!$('#lightArmor2').attr('checked'))	{unit2['op-lightArmor'] = (0);}
 	if ($('#barding2').attr('checked'))	 	{unit2['op-barding'] = (1);}
-		else {unit2['op-barding'] = (0);}
+	if (!$('#barding2').attr('checked'))	{unit2['op-barding'] = (0);}
 	if ($('#lance2').attr('checked'))	 	{unit2['op-lance'] = (1);}
-		else {unit2['op-lance'] = (0);}
+	if (!$('#lance2').attr('checked'))	 	{unit2['op-lance'] = (0);}
 	
 	//opening message
 	var intro = "Today " + unit1['count'] + " " + unit1['name'] + " take on " + unit2['count'] + " " + unit2['name'];
@@ -126,11 +126,11 @@ function CombatFight(unit1, oppunit, woundsTaken){
 		else if (unit1['op-spears'] == 1 && unit1['op-charged'] == 0) {
 				unitRanks = unitRanks + 1;
 			}
-		else if (unit1['op-charged'] == 1 && unit1['charge']['spears'] == 1) {
-					if (typeof unit1['charge']['spears'] == 'undefined'){
+		else if (unit1['op-charged'] == 1 && unit1['op-charged']['spears'] == 1) {
+					if (typeof unit1['op-charged']['spears'] == 'undefined'){
 						unitRanks = unirRanks;
 					}
-					else if (unit1['charge']['spears'] == 1) {
+					else if (unit1['op-charged']['spears'] == 1) {
 						unitRanks = unitRanks - 1;
 					}
 				}
@@ -369,10 +369,11 @@ function combatResultsCalculation(firstUnit,firstUnitWounds,secondUnit,secondUni
 			var coldBlooded = 0;
 		}
 		// undead and deamons crumble instead of breaking
-		if (secondUnit['crumble'] == 1){
-			var breakChance = breakChanceCalc(breakTest,coldBlooded) + " chance to avoid crumbling that results in " + wonByAmount.toFixed(1) + " more dead.";
-		}
-		else  var breakChance = breakChanceCalc(breakTest,coldBlooded) + " chance to stick around and keep fighting.";
+		//if (secondUnit['crumble'] == 1){
+		//	var breakChance = breakChanceCalc(breakTest,coldBlooded) + " chance to avoid crumbling that results in " + wonByAmount.toFixed(1) + " more dead.";
+		//}
+		//else
+		var breakChance = breakChanceCalc(breakTest,coldBlooded) + " chance to stick around and keep fighting.";
 		
 		var wonByText = wonBy + " won the combat by " + wonByAmount.toFixed(1) + "<br />" + lostBy + " lost and have a " + breakChance;
 	}
