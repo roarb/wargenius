@@ -15,7 +15,7 @@ function fight(){
 		
 	// options unit 1
 	if ($('#charge1').attr('checked'))		{unit1['op-charged'] = (1);}
-	if (!$('#charged1').attr('checked'))	{unit1['op-charged'] = (0);}
+	if (!$('#charge1').attr('checked'))		{unit1['op-charged'] = (0);}
 	if ($('#champion1').attr('checked'))	{unit1['op-champion'] = (1);}
 	if (!$('#champion1').attr('checked')) 	{unit1['op-champion'] = (0);}
 	if ($('#standard1').attr('checked'))	{unit1['op-standard'] = (1);}
@@ -118,7 +118,7 @@ function CombatFight(unit1, oppunit, woundsTaken){
 
 		// pre-fight calculations
 		var unitAttacks = unit1['A']; // attacks per model
-		var oppUnitWounds = (oppunit['W'] * oppunit['count']);
+		var oppUnitWounds = (oppunit['W'] * oppunit['count']); // oppenents total unit wounds
 		var unitRanks = unit1['rank'];
 		if (unit1['op-spears'] == 1 && unit1['op-charged'] == 1) {
 			unitRanks = unitRanks;
@@ -135,7 +135,10 @@ function CombatFight(unit1, oppunit, woundsTaken){
 					}
 				}
 		else unitRanks = unitRanks;
-			
+		
+		// total models unable to fight back
+		var modelsLost = (woundsTaken / unit1['W']);
+		
 		//total strength of attack with weapon modifier
 		if (unit1['WepS'] == null) {
 			unitCombinedStrength = unit1['S'];
@@ -165,8 +168,12 @@ function CombatFight(unit1, oppunit, woundsTaken){
 		// matching unit widths to max 
 		var unitFightingWidth = '';
 		var oppunitFightingWidth = '';
-		var unitTotalWidth = (unit1['width'] * unit1['basesize']);
-		var oppunitTotalWidth = (oppunit['width'] * unit1['basesize']);
+		var unit1Width = unit1['width'];
+		var oppunitWidth = oppunit['width'];
+		if (unit1Width>unit1['count']){unit1Width=unit1['count'];}
+		if (oppunitWidth>oppunit['count']){oppunitWidth=oppunit['count'];}
+		var unitTotalWidth = (unit1Width * unit1['basesize']);
+		var oppunitTotalWidth = (oppunitWidth * unit1['basesize']);
 		// unit 1 max check
 		if (unitTotalWidth <= oppunitTotalWidth) {
 			unitFightingWidth = unitTotalWidth;
@@ -174,9 +181,7 @@ function CombatFight(unit1, oppunit, woundsTaken){
 		else 
 			if (unitTotalWidth > oppunitTotalWidth) {
 				unitFightingWidth = (oppunitTotalWidth + (unit1['basesize'] * 2));
-				if (unitFightingWidth > unitTotalWidth) {
-					unitFightingWidth = unitTotalWidth;
-				}
+				if (unitFightingWidth > unitTotalWidth) {unitFightingWidth = unitTotalWidth;}
 			}
 
 		// convert back to model count
@@ -185,7 +190,7 @@ function CombatFight(unit1, oppunit, woundsTaken){
 		
 		// total attacks calculation
 		//unit 1
-		var unitTotalModelCount = (unit1['count'] - woundsTaken);
+		var unitTotalModelCount = ((unit1['count']) - (modelsLost*unit1['A']));
 		var unitBackRanks = ((unitRanks - 1) * unitFightingWidth)
 		if (unitBackRanks > (unitTotalModelCount - unitFightingWidth)) {
 			unitBackRanks = (unitTotalModelCount - unitFightingWidth);
@@ -339,13 +344,13 @@ function CombatFight(unit1, oppunit, woundsTaken){
 function combatResultsCalculation(firstUnit,firstUnitWounds,secondUnit,secondUnitWounds){
 	
 	// need for unit 1 ranks, width, basesize, kills, charge, standard = total CR  musician, stubborn, unbreakable, frenzy = extras affected
-	var firstUnitRanksTemp = ((firstUnit['count']-secondUnitWounds) / firstUnit['width'])-1;
+	var firstUnitRanksTemp = ((firstUnit['count']-(secondUnitWounds/firstUnit['W'])) / firstUnit['width'])-1;
 	var firstUnitRanks = Math.floor(firstUnitRanksTemp);
 	if (firstUnitRanks > 3){firstUnitRanks=3}
 	var firstUnitCombatResolutionTotal = (firstUnitRanks + Number(firstUnitWounds) + firstUnit['op-charged'] + firstUnit['op-standard']);
 	
 	// need for unit 2 ranks, width, basesize, kills, charge, standard = total CR  musician, stubborn, unbreakable, frenzy = extras affected
-	var secondUnitRanksTemp = ((secondUnit['count']-firstUnitWounds) / secondUnit['width'])-1;
+	var secondUnitRanksTemp = ((secondUnit['count']-(firstUnitWounds/secondUnit['W'])) / secondUnit['width'])-1;
 	var secondUnitRanks = Math.floor(secondUnitRanksTemp);
 	if (secondUnitRanks > 3){secondUnitRanks=3}
 	var secondUnitCombatResolutionTotal = (secondUnitRanks + Number(secondUnitWounds) + secondUnit['op-charged'] + secondUnit['op-standard']);
@@ -395,10 +400,11 @@ function combatResultsCalculation(firstUnit,firstUnitWounds,secondUnit,secondUni
 			var coldBlooded = 0;
 		}
 		// undead and deamons crumble instead of breaking
-		if (firstUnit['crumble'] == 1){
-			var breakChance = breakChanceCalc(breakTest,coldBlooded) + " chance to avoid crumbling that results in " + wonByAmount.toFixed(1) + " more dead.";
-		}
-		else var breakChance = breakChanceCalc(breakTest,coldBlooded) + " chance to stick around and fight some more";
+		//if (firstUnit['crumble'] == 1){
+		//	var breakChance = breakChanceCalc(breakTest,coldBlooded) + " chance to avoid crumbling that results in " + wonByAmount.toFixed(1) + " more dead.";
+		//}
+		//else
+		var breakChance = breakChanceCalc(breakTest,coldBlooded) + " chance to stick around and fight some more";
 			
 		var wonByText = wonBy + " won the combat by " + wonByAmount.toFixed(1) + "<br />" + lostBy + " lost and have a " + breakChance;
 	}
@@ -553,7 +559,8 @@ function combatResultsCalculation(firstUnit,firstUnitWounds,secondUnit,secondUni
 
 function rankDisplay(unit, wounds, order) {
 	var i = 0;
-	wounds = Math.round(wounds);
+	var modelsLost = wounds / unit['W'];
+	modelsLost = Math.round(modelsLost);
 	var boxes = new Array();
 	if (order == "bottom") {
 		for (var i = 0; i < unit['count']; i++) {
@@ -628,12 +635,12 @@ function rankDisplay(unit, wounds, order) {
 	var newColor =  '#000; background:url(images/death.jpg); background-size:'+unit['basesize']+'px;';
 	
 	if (order == "bottom") {
-		for (var x = unit['count']; x >= (unit['count']-wounds); x--) {
+		for (var x = unit['count']; x >= (unit['count']-modelsLost); x--) {
 			boxes[x] = boxes[x].replace(replaceColor, newColor);
 		}
 	}
 	else {
-		for (var i = 0; i < wounds; i++) {
+		for (var i = 0; i < modelsLost; i++) {
 			boxes[i] = boxes[i].replace(replaceColor, newColor);
 		}
 	}	

@@ -24,34 +24,8 @@
 
 <script type="text/javascript" src="js/jquery/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css/combat-sim.css" />
-<script type="text/javascript" charset="utf-8">
-
-    // Call onDeviceReady when PhoneGap is loaded.
-    //
-    // At this point, the document has loaded but phonegap-1.0.0.js has not.
-    // When PhoneGap is loaded and talking with the native device,
-    // it will call the event `deviceready`.
-    // 
-    function onLoad() {
-        document.addEventListener("deviceready", onDeviceReady, false);
-    }
-
-    // PhoneGap is loaded and it is now safe to make calls PhoneGap methods
-    //
-    function onDeviceReady() {
-        // Register the event listener
-        document.addEventListener("menubutton", onMenuKeyDown, false);
-    }
-
-    // Handle the menu button
-    //
-    function onMenuKeyDown() {
-		document.write("testing");
-    }
-
-</script>
 </head>
-<body onload="onLoad()">
+<body>
 <div class="combatSim">
 	<form name="countsoptions" action="">
 	<div id="armyChoice">

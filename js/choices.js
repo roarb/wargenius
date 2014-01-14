@@ -796,10 +796,10 @@ function oppunitChoice() {
 function unit1Options(unitChoice){
 	var unitMax = unitChoice['maxsize'];
 	var unitMin = unitChoice['minsize'];
-	document.getElementById("unitcount1").style = "display:block;";
-	document.getElementById("unitcount1-text").style = "display:block;";
-	document.getElementById("unitwidth1").style = "display:block;";
-	document.getElementById("unitwidth1-text").style = "display:block;";
+	document.getElementById("unitcount1").style.display="block";
+	document.getElementById("unitcount1-text").style.display="block";
+	document.getElementById("unitwidth1").style.display="block";
+	document.getElementById("unitwidth1-text").style.display="block";
 	var select = document.getElementById('unitcount1');
 	var option = new Option(unitMin);
 	while (unitMin <= unitMax){
@@ -839,10 +839,10 @@ function unit1Options(unitChoice){
 function unit2Options(unitChoice){
 	var unitMax = unitChoice['maxsize'];
 	var unitMin = unitChoice['minsize'];
-	document.getElementById("unitcount2").style = "display:block;";
-	document.getElementById("unitcount2-text").style = "display:block;";
-	document.getElementById("unitwidth2").style = "display:block;";
-	document.getElementById("unitwidth2-text").style = "display:block;";
+	document.getElementById("unitcount2").style.display="block";
+	document.getElementById("unitcount2-text").style.display="block";
+	document.getElementById("unitwidth2").style.display="block";
+	document.getElementById("unitwidth2-text").style.display="block";
 	var select = document.getElementById('unitcount2');
 	var option = new Option(unitMin);
 	while (unitMin <= unitMax){
