@@ -296,11 +296,11 @@ function CombatFight(unit1, oppunit, woundsTaken){
 		}
 		// parry
 		var oppunitWoundsSavedByParry = 0;
-		if (oppunit['parry'] == 1 && oppunitWoundsSavedByWard == 0 && oppunit['op-greatWep'] < 1 && oppunit['op-adHandWep'] ==0) {
+		if (oppunit['parry'] == 1 && oppunitWoundsSavedByWard == 0 && oppunit['op-greatWep'] < 1 && oppunit['op-adHandWep'] ==0 && oppunit['op-spears']==0) {
 			oppunitWoundsSavedByParry = (.167 * (oppunitWoundsBeforeSaves - oppunitWoundsSavedByArmor));
 			oppunitWoundsSavedByParryText = oppunitWoundsSavedByParry.toFixed(1);
 		}
-		else if (oppunit['parry'] == 2 && oppunit['op-shield'] == 1 && oppunitWoundsSavedByWard == 0 && oppunit['op-greatWep'] < 1 && oppunit['op-adHandWep'] ==0) {
+		else if (oppunit['parry'] == 2 && oppunit['op-shield'] == 1 && oppunitWoundsSavedByWard == 0 && oppunit['op-greatWep'] < 1 && oppunit['op-adHandWep'] ==0 && oppunit['op-spears']==0) {
 				oppunitWoundsSavedByParry = (.167 * (oppunitWoundsBeforeSaves - oppunitWoundsSavedByArmor));
 				oppunitWoundsSavedByParryText = oppunitWoundsSavedByParry.toFixed(1);
 			}

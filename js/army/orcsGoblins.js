@@ -20,6 +20,7 @@ var commonGoblin = new Array ();
 	commonGoblin['I'] = (2); // initiaive
 	commonGoblin['A'] = (1); // attacks
 	commonGoblin['AS'] = (6); // armor save amount
+	commonGoblin['parry'] = (2);
 	commonGoblin['rank'] = (2); // how many ranks deep can attack
 	commonGoblin['basesize'] = (20); // base width in mm 20, 25, 40, 50
 	commonGoblin['maxsize'] = (100); 
