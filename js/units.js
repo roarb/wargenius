@@ -39,6 +39,7 @@ var masterUnit = new Array ();
 	masterUnit['hatred'] = (0); // hatred 0 no 1 yes
 	masterUnit['killingblow'] = (0); // killing blow 0 no 1 yes
 	masterUnit['heroicKB'] = (0); // heroic killing blow 0 no 1 yes
+	masterUnit['impact'] = (1); // impact hits 1 = 1 2 = 2 etc.. 
 	masterUnit['stomp'] = (0); // stomp, 0=none .5=cav 1=normal 3.5=thunderstomp
 	masterUnit['mounted'] = new Array(); // mounted plus mounts stats
 		masterUnit['mounted']['S'] = (3); // mounts strength
@@ -47,6 +48,7 @@ var masterUnit = new Array ();
 		masterUnit['mounted']['I'] = (3); // mounts Initiative
 		masterUnit['mounted']['AP'] = (1); // mount has armor piercing attacks 0 no 1 yes
 		masterUnit['mounted']['poison'] = (1); // mount has poisoned attacks 0 no 1 yes
+		masterUnit['mounted']['daemonicAttacks'] = (1); // mount has daemonic attacks 0 no 1 yes
 	masterUnit['options'] = new Array();
 		masterUnit['options']['charge'] = (1);
 		masterUnit['options']['champion'] = (1); // chamption 0 not an option 1 is an option
@@ -63,4 +65,10 @@ var masterUnit = new Array ();
 		masterUnit['options']['flails'] = (1); // unit has flails 0 not an option 1 is an option
 		masterUnit['options']['barding'] = (1); // mount has barding 0 no 1 yes
 		masterUnit['options']['lance'] = (1); // unit has lances 0 no 1 yes
+		masterUnit['options']['ASF'] = (1); // unit has always strikes first 0 not an option 1 is an option
+		masterUnit['options']['ensorcelled'] = (1); // unit has ensorcelled weapons, +1 str and magical
+		masterUnit['options']['MoKhorne'] = (1); // unit can have mark of khorne, frenzy
+		masterUnit['options']['MoTzeentch'] = (1); // unit can have mark of tzeentch +1 ward
+		masterUnit['options']['MoNurgle'] = (1); // unit can have mark of nurgle -1 to hit
+		masterUnit['options']['MoSlaanesh'] = (1); // pass all leader tests for fear terror and panic ---- not needed
 		

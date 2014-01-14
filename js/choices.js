@@ -529,6 +529,30 @@ function unitChoice() {
 			unit1 = chosen;
 			unit1Options(unit1);
 			}
+		if (unit1Choice == "Hellstriders of Slaanesh"){
+			unit1 = hellstridersSlaanesh;
+			unit1Options(unit1);
+			}
+		if (unit1Choice == "Chaos Knights"){
+			unit1 = chaosKnights;
+			unit1Options(unit1);
+			}
+		if (unit1Choice == "Chaos Ogres"){
+			unit1 = chaosOgres;
+			unit1Options(unit1);
+			}
+		if (unit1Choice == "Dragon Ogres"){
+			unit1 = dragonOgres;
+			unit1Options(unit1);
+			}
+		if (unit1Choice == "Chaos Trolls"){
+			unit1 = chaosTrolls;
+			unit1Options(unit1);
+			}
+		if (unit1Choice == "Skullcrushers of Khorne"){
+			unit1 = skullcrushers;
+			unit1Options(unit1);
+			}
 		// Vampire Counts
 		if (unit1Choice == "Zombies"){
 			unit1 = zombies;
@@ -694,6 +718,30 @@ function oppunitChoice() {
 			}
 		if (unit2Choice == "Chosen"){
 			unit2 = chosen;
+			unit2Options(unit2);
+			}
+		if (unit2Choice == "Hellstriders of Slaanesh"){
+			unit2 = hellstridersSlaanesh;
+			unit2Options(unit2);
+			}
+		if (unit2Choice == "Chaos Knights"){
+			unit2 = chaosKnights;
+			unit2Options(unit2);
+			}
+		if (unit2Choice == "Chaos Ogres"){
+			unit2 = chaosOgres;
+			unit2Options(unit2);
+			}
+		if (unit2Choice == "Dragon Ogres"){
+			unit2 = dragonOgres;
+			unit2Options(unit2);
+			}
+		if (unit2Choice == "Chaos Trolls"){
+			unit2 = chaosTrolls;
+			unit2Options(unit2);
+			}
+		if (unit2Choice == "Skullcrushers of Khorne"){
+			unit2 = skullcrushers;
 			unit2Options(unit2);
 			}
 		// Vampire Counts
