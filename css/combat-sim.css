@@ -13,6 +13,8 @@ div { z-index:1; position:relative; }
 .oppcount { width:200px; }
 #fight { width:100px; text-align:center; margin:auto; padding:20px; }
 #fightButton { padding:10px; font-weight:bold; color:#fff;  border-radius:10px; background:#333; margin-top:-20px; -webkit-box-shadow:inset 0 0 10px 0 #000; box-shadow:inset 0 0 10px 0 #000; }
+#reset { width:100px; text-align:center; margin:auto; padding:20px; display:none; }
+#resetButton { padding:10px; font-weight:bold; color:#fff;  border-radius:10px; background:#333; margin-top:-20px; -webkit-box-shadow:inset 0 0 10px 0 #000; box-shadow:inset 0 0 10px 0 #000; }
 
 .clearer { clear:both; }
 
@@ -26,8 +28,8 @@ td.label { text-align:right; font-weight:bold; }
 td.value { text-align:left; padding-left:4px;}
 
 .draw-box { width:520px; float:left; }
-#fight-intro.display { text-align:center; margin:5px 20px; font-size:1.2em; font-weight:bold; background:#fff; border-radius:12px; padding:5px; -webkit-box-shadow:inset 0 0 10px 0 #000; box-shadow:inset 0 0 10px 0 #000; border:1px solid #555; }
-#fight-conclusion.display { text-align:center; margin:5px 20px; padding:5px; font-size:1.2em; background:#fff; border-radius:12px; -webkit-box-shadow:inset 0 0 10px 0 #000; box-shadow:inset 0 0 10px 0 #000; border:1px solid #555; }
+#fight-intro { text-align:center; margin:5px 20px; font-size:1.2em; font-weight:bold; background:#fff; border-radius:12px; padding:5px; -webkit-box-shadow:inset 0 0 10px 0 #000; box-shadow:inset 0 0 10px 0 #000; border:1px solid #555; display:none; }
+#fight-conclusion { text-align:center; margin:5px 20px; padding:5px; font-size:1.2em; background:#fff; border-radius:12px; -webkit-box-shadow:inset 0 0 10px 0 #000; box-shadow:inset 0 0 10px 0 #000; border:1px solid #555; display:none; }
 #fight-text-top, #fight-text-bottom { float:left; width:175px; }
 #draw-ranks-top, #draw-ranks-bottom { padding-top:40px; min-width:240px; float:left; text-align:center; }
 #draw-icons-top, #draw-icons-bottom { padding-top:40px; float:right; width:105px; text-align:left; }
