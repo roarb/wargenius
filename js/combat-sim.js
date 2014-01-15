@@ -192,7 +192,10 @@ function CombatFight(unit1, oppunit, woundsTaken){
 		
 		// total attacks calculation
 		//unit 1
+			// total attacks available
 		var unitTotalModelCount = ((unit1['count']) - (modelsLost*unit1['A']));
+			// total models left
+		var unitTotalModelCountHard = (unit1['count'] - modelsLost);
 		var unitBackRanks = ((unitRanks - 1) * unitFightingWidth)
 		if (unitBackRanks > (unitTotalModelCount - unitFightingWidth)) {
 			unitBackRanks = (unitTotalModelCount - unitFightingWidth);
@@ -206,7 +209,11 @@ function CombatFight(unit1, oppunit, woundsTaken){
 		//add mounts attacks if there is a mount
 		if (typeof (unit1['mounted']) != 'undefined'){
 			var mountChanceToHit = toHit(unit1['mounted']['WS'], oppunit['WS']);
-			var mountTotalAttacks = unit1['mounted']['A'] * unitFightingWidth;
+			var mountQtyCanFight = unitFightingWidth;
+			if (unitFightingWidth > unitTotalModelCountHard){
+				mountQtyCanFight = unitTotalModelCountHard;
+			}
+			var mountTotalAttacks = unit1['mounted']['A'] * mountQtyCanFight;
 			var mountTotalHits = mountChanceToHit * mountTotalAttacks;
 			mountWoundsPrint = '<img src="images/mounted.jpg">';
 			var mountPoisonWounds = 0;
@@ -264,15 +271,12 @@ function CombatFight(unit1, oppunit, woundsTaken){
 		// armor
 		var oppunitArmorChance = armorSaveCalc(unitCombinedStrength, oppunitArmorSave);
 		var oppunitWoundsSavedByArmor = 0;
+		var mountOppunitWoundsSavedByArmor = 0;
 		oppunitWoundsSavedByArmor = oppunitWoundsBeforeSavesArmorSave * oppunitArmorChance;
 		// mounts attacks armor saves
 		if (mountOppunitWoundsBeforeSaves > 0){
 			var mountOppunitArmorChance = armorSaveCalc(unit1['mounted']['S'], oppunitArmorSave);
-			var mountOppunitWoundsSavedByArmor = 0;
 			mountOppunitWoundsSavedByArmor = mountOppunitWoundsBeforeSaves * mountOppunitArmorChance;
-		}
-		else {
-			mountOppunitWoundsSavedByArmor = 0;
 		}
 		// add mounts and units armor saves together
 		oppunitWoundsSavedByArmor = oppunitWoundsSavedByArmor + mountOppunitWoundsSavedByArmor;
@@ -285,15 +289,14 @@ function CombatFight(unit1, oppunit, woundsTaken){
 		}
 		// ward
 		var oppunitWoundsSavedByWard = 0;
+		var mountOppunitWoundsSavedByWard = 0;
 		if (oppunit['ward'] >= 1) {
 			var oppunitWardChance = wardSaveCalc(oppunit['ward']);
 			oppunitWoundsSavedByWard = (oppunitWardChance * (oppunitWoundsBeforeSaves - oppunitWoundsSavedByArmor));
 			if (mountOppunitWoundsBeforeSaves > 0){
-				var mountOppunitWoundsSavedByWard = 0;
 				mountOppunitWoundsSavedByWard = (oppunitWardChance * (mountOppunitWoundsBeforeSaves - mountOppunitWoundsSavedByArmor));
 				oppunitWoundsSavedByWard = oppunitWoundsSavedByWard + mountOppunitWoundsSavedByWard;
 			}
-			else var mountOppunitWoundsSavedByWard = 0;
 			oppunitWoundsSavedByWardText = oppunitWoundsSavedByWard.toFixed(1);
 		}
 		else {
@@ -301,39 +304,47 @@ function CombatFight(unit1, oppunit, woundsTaken){
 		}
 		// parry
 		var oppunitWoundsSavedByParry = 0;
+		var mountOppunitWoundsSavedByParry = 0;
 		if (oppunit['parry'] == 1 && oppunitWoundsSavedByWard == 0 && oppunit['op-greatWep'] < 1 && oppunit['op-adHandWep'] ==0 && oppunit['op-spears']==0) {
 			oppunitWoundsSavedByParry = (.167 * (oppunitWoundsBeforeSaves - oppunitWoundsSavedByArmor));
 			if (mountOppunitWoundsBeforeSaves > 0){
-				var mountOppunitWoundsSavedByParry = 0;
 				mountOppunitWoundsSavedByParry = (.167 * (mountOppunitWoundsBeforeSaves - mountOppunitWoundsSavedByArmor));
-				oppunitWoundsSavedByWard = oppunitWoundsSavedByWard + mountOppunitWoundsSavedByParry;
+				oppunitWoundsSavedByParry = oppunitWoundsSavedByParry + mountOppunitWoundsSavedByParry;
 			}
-			else var mountOppunitWoundsSavedByParry = 0;
 			oppunitWoundsSavedByParryText = oppunitWoundsSavedByParry.toFixed(1);
 		}
 		else if (oppunit['parry'] == 2 && oppunit['op-shield'] == 1 && oppunitWoundsSavedByWard == 0 && oppunit['op-greatWep'] < 1 && oppunit['op-adHandWep'] ==0 && oppunit['op-spears']==0) {
 				oppunitWoundsSavedByParry = (.167 * (oppunitWoundsBeforeSaves - oppunitWoundsSavedByArmor));
 			if (mountOppunitWoundsBeforeSaves > 0){
-				var mountOppunitWoundsSavedByParry = 0;
 				mountOppunitWoundsSavedByParry = (.167 * (mountOppunitWoundsBeforeSaves - mountOppunitWoundsSavedByArmor));
-				oppunitWoundsSavedByWard = oppunitWoundsSavedByWard + mountOppunitWoundsSavedByParry;
+				oppunitWoundsSavedByParry = oppunitWoundsSavedByParry + mountOppunitWoundsSavedByParry;
 			}
-			else var mountOppunitWoundsSavedByParry = 0;
 			oppunitWoundsSavedByParryText = oppunitWoundsSavedByParry.toFixed(1);
 			}
 		else {
-				oppunitWoundsSavedByParryText = '';
-			}
+			oppunitWoundsSavedByParryText = '';
+		}
 		// regen
 		var oppunitWoundsSavedByRegen = 0;
 		var mountOppunitWoundsSavedByRegen = 0;
-		var oppunitWoundsSavedByRegenText = '';
+		if (oppunit['regen'] > 0 && unit1['flaming'] != 0 && oppunitWoundsSavedByWard == 0){
+			var oppunitRegenChance = wardSaveCalc(oppunit['regen']);
+			oppunitWoundsSavedByRegen = (oppunitRegenChance * (oppunitWoundsBeforeSaves - oppunitWoundsSavedByArmor - oppunitWoundsSavedByParry));
+			if (mountOppunitWoundsBeforeSaves > 0){
+				mountOppunitWoundsSavedByRegen = (.167 * (mountOppunitWoundsBeforeSaves - mountOppunitWoundsSavedByArmor - mountOppunitWoundsSavedByParry));
+				oppunitWoundsSavedByRegen = oppunitWoundsSavedByRegen + mountOppunitWoundsSavedByRegen;
+			}
+			oppunitWoundsSavedByRegenText = oppunitWoundsSavedByRegen.toFixed(1);
+		}
+		else {
+			oppunitWoundsSavedByRegenText = '';
+		}
 		// final wounds totals
 		var totalWoundsSaved = oppunitWoundsSavedByArmor + oppunitWoundsSavedByWard + oppunitWoundsSavedByParry + oppunitWoundsSavedByRegen;
 		var totalMountWounds = 0;
 		var mountTotalWoundsSaved = 0;
 		if (mountOppunitWoundsBeforeSaves > 0) { 
-			mountTotalWoundsSaved = mountTotalWoundsSaved + mountOppunitWoundsSavedByArmor + mountOppunitWoundsSavedByWard + mountOppunitWoundsSavedByParry + mountOppunitWoundsSavedByRegen;
+			mountTotalWoundsSaved = mountTotalWoundsSaved + mountOppunitWoundsSavedByArmor + mountOppunitWoundsSavedByRegen + mountOppunitWoundsSavedByWard + mountOppunitWoundsSavedByParry;
 			totalMountWounds = mountOppunitWoundsBeforeSaves - mountTotalWoundsSaved;
 			}
 		var unitTotalWounds = oppunitWoundsBeforeSaves - totalWoundsSaved + totalMountWounds;
@@ -491,7 +502,7 @@ function combatResultsCalculation(firstUnit,firstUnitWounds,secondUnit,secondUni
 		}
 	else var firstUnitFightTextRegenSaves = '';
 	
-	if (firstUnitCombatCalculated[13] != ''){ 
+	if (firstUnitCombatCalculated[13] != 0){ 
 		var firstUnitFightTextMount = '<tr class="mount"><td class="label">Mount Wounds</td><td class="value">' + firstUnitCombatCalculated[13] + '</td></tr>';
 		}
 	else var firstUnitFightTextMount = '';
@@ -513,7 +524,7 @@ function combatResultsCalculation(firstUnit,firstUnitWounds,secondUnit,secondUni
 		}
 	else var secondUnitFightTextRegenSaves = '';
 	
-	if (secondUnitCombatCalculated[13] != ''){ 
+	if (secondUnitCombatCalculated[13] != 0){ 
 		var secondUnitFightTextMount = '<tr class="mount"><td class="label">Mount Wounds</td><td class="value">' + secondUnitCombatCalculated[13] + '</td></tr>';
 		}
 	else var secondUnitFightTextMount = '';
@@ -769,7 +780,7 @@ function resetForces() {
 	document.getElementById('unitwidth2-text').innerHTML = '';
 	document.getElementById('unitwidth2').innerHTML = '';
 	document.getElementById('reset').style.display = 'none';
-	
+	document.getElementById("fightButton").value = "Battle Royale!";
 	var army1 = document.getElementById('army1');
 	army1.selectedIndex = 0;
 	var army2 = document.getElementById('army2');
