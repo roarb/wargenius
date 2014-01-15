@@ -4,7 +4,7 @@
 body { background:url(../images/battle-sim-bg.jpg) no-repeat 0 0 #000; }
 div { z-index:1; position:relative; }
 .combatSim { width:940px; margin:auto; background:url(../images/combat-sim-bg.png) repeat-y 0 0; border-radius:13px; }
-#armyChoice { width:200px; float:left; margin:5px; }
+#armyChoice { width:200px; float:left; margin:5px; color:#fff; }
 #opparmyChoice { width:200px; float:right; margin:5px; color:#fff; }
 #unitChoice, #oppunitChoice { width:200px; min-height:24px; text-align:center; }
 #unitOptions { width:200px; display:block; }
