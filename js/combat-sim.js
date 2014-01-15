@@ -170,10 +170,14 @@ function CombatFight(unit1, oppunit, woundsTaken){
 		// matching unit widths to max 
 		var unitFightingWidth = '';
 		var oppunitFightingWidth = '';
-		var unit1Width = unit1['width'];
-		var oppunitWidth = oppunit['width'];
-		if (unit1Width>unit1['count']){unit1Width=unit1['count'];}
-		if (oppunitWidth>oppunit['count']){oppunitWidth=oppunit['count'];}
+		if (Number(unit1['width']) > Number(unit1['count'])){
+			var unit1Width = unit1['count'];
+			}
+		else { var unit1Width = unit1['width']; }
+		if (Number(oppunit['width']) > Number(oppunit['count'])){
+			var oppunitWidth = oppunit['count'];
+			}
+		else { var oppunitWidth = oppunit['width']; }
 		var unitTotalWidth = (unit1Width * unit1['basesize']);
 		var oppunitTotalWidth = (oppunitWidth * unit1['basesize']);
 		// unit 1 max check
@@ -197,9 +201,10 @@ function CombatFight(unit1, oppunit, woundsTaken){
 			// total models left
 		var unitTotalModelCountHard = (unit1['count'] - modelsLost);
 		var unitBackRanks = ((unitRanks - 1) * unitFightingWidth)
-		if (unitBackRanks > (unitTotalModelCount - unitFightingWidth)) {
-			unitBackRanks = (unitTotalModelCount - unitFightingWidth);
+		if (unitBackRanks > (unitTotalModelCountHard - unitFightingWidth)) {
+			unitBackRanks = (unitTotalModelCountHard - unitFightingWidth);
 		}
+		//alert('fighting width'+unitFightingWidth+'<br>unit attacks'+unitAttacks+'<br>unit back ranks'+unitBackRanks);
 		var unitTotalAttacks = ((unitFightingWidth * unitAttacks) + unitBackRanks);
 		if (unit1['op-champion'] == 1) {
 			unitTotalAttacks = unitTotalAttacks + 1
