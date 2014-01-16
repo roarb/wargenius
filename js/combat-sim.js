@@ -130,7 +130,7 @@ function CombatFight(unit1, oppunit, woundsTaken){
 			}
 		else if (unit1['op-charged'] == 1 && unit1['op-charged']['spears'] == 1) {
 					if (typeof unit1['op-charged']['spears'] == 'undefined'){
-						unitRanks = unirRanks;
+						unitRanks = unitRanks;
 					}
 					else if (unit1['op-charged']['spears'] == 1) {
 						unitRanks = unitRanks - 1;
@@ -150,6 +150,16 @@ function CombatFight(unit1, oppunit, woundsTaken){
 		}
 		unitCombinedStrength = unitCombinedStrength + unit1['op-greatWep'];
 		
+		if (unit1['charge'] != undefined){
+			if (unit1['op-charged'] == 1 && unit1['charge']['lance'] == 1){
+				unitCombinedStrength = unitCombinedStrength + 2;
+			}
+		}
+		else if (unit1['op-charged'] == 1 && unit1['op-lance'] == 1){
+			unitCombinedStrength = unitCombinedStrength + 2;
+		}
+		
+
 		//armor saves after options		
 		if (oppunit['AS'] == null){oppunitArmorSave = 7 - oppunit['op-shield'] - oppunit['op-lightArmor']}
 		//else if (oppunit['AS'] == null && oppunit['op-shield'] == 0 && oppunit['op-lightArmor'] == 0){oppunitArmorSave = 7}

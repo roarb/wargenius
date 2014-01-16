@@ -463,6 +463,14 @@ function unitChoice() {
 			unit1 = seaGuard;
 			unit1Options(unit1);
 			}
+		if (unit1Choice == "Silver Helms"){
+			unit1 = silverHelms;
+			unit1Options(unit1);
+			}
+		if (unit1Choice == "Ellyrian Reavers"){
+			unit1 = ellyrianReavers;
+			unit1Options(unit1);
+			}
 		if (unit1Choice == "White Lions of Chrace"){
 			unit1 = whiteLions;
 			unit1Options(unit1);
@@ -473,6 +481,10 @@ function unitChoice() {
 			}
 		if (unit1Choice == "Phoenix Guard"){
 			unit1 = phoenixGuard;
+			unit1Options(unit1);
+			}
+		if (unit1Choice == "Dragon Princes"){
+			unit1 = dragonPrinces;
 			unit1Options(unit1);
 			}
 		// Orcs and Goblins
@@ -654,6 +666,14 @@ function oppunitChoice() {
 			unit2 = seaGuard;
 			unit2Options(unit2);
 			}
+		if (unit2Choice == "Silver Helms"){
+			unit2 = silverHelms;
+			unit2Options(unit2);
+			}
+		if (unit2Choice == "Ellyrian Reavers"){
+			unit2 = ellyrianReavers;
+			unit2Options(unit2);
+			}
 		if (unit2Choice == "White Lions of Chrace"){
 			unit2 = whiteLions;
 			unit2Options(unit2);
@@ -664,6 +684,10 @@ function oppunitChoice() {
 			}
 		if (unit2Choice == "Phoenix Guard"){
 			unit2 = phoenixGuard;
+			unit2Options(unit2);
+			}
+		if (unit2Choice == "Dragon Princes"){
+			unit2 = dragonPrinces;
 			unit2Options(unit2);
 			}
 		// Orcs and Goblins
@@ -815,7 +839,12 @@ function unit1Options(unitChoice){
 		selectRank.appendChild(optionRank, optionRank);
 		i++;
 	}
-	selectRank.selectedIndex = 4;
+	if (unitChoice['minsize'] > 5){
+		selectRank.selectedIndex = 4;
+	}
+	else {
+		selectRank.selectedIndex = (unitChoice['minsize']-1);
+	}
 	
 	var a = '<div class="choice-button"><label><input type="checkbox" id="';
 	var b = '1" /><span>';
@@ -858,7 +887,10 @@ function unit2Options(unitChoice){
 		selectRank.appendChild(optionRank, optionRank);
 		i++;
 	}
-	selectRank.selectedIndex = 4;
+	if (unitChoice['minsize'] > 5){
+		selectRank.selectedIndex = 4;
+	}
+	else selectRank.selectedIndex = (unitChoice['minsize']-1);
 	
 	var a = '<div class="choice-button"><label><input type="checkbox" id="';
 	var b = '2" /><span>';
