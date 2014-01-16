@@ -350,6 +350,8 @@ function CombatFight(unit1, oppunit, woundsTaken){
 		// regen
 		var oppunitWoundsSavedByRegen = 0;
 		var mountOppunitWoundsSavedByRegen = 0;
+		var regenPrint = '';
+		if (unit1['regen'] > 1 ) { regenPrint = '<img src="images/regen.jpg">';}
 		if (oppunit['regen'] > 0 && unit1['flaming'] != 0 && oppunitWoundsSavedByWard == 0){
 			var oppunitRegenChance = wardSaveCalc(oppunit['regen']);
 			oppunitWoundsSavedByRegen = (oppunitRegenChance * (oppunitWoundsBeforeSaves - oppunitWoundsSavedByArmor - oppunitWoundsSavedByParry));
@@ -390,6 +392,7 @@ function CombatFight(unit1, oppunit, woundsTaken){
 			unitCombatResults[12] = mountPoisonWoundsPrint; // mount had poisoned attacks
 			unitCombatResults[13] = totalMountWounds.toFixed(1); // wounds caused by the mount
 			unitCombatResults[14] = etheralPrint; // show etheral on unit image
+			unitCombatResults[15] = regenPrint; // show regen on unit image
 		
 		return unitCombatResults;
 		
@@ -597,22 +600,24 @@ function combatResultsCalculation(firstUnit,firstUnitWounds,secondUnit,secondUni
 		unitImageTop[0] = '<img src="images/unitmodels/'+firstUnitCombatCalculated[8]+'.jpg"><br />';
 		unitImageTop[1] = firstUnitCombatCalculated[9]; // killing blow
 		unitImageTop[2] = firstUnitCombatCalculated[10]; // poison
-		unitImageTop[3] = firstUnitCombatCalculated[14]; // unit is etheral
-		unitImageTop[4] = firstUnitCombatCalculated[11]; // mount fought
-		unitImageTop[5] = firstUnitCombatCalculated[12]; // mount had poison attacks
-		unitImageTop[6] = combatResults[5]; // steadfast
-		unitImageTop[7] = combatResults[6]; // stubborn
-		unitImageTop[8] = combatResults[9]; // unbreakable
+		unitImageTop[3] = firstUnitCombatCalculated[15]; // regen
+		unitImageTop[4] = firstUnitCombatCalculated[14]; // unit is etheral
+		unitImageTop[5] = firstUnitCombatCalculated[11]; // mount fought
+		unitImageTop[6] = firstUnitCombatCalculated[12]; // mount had poison attacks
+		unitImageTop[7] = combatResults[5]; // steadfast
+		unitImageTop[8] = combatResults[6]; // stubborn
+		unitImageTop[9] = combatResults[9]; // unbreakable
 	var unitImageBottom = new Array();
 		unitImageBottom[0] = '<img src="images/unitmodels/'+secondUnitCombatCalculated[8]+'.jpg"><br />';
 		unitImageBottom[1] = secondUnitCombatCalculated[9]; // killing blow
 		unitImageBottom[2] = secondUnitCombatCalculated[10]; // poison
-		unitImageBottom[3] = secondUnitCombatCalculated[14]; // unit is etheral
-		unitImageBottom[4] = secondUnitCombatCalculated[11]; // mount fought
-		unitImageBottom[5] = secondUnitCombatCalculated[12]; // mount had poison attacks
-		unitImageBottom[6] = combatResults[7]; // steadfast
-		unitImageBottom[7] = combatResults[8]; // stubborn
-		unitImageBottom[8] = combatResults[10]; // unbreakable
+		unitImageBottom[3] = secondUnitCombatCalculated[15]; // regen
+		unitImageBottom[4] = secondUnitCombatCalculated[14]; // unit is etheral
+		unitImageBottom[5] = secondUnitCombatCalculated[11]; // mount fought
+		unitImageBottom[6] = secondUnitCombatCalculated[12]; // mount had poison attacks
+		unitImageBottom[7] = combatResults[7]; // steadfast
+		unitImageBottom[8] = combatResults[8]; // stubborn
+		unitImageBottom[9] = combatResults[10]; // unbreakable
 	
 	//##############################				
 	// print the attack 
