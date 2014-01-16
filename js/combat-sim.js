@@ -151,7 +151,7 @@ function CombatFight(unit1, oppunit, woundsTaken){
 		unitCombinedStrength = unitCombinedStrength + unit1['op-greatWep'];
 		
 		if (unit1['charge'] != undefined){
-			if (unit1['op-charged'] == 1 && unit1['charge']['lance'] == 1){
+			if (unit1['op-charged'] == 1 && unit1['charge']['lance'] == 1 && unit1['mounted'] != undefined){
 				unitCombinedStrength = unitCombinedStrength + 2;
 			}
 		}
