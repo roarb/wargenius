@@ -244,6 +244,14 @@ function CombatFight(unit1, oppunit, woundsTaken){
 		else {
 			mountOppunitWoundsBeforeSaves = 0;
 		}
+		// etheral vs magical item check
+		var etheralPrint = '';
+		if (unit1['etheral'] == 1){ etheralPrint = '<img src="images/etheral.jpg">'; }
+		if (oppunit['etheral'] == 1){
+			unitTotalAttacks = 0;
+			mountOppunitWoundsBeforeSaves = 0;
+		}
+		
 		// attacks that hit
 		var unitChanceToHit = toHit(unit1['WS'], oppunit['WS']);
 		var unitTotalHits = unitChanceToHit * unitTotalAttacks;
@@ -381,6 +389,7 @@ function CombatFight(unit1, oppunit, woundsTaken){
 			unitCombatResults[11] = mountWoundsPrint; // mount attacks
 			unitCombatResults[12] = mountPoisonWoundsPrint; // mount had poisoned attacks
 			unitCombatResults[13] = totalMountWounds.toFixed(1); // wounds caused by the mount
+			unitCombatResults[14] = etheralPrint; // show etheral on unit image
 		
 		return unitCombatResults;
 		
@@ -422,10 +431,10 @@ function combatResultsCalculation(firstUnit,firstUnitWounds,secondUnit,secondUni
 			var coldBlooded = 0;
 		}
 		// undead and deamons crumble instead of breaking
-		//if (secondUnit['crumble'] == 1){
-		//	var breakChance = breakChanceCalc(breakTest,coldBlooded) + " chance to avoid crumbling that results in " + wonByAmount.toFixed(1) + " more dead.";
-		//}
-		//else
+		if (secondUnit['crumble'] == 1){
+			var breakChance = "Crumbling results in " + wonByAmount.toFixed(1) + " more dead.";
+		}
+		else
 		var breakChance = breakChanceCalc(breakTest,coldBlooded) + " chance to stick around and keep fighting.";
 		
 		var wonByText = wonBy + " won the combat by " + wonByAmount.toFixed(1) + "<br />" + lostBy + " lost and have a " + breakChance;
@@ -448,10 +457,10 @@ function combatResultsCalculation(firstUnit,firstUnitWounds,secondUnit,secondUni
 			var coldBlooded = 0;
 		}
 		// undead and deamons crumble instead of breaking
-		//if (firstUnit['crumble'] == 1){
-		//	var breakChance = breakChanceCalc(breakTest,coldBlooded) + " chance to avoid crumbling that results in " + wonByAmount.toFixed(1) + " more dead.";
-		//}
-		//else
+		if (firstUnit['crumble'] == 1){
+			var breakChance = "Crumbling results in " + wonByAmount.toFixed(1) + " more dead.";
+		}
+		else 
 		var breakChance = breakChanceCalc(breakTest,coldBlooded) + " chance to stick around and fight some more";
 			
 		var wonByText = wonBy + " won the combat by " + wonByAmount.toFixed(1) + "<br />" + lostBy + " lost and have a " + breakChance;
@@ -586,20 +595,22 @@ function combatResultsCalculation(firstUnit,firstUnitWounds,secondUnit,secondUni
 		unitImageTop[0] = '<img src="images/unitmodels/'+firstUnitCombatCalculated[8]+'.jpg"><br />';
 		unitImageTop[1] = firstUnitCombatCalculated[9]; // killing blow
 		unitImageTop[2] = firstUnitCombatCalculated[10]; // poison
-		unitImageTop[3] = firstUnitCombatCalculated[11]; // mount fought
-		unitImageTop[4] = firstUnitCombatCalculated[12]; // mount had poison attacks
-		unitImageTop[5] = combatResults[5]; // steadfast
-		unitImageTop[6] = combatResults[6]; // stubborn
-		unitImageTop[7] = combatResults[9]; // unbreakable
+		unitImageTop[3] = firstUnitCombatCalculated[14]; // unit is etheral
+		unitImageTop[4] = firstUnitCombatCalculated[11]; // mount fought
+		unitImageTop[5] = firstUnitCombatCalculated[12]; // mount had poison attacks
+		unitImageTop[6] = combatResults[5]; // steadfast
+		unitImageTop[7] = combatResults[6]; // stubborn
+		unitImageTop[8] = combatResults[9]; // unbreakable
 	var unitImageBottom = new Array();
 		unitImageBottom[0] = '<img src="images/unitmodels/'+secondUnitCombatCalculated[8]+'.jpg"><br />';
 		unitImageBottom[1] = secondUnitCombatCalculated[9]; // killing blow
 		unitImageBottom[2] = secondUnitCombatCalculated[10]; // poison
-		unitImageBottom[3] = secondUnitCombatCalculated[11]; // mount fought
-		unitImageBottom[4] = secondUnitCombatCalculated[12]; // mount had poison attacks
-		unitImageBottom[5] = combatResults[7]; // steadfast
-		unitImageBottom[6] = combatResults[8]; // stubborn
-		unitImageBottom[7] = combatResults[10]; // unbreakable
+		unitImageBottom[3] = secondUnitCombatCalculated[14]; // unit is etheral
+		unitImageBottom[4] = secondUnitCombatCalculated[11]; // mount fought
+		unitImageBottom[5] = secondUnitCombatCalculated[12]; // mount had poison attacks
+		unitImageBottom[6] = combatResults[7]; // steadfast
+		unitImageBottom[7] = combatResults[8]; // stubborn
+		unitImageBottom[8] = combatResults[10]; // unbreakable
 	
 	//##############################				
 	// print the attack 
