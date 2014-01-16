@@ -432,7 +432,7 @@ function combatResultsCalculation(firstUnit,firstUnitWounds,secondUnit,secondUni
 		}
 		// undead and deamons crumble instead of breaking
 		if (secondUnit['crumble'] == 1){
-			var breakChance = "Crumbling results in " + wonByAmount.toFixed(1) + " more dead.";
+			var breakChance = "Crumbling results in " + wonByAmount.toFixed(1) + " more wounds.";
 		}
 		else
 		var breakChance = breakChanceCalc(breakTest,coldBlooded) + " chance to stick around and keep fighting.";
@@ -458,17 +458,19 @@ function combatResultsCalculation(firstUnit,firstUnitWounds,secondUnit,secondUni
 		}
 		// undead and deamons crumble instead of breaking
 		if (firstUnit['crumble'] == 1){
-			var breakChance = "Crumbling results in " + wonByAmount.toFixed(1) + " more dead.";
+			var breakChance = "Crumbling results in " + wonByAmount.toFixed(1) + " more wounds.";
 		}
 		else 
 		var breakChance = breakChanceCalc(breakTest,coldBlooded) + " chance to stick around and fight some more";
 			
 		var wonByText = wonBy + " won the combat by " + wonByAmount.toFixed(1) + "<br />" + lostBy + " lost and have a " + breakChance;
 	}
-	else if (secondUnitCombatResolutionTotal == firstUnitCombatResolutionTotal){			
-		var wonByText = "This combat results in a tie. ";
+	else if (secondUnitCombatResolutionTotal == firstUnitCombatResolutionTotal){
+		if (firstUnit['op-musician'] > secondUnit['op-musician']){ var wonByText = firstUnit['name'] + " win the tied combat due to their Musician.";}	
+		if (firstUnit['op-musician'] < secondUnit['op-musician']){ var wonByText = secondUnit['name'] + " win the tied combat due to their Musician.";}			
+		if (firstUnit['op-musician'] == secondUnit['op-musician']) {var wonByText = "This combat results in a tie.";}
 	}
-	
+
 	// steadfast and stubborn notices
 	if (secondUnitRanks > firstUnitRanks) { var secondUnitSteadfast = '<img src="images/steadfast.jpg">' }
 		else var secondUnitSteadfast = '';
