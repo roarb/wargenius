@@ -10,6 +10,8 @@ function fight(){
 	// rename battle royale to do it again
 	document.getElementById("fightButton").value = "Do It Again";
 	
+	document.getElementById("bottomArmy").style.borderTop="1px solid #000";
+	
 	unit1['count'] = document.countsoptions.unitcount1.value;
 	unit2['count'] = document.countsoptions.unitcount2.value;
 	unit1['width'] = document.countsoptions.unitwidth1.value;
@@ -619,14 +621,20 @@ function combatResultsCalculation(firstUnit,firstUnitWounds,secondUnit,secondUni
 		unitImageBottom[8] = combatResults[8]; // stubborn
 		unitImageBottom[9] = combatResults[10]; // unbreakable
 	
+	
+	//build background images
+	var backgroundTop = "url('images/backgrounds/"+firstUnitCombatCalculated[8]+".png') no-repeat 0 0";
+	var backgroundBottom = "url('images/backgrounds/"+secondUnitCombatCalculated[8]+".png') no-repeat 0 0";
 	//##############################				
 	// print the attack 
 		// first unit to strike on top
 	document.getElementById("fight-intro").innerHTML = intro;
+	document.getElementById("topArmy").style.background = backgroundTop;
 	document.getElementById("fight-text-top").innerHTML = firstUnitFightText.join("");
 	document.getElementById("draw-ranks-top").innerHTML = combatResults[3];
 	document.getElementById("draw-icons-top").innerHTML = unitImageTop.join("");
 		// second unit to strike on bottom
+	document.getElementById("bottomArmy").style.background = backgroundBottom;
 	document.getElementById("fight-text-bottom").innerHTML = secondUnitFightText.join("");
 	document.getElementById("draw-ranks-bottom").innerHTML = combatResults[4];
 	document.getElementById("draw-icons-bottom").innerHTML = unitImageBottom.join("");
