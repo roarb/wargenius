@@ -87,35 +87,50 @@ function fight(){
 		else if (unit2['I'] > unit1['I'] && unit1ASL >= unit2ASL) {secondUnitFirst = 1}
 		else if (unit1['I'] > unit2['I'] && unit1ASL > 0 && unit2ASL == 0) {secondUnitFirst = 1}
 		else if (unit1ASL >= 1 && unit2ASL == 0) {secondUnitFirst = 1}
+		
+	// impact wounds
+	var unit1ImpactWounds = impactHits(unit1,unit2);
+	var unit2ImpactWounds = impactHits(unit2,unit1);
 				
 	if (simoAttacks == 0 && secondUnitFirst == 0) {
-		var modelsLost = 0;
+		var modelsLost = unit2ImpactWounds;
 		var firstUnitAttacks = "<h2>" + unit1['name'] + "<br />attack first</h2>";
 		var firstUnitCombatCalculated = CombatFight(unit1,unit2,modelsLost);
-		modelsLost = firstUnitCombatCalculated[7];
+		var modelsLost = Number(firstUnitCombatCalculated[7]) + Number(unit1ImpactWounds);
 		var secondUnitAttacks = "<h2>" + unit2['name'] + "<br />attack second</h2>";
 		var secondUnitCombatCalculated = CombatFight(unit2,unit1,modelsLost);
 		var combatResults = combatResultsCalculation(unit1,firstUnitCombatCalculated[7],unit2,secondUnitCombatCalculated[7]);
 	}
 	else 
 		if (secondUnitFirst == 1) {
-			var modelsLost = 0;
+			var modelsLost = unit1ImpactWounds;
 			var firstUnitAttacks = "<h2>" + unit2['name'] + "<br />attack first</h2>";
 			var firstUnitCombatCalculated = CombatFight(unit2,unit1,modelsLost);
-			modelsLost = firstUnitCombatCalculated[7];
+			var modelsLost = Number(firstUnitCombatCalculated[7]) + Number(unit2ImpactWounds);
 			var secondUnitAttacks = "<h2>" + unit1['name'] + "<br />attack second</h2>";
 			var secondUnitCombatCalculated = CombatFight(unit1,unit2,modelsLost);
 			var combatResults = combatResultsCalculation(unit2,firstUnitCombatCalculated[7],unit1,secondUnitCombatCalculated[7]);
 		}
 		else 
 			if (simoAttacks == 1) {
-				var modelsLost = 0;
+				var modelsLost = unit1ImpactWounds;
 				var firstUnitAttacks = "<h2>" + unit1['name'] + "<br />attack simultaneously</h2>";
 				var firstUnitCombatCalculated = CombatFight(unit1,unit2,modelsLost);
 				var secondUnitAttacks = "<h2>" + unit2['name'] + "<br />attack simultaneously</h2>";
+				var modelsLost = unit2ImpactWounds;
 				var secondUnitCombatCalculated = CombatFight(unit2,unit1,modelsLost);
 				var combatResults = combatResultsCalculation(unit1,firstUnitCombatCalculated[7],unit2,secondUnitCombatCalculated[7]);
 			}
+
+//* Impact Hits *//
+function impactHits(unit1, oppunit){
+		if (unit1['impact'] != undefined){
+			var woundsChance = toWound(unit1['S'],oppunit['T']);
+			var wounds = unit1['rank'] *woundsChance;
+			return wounds;
+		}
+		else { return 0; }
+}
 
 //*****************************************************	
 function CombatFight(unit1, oppunit, woundsTaken){
