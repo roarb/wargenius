@@ -124,7 +124,7 @@ function fight(){
 
 //* Impact Hits *//
 function impactHits(unit1, oppunit){
-		if (unit1['impact'] != undefined){
+		if (unit1['impact'] != undefined && unit1['op-charged'] == 1){
 			var woundsChance = toWound(unit1['S'],oppunit['T']);
 			var wounds = unit1['rank'] *woundsChance;
 			return wounds;
