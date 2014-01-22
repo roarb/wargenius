@@ -8,13 +8,13 @@ var army = new Array ();
 	//army[5] = ("Dwarfs"); //dwarfs
 	army[0] = ("The Empire"); //empire
 	army[1] = ("High Elves"); //highElves
-	//army[8] = ("Lizardmen"); //lizardmen
+	army[2] = ("Lizardmen"); //lizardmen
 	//army[9] = ("Ogre Kingdoms"); //ogres
-	army[2] = ("Orcs and Goblins"); //orcsGoblins
+	army[3] = ("Orcs and Goblins"); //orcsGoblins
 	//army[11] = ("Skaven"); //skaven
 	//army[12] = ("Tomb Kings"); //tombKings
-	army[3] = ("Vampire Counts"); //vampireCounts
-	army[4] = ("Warriors of Chaos"); //chaosWarriors
+	army[4] = ("Vampire Counts"); //vampireCounts
+	army[5] = ("Warriors of Chaos"); //chaosWarriors
 	//army[15] = ("Wood Elves"); //woodElves
 
 function armyChoice() {
@@ -487,6 +487,35 @@ function unitChoice() {
 			unit1 = dragonPrinces;
 			unit1Options(unit1);
 			}
+		// Lizardmen
+		if (unit1Choice == "Saurus Warriors"){
+			unit1 = saurusWarriors;
+			unit1Options(unit1);
+		}
+		if (unit1Choice == "Skink Cohort"){
+			unit1 = skinkCohort;
+			unit1Options(unit1);
+		}
+		if (unit1Choice == "Skink Skirmishers"){
+			unit1 = skinkSkirmishers;
+			unit1Options(unit1);
+		}
+		if (unit1Choice == "Temple Guard"){
+			unit1 = templeGuard;
+			unit1Options(unit1);
+		}
+		if (unit1Choice == "Chameleon Skinks"){
+			unit1 = chameleonSkinks;
+			unit1Options(unit1);
+		}
+		if (unit1Choice == "Cold One Riders"){
+			unit1 = coldOneRiders;
+			unit1Options(unit1);
+		}
+		if (unit1Choice == "Kroxigor"){
+			unit1 = kroxigor;
+			unit1Options(unit1);
+		}
 		// Orcs and Goblins
 		if (unit1Choice == "Goblins"){
 			unit1 = commonGoblin;
@@ -690,6 +719,35 @@ function oppunitChoice() {
 			unit2 = dragonPrinces;
 			unit2Options(unit2);
 			}
+		// Lizardmen
+		if (unit2Choice == "Saurus Warriors"){
+			unit2 = saurusWarriors;
+			unit2Options(unit2);
+		}
+		if (unit2Choice == "Skink Cohort"){
+			unit2 = skinkCohort;
+			unit2Options(unit2);
+		}
+		if (unit2Choice == "Skink Skirmishers"){
+			unit2 = skinkSkirmishers;
+			unit2Options(unit2);
+		}
+		if (unit2Choice == "Temple Guard"){
+			unit2 = templeGuard;
+			unit2Options(unit2);
+		}
+		if (unit2Choice == "Chameleon Skinks"){
+			unit2 = chameleonSkinks;
+			unit2Options(unit2);
+		}
+		if (unit2Choice == "Cold One Riders"){
+			unit2 = coldOneRiders;
+			unit2Options(unit2);
+		}
+		if (unit2Choice == "Kroxigor"){
+			unit2 = kroxigor;
+			unit2Options(unit2);
+		}
 		// Orcs and Goblins
 		if (unit2Choice == "Goblins"){
 			unit2 = commonGoblin;
