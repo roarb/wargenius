@@ -86,3 +86,5 @@ div canvas { background:#555}
 
 #topArmy { width:100%; overflow:auto; }
 #bottomArmy { width:100%; overflow:auto; }
+
+.icon-text { display:block; width:100px; background:#fff; text-align:center; border:1px solid #333; font-size:.8em; }

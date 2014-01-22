@@ -40,6 +40,8 @@ function fight(){
 	if (!$('#barding1').attr('checked'))	{unit1['op-barding'] = (0);}
 	if ($('#lance1').attr('checked'))	 	{unit1['op-lance'] = (1);}
 	if (!$('#lance1').attr('checked'))	 	{unit1['op-lance'] = (0);}
+	if ($('#poison1').attr('checked'))	 	{unit1['op-poison'] = (1);}
+	if (!$('#poison1').attr('checked'))	 	{unit1['op-poison'] = (0);}
 	
 	// options unit 2
 	if ($('#charge2').attr('checked'))		{unit2['op-charged'] = (1);}
@@ -64,6 +66,8 @@ function fight(){
 	if (!$('#barding2').attr('checked'))	{unit2['op-barding'] = (0);}
 	if ($('#lance2').attr('checked'))	 	{unit2['op-lance'] = (1);}
 	if (!$('#lance2').attr('checked'))	 	{unit2['op-lance'] = (0);}
+	if ($('#poison2').attr('checked'))	 	{unit2['op-poison'] = (1);}
+	if (!$('#poison2').attr('checked'))	 	{unit2['op-poison'] = (0);}
 	
 	//opening message
 	var intro = "Today " + unit1['count'] + " " + unit1['name'] + " take on " + unit2['count'] + " " + unit2['name'];
@@ -91,35 +95,49 @@ function fight(){
 	// impact wounds
 	var unit1ImpactWounds = impactHits(unit1,unit2);
 	var unit2ImpactWounds = impactHits(unit2,unit1);
-				
+	var unit1ImpactWoundsPrint = '';
+	var unit2ImpactWoundsPrint = '';
+
 	if (simoAttacks == 0 && secondUnitFirst == 0) {
 		var modelsLost = unit2ImpactWounds;
+			if (unit2ImpactWounds > 0){unit2ImpactWoundsPrint = '<img src="images/impact.jpg"><br /><span class="icon-text">'+unit2ImpactWounds.toFixed(1)+' Wounds Dealt</span>';}
 		var firstUnitAttacks = "<h2>" + unit1['name'] + "<br />attack first</h2>";
 		var firstUnitCombatCalculated = CombatFight(unit1,unit2,modelsLost);
 		var modelsLost = Number(firstUnitCombatCalculated[7]) + Number(unit1ImpactWounds);
+			if (unit1ImpactWounds > 0){unit1ImpactWoundsPrint = '<img src="images/impact.jpg"><br /><span class="icon-text">'+unit1ImpactWounds.toFixed(1)+' Wounds Dealt</span>';}
 		var secondUnitAttacks = "<h2>" + unit2['name'] + "<br />attack second</h2>";
 		var secondUnitCombatCalculated = CombatFight(unit2,unit1,modelsLost);
-		var combatResults = combatResultsCalculation(unit1,firstUnitCombatCalculated[7],unit2,secondUnitCombatCalculated[7]);
+		var unit1WoundsCaused = Number(firstUnitCombatCalculated[7]) + Number(unit1ImpactWounds.toFixed(1));
+		var unit2WoundsCaused = Number(secondUnitCombatCalculated[7]) + Number(unit2ImpactWounds.toFixed(1));
+		var combatResults = combatResultsCalculation(unit1,unit1WoundsCaused,unit2,unit2WoundsCaused);
 	}
 	else 
 		if (secondUnitFirst == 1) {
 			var modelsLost = unit1ImpactWounds;
+				if (unit1ImpactWounds > 0){unit2ImpactWoundsPrint = '<img src="images/impact.jpg"><br /><span class="icon-text">'+unit1ImpactWounds.toFixed(1)+' Wounds Dealt</span>';}
 			var firstUnitAttacks = "<h2>" + unit2['name'] + "<br />attack first</h2>";
 			var firstUnitCombatCalculated = CombatFight(unit2,unit1,modelsLost);
 			var modelsLost = Number(firstUnitCombatCalculated[7]) + Number(unit2ImpactWounds);
+				if (unit2ImpactWounds > 0){unit1ImpactWoundsPrint = '<img src="images/impact.jpg"><br /><span class="icon-text">'+unit2ImpactWounds.toFixed(1)+' Wounds Dealt</span>';}
 			var secondUnitAttacks = "<h2>" + unit1['name'] + "<br />attack second</h2>";
 			var secondUnitCombatCalculated = CombatFight(unit1,unit2,modelsLost);
-			var combatResults = combatResultsCalculation(unit2,firstUnitCombatCalculated[7],unit1,secondUnitCombatCalculated[7]);
+			var firstUnitWoundsCaused = Number(firstUnitCombatCalculated[7]) + Number(unit2ImpactWounds.toFixed(1));
+			var secondUnitWoundsCaused = Number(secondUnitCombatCalculated[7]) + Number(unit1ImpactWounds.toFixed(1));
+			var combatResults = combatResultsCalculation(unit2,firstUnitWoundsCaused,unit1,secondUnitWoundsCaused);
 		}
 		else 
 			if (simoAttacks == 1) {
 				var modelsLost = unit1ImpactWounds;
+					if (unit1ImpactWounds > 0){unit1ImpactWoundsPrint = '<img src="images/impact.jpg"><br /><span class="icon-text">'+unit1ImpactWounds.toFixed(1)+' Wounds Dealt</span>';}
 				var firstUnitAttacks = "<h2>" + unit1['name'] + "<br />attack simultaneously</h2>";
 				var firstUnitCombatCalculated = CombatFight(unit1,unit2,modelsLost);
 				var secondUnitAttacks = "<h2>" + unit2['name'] + "<br />attack simultaneously</h2>";
 				var modelsLost = unit2ImpactWounds;
+					if (unit2ImpactWounds > 0){unit2ImpactWoundsPrint = '<img src="images/impact.jpg"><br /><span class="icon-text">'+unit2ImpactWounds.toFixed(1)+' Wounds Dealt</span>';}
 				var secondUnitCombatCalculated = CombatFight(unit2,unit1,modelsLost);
-				var combatResults = combatResultsCalculation(unit1,firstUnitCombatCalculated[7],unit2,secondUnitCombatCalculated[7]);
+				var unit1WoundsCaused = Number(firstUnitCombatCalculated[7]) + Number(unit1ImpactWounds.toFixed(1));
+				var unit2WoundsCaused = Number(secondUnitCombatCalculated[7]) + Number(unit2ImpactWounds.toFixed(1));
+				var combatResults = combatResultsCalculation(unit1,unit1WoundsCaused,unit2,unit2WoundsCaused);
 			}
 
 //* Impact Hits *//
@@ -290,7 +308,7 @@ function CombatFight(unit1, oppunit, woundsTaken){
 		// poison wounds
 		var poisonWounds = 0;
 		var poisonWoundsPrint = '';
-		if (unit1['poison'] == 1){
+		if (unit1['poison'] == 1 || unit1['op-poison'] == 1){
 			poisonWounds = unitTotalHits/6;
 			unitTotalHits = unitTotalHits - poisonWounds;
 			poisonWoundsPrint = '<img src="images/poison.jpg">';
@@ -617,26 +635,28 @@ function combatResultsCalculation(firstUnit,firstUnitWounds,secondUnit,secondUni
 	
 	var unitImageTop = new Array();
 		unitImageTop[0] = '<img src="images/unitmodels/'+firstUnitCombatCalculated[8]+'.jpg"><br />';
-		unitImageTop[1] = firstUnitCombatCalculated[9]; // killing blow
-		unitImageTop[2] = firstUnitCombatCalculated[10]; // poison
-		unitImageTop[3] = firstUnitCombatCalculated[15]; // regen
-		unitImageTop[4] = firstUnitCombatCalculated[14]; // unit is etheral
-		unitImageTop[5] = firstUnitCombatCalculated[11]; // mount fought
-		unitImageTop[6] = firstUnitCombatCalculated[12]; // mount had poison attacks
-		unitImageTop[7] = combatResults[5]; // steadfast
-		unitImageTop[8] = combatResults[6]; // stubborn
-		unitImageTop[9] = combatResults[9]; // unbreakable
+		unitImageTop[1] = unit1ImpactWoundsPrint; //impact wounds dealt
+		unitImageTop[2] = firstUnitCombatCalculated[9]; // killing blow
+		unitImageTop[3] = firstUnitCombatCalculated[10]; // poison
+		unitImageTop[4] = firstUnitCombatCalculated[15]; // regen
+		unitImageTop[5] = firstUnitCombatCalculated[14]; // unit is etheral
+		unitImageTop[6] = firstUnitCombatCalculated[11]; // mount fought
+		unitImageTop[7] = firstUnitCombatCalculated[12]; // mount had poison attacks
+		unitImageTop[8] = combatResults[5]; // steadfast
+		unitImageTop[9] = combatResults[6]; // stubborn
+		unitImageTop[10] = combatResults[9]; // unbreakable
 	var unitImageBottom = new Array();
 		unitImageBottom[0] = '<img src="images/unitmodels/'+secondUnitCombatCalculated[8]+'.jpg"><br />';
-		unitImageBottom[1] = secondUnitCombatCalculated[9]; // killing blow
-		unitImageBottom[2] = secondUnitCombatCalculated[10]; // poison
-		unitImageBottom[3] = secondUnitCombatCalculated[15]; // regen
-		unitImageBottom[4] = secondUnitCombatCalculated[14]; // unit is etheral
-		unitImageBottom[5] = secondUnitCombatCalculated[11]; // mount fought
-		unitImageBottom[6] = secondUnitCombatCalculated[12]; // mount had poison attacks
-		unitImageBottom[7] = combatResults[7]; // steadfast
-		unitImageBottom[8] = combatResults[8]; // stubborn
-		unitImageBottom[9] = combatResults[10]; // unbreakable
+		unitImageBottom[1] = unit2ImpactWoundsPrint; //impact wounds dealt
+		unitImageBottom[2] = secondUnitCombatCalculated[9]; // killing blow
+		unitImageBottom[3] = secondUnitCombatCalculated[10]; // poison
+		unitImageBottom[4] = secondUnitCombatCalculated[15]; // regen
+		unitImageBottom[5] = secondUnitCombatCalculated[14]; // unit is etheral
+		unitImageBottom[6] = secondUnitCombatCalculated[11]; // mount fought
+		unitImageBottom[7] = secondUnitCombatCalculated[12]; // mount had poison attacks
+		unitImageBottom[8] = combatResults[7]; // steadfast
+		unitImageBottom[9] = combatResults[8]; // stubborn
+		unitImageBottom[10] = combatResults[10]; // unbreakable
 	
 	
 	//build background images
@@ -815,9 +835,11 @@ function breakChanceCalc(var1,cb) {
 function resetForces() {
 	document.getElementById('fight-text-top').innerHTML = '';
 	document.getElementById('draw-ranks-top').innerHTML = '';
+	document.getElementById('topArmy').style.background = "none";
 	document.getElementById('draw-icons-top').innerHTML = '';
 	document.getElementById('fight-text-bottom').innerHTML = '';
 	document.getElementById('draw-ranks-bottom').innerHTML = '';
+	document.getElementById('bottomArmy').style.background = "none";
 	document.getElementById('draw-icons-bottom').innerHTML = '';
 	document.getElementById('fight-intro').innerHTML = '';
 	document.getElementById('fight-intro').style.display = 'none';

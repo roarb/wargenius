@@ -920,6 +920,7 @@ function unit1Options(unitChoice){
 	if (unit1['options']['lightArmor'] == 1){ unit1Options = unit1Options + a + 'lightArmor' + b + 'Light Armor' + c;}
 	if (unit1['options']['barding'] == 1){ unit1Options = unit1Options + a + 'barding' + b + 'Barding' + c;}
 	if (unit1['options']['lance'] == 1){ unit1Options = unit1Options + a + 'lance' + b + 'Lances' + c;}
+	if (unit1['options']['poison'] == 1){ unit1Options = unit1Options + a + 'poison' + b + 'Poison' + c;}
 	document.getElementById("unitOptions").innerHTML = unit1Options;
 }
 
@@ -966,5 +967,6 @@ function unit2Options(unitChoice){
 	if (unit2['options']['lightArmor'] == 1){ unit2Options = unit2Options + a + 'lightArmor' + b + 'Light Armor' + c;}
 	if (unit2['options']['barding'] == 1){ unit2Options = unit2Options + a + 'barding' + b + 'Barding' + c;}
 	if (unit2['options']['lance'] == 1){ unit2Options = unit2Options + a + 'lance' + b + 'Lances' + c;}
+	if (unit2['options']['poison'] == 1){ unit2Options = unit2Options + a + 'poison' + b + 'Poison' + c;}
 	document.getElementById("oppunitOptions").innerHTML = unit2Options;
 }
