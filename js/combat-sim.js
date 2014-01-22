@@ -193,7 +193,9 @@ function CombatFight(unit1, oppunit, woundsTaken){
 		if (unit1['frenzy'] == 1) {unitAttacks = unitAttacks + 1;}
 		// additional hand weapons
 		if (unit1['op-adHandWep'] == 1) {unitAttacks = unitAttacks + 1;}
-		
+		// predatory fighter attacks
+		if (unit1['predatory'] == 1) {unitAttacks = unitAttacks * 1.167;}
+
 		// matching unit widths to max 
 		var unitFightingWidth = '';
 		var oppunitFightingWidth = '';
