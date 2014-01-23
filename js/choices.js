@@ -15,7 +15,7 @@ var army = new Array ();
 	//army[12] = ("Tomb Kings"); //tombKings
 	army[4] = ("Vampire Counts"); //vampireCounts
 	army[5] = ("Warriors of Chaos"); //chaosWarriors
-	//army[15] = ("Wood Elves"); //woodElves
+	army[6] = ("Wood Elves"); //woodElves
 
 function armyChoice() {
 	var armyChoice = (document.getElementById("army1").value);
@@ -639,6 +639,14 @@ function unitChoice() {
 			unit1 = cairnWraiths;
 			unit1Options(unit1);
 			}
+		if (unit1Choice == "Glade Guard"){
+			unit1 = gladeGuard;
+			unit1Options(unit1);
+			}
+		if (unit1Choice == "Glade Riders"){
+			unit1 = gladeRiders;
+			unit1Options(unit1);
+			}
 		else {}
 		
 }
@@ -869,6 +877,14 @@ function oppunitChoice() {
 			}
 		if (unit2Choice == "Cairn Wraiths"){
 			unit2 = cairnWraiths;
+			unit2Options(unit2);
+			}
+		if (unit2Choice == "Glade Guard"){
+			unit2 = gladeGuard;
+			unit2Options(unit2);
+			}
+		if (unit2Choice == "Glade Riders"){
+			unit2 = gladeRiders;
 			unit2Options(unit2);
 			}
 		else {}
