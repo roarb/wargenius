@@ -1,21 +1,21 @@
 // JavaScript Document
 var army = new Array ();
-	//army[0] = ("Beastmen"); //beastmen
+	army[0] = ("Beastmen"); //beastmen
 	//army[1] = ("Bretonnia"); //bretonnia
 	//army[2] = ("Chaos Dwarfs"); //chaosDwarfs
-	//army[3] = ("Daemons of Chaos"); //daemons
+	army[1] = ("Daemons of Chaos"); //daemons
 	//army[4] = ("Dark Elves"); //darkElves
 	//army[5] = ("Dwarfs"); //dwarfs
-	army[0] = ("The Empire"); //empire
-	army[1] = ("High Elves"); //highElves
-	army[2] = ("Lizardmen"); //lizardmen
+	army[2] = ("The Empire"); //empire
+	army[3] = ("High Elves"); //highElves
+	army[4] = ("Lizardmen"); //lizardmen
 	//army[9] = ("Ogre Kingdoms"); //ogres
-	army[3] = ("Orcs and Goblins"); //orcsGoblins
+	army[5] = ("Orcs and Goblins"); //orcsGoblins
 	//army[11] = ("Skaven"); //skaven
 	//army[12] = ("Tomb Kings"); //tombKings
-	army[4] = ("Vampire Counts"); //vampireCounts
-	army[5] = ("Warriors of Chaos"); //chaosWarriors
-	army[6] = ("Wood Elves"); //woodElves
+	army[6] = ("Vampire Counts"); //vampireCounts
+	army[7] = ("Warriors of Chaos"); //chaosWarriors
+	army[8] = ("Wood Elves"); //woodElves
 
 function armyChoice() {
 	var armyChoice = (document.getElementById("army1").value);
@@ -413,6 +413,68 @@ function opparmyChoice() {
 
 function unitChoice() {
 	var unit1Choice = (document.getElementById("unit1").value);
+		// Beastmen
+		if (unit1Choice == "Ungor Herd"){
+			unit1 = ungorHerd;
+			unit1Options(unit1);
+			}
+		if (unit1Choice == "Gor Herd"){
+			unit1 = gorHerd;
+			unit1Options(unit1);
+			}
+		if (unit1Choice == "Chaos Warhounds"){
+			unit1 = chaosWarhoundsBeastmen;
+			unit1Options(unit1);
+			}
+		if (unit1Choice == "Centigor Herd"){
+			unit1 = centigorHerd;
+			unit1Options(unit1);
+			}
+		if (unit1Choice == "Minotaurs"){
+			unit1 = minotaurs;
+			unit1Options(unit1);
+			}
+		if (unit1Choice == "Harpies"){
+			unit1 = harpiesBeastmen;
+			unit1Options(unit1);
+			}
+		if (unit1Choice == "Bestigor Herd"){
+			unit1 = bestigorHerd;
+			unit1Options(unit1);
+			}
+		// Daemons of Chaos
+		if (unit1Choice == "Bloodletters of Khorne"){
+			unit1 = bloodlettersOfKhorne;
+			unit1Options(unit1);
+			}
+		if (unit1Choice == "Pink Horrors of Tzeentch"){
+			unit1 = pinkHorrorsOfTzeentch;
+			unit1Options(unit1);
+			}
+		if (unit1Choice == "Plaguebearers of Nurgle"){
+			unit1 = plaguebearersOfNurgle;
+			unit1Options(unit1);
+			}
+		if (unit1Choice == "Daemonettes of Slaanesh"){
+			unit1 = daemonettesOfSlaanesh;
+			unit1Options(unit1);
+			}
+		if (unit1Choice == "Bloodcrushers of Khorne"){
+			unit1 = bloodcrushersOfKhorne;
+			unit1Options(unit1);
+			}
+		if (unit1Choice == "Flesh Hounds of Khorne"){
+			unit1 = fleshHoundsOfKhorne;
+			unit1Options(unit1);
+			}
+		if (unit1Choice == "Seekers of Slaanesh"){
+			unit1 = seekersOfSlaanesh;
+			unit1Options(unit1);
+			}
+		if (unit1Choice == "Plague Drones of Nurgle"){
+			unit1 = plagueDronesOfNurgle;
+			unit1Options(unit1);
+			}
 		// the Empire
 		if (unit1Choice == "Halberdiers"){
 			unit1 = empireHalberdiers;
@@ -647,12 +709,98 @@ function unitChoice() {
 			unit1 = gladeRiders;
 			unit1Options(unit1);
 			}
+		if (unit1Choice == "Dryads"){
+			unit1 = dryads;
+			unit1Options(unit1);
+			}
+		if (unit1Choice == "Eternal Guard"){
+			unit1 = eternalGuard;
+			unit1Options(unit1);
+			}
+		if (unit1Choice == "Wild Riders"){
+			unit1 = wildRiders;
+			unit1Options(unit1);
+			}
+		if (unit1Choice == "Tree Kin"){
+			unit1 = treeKin;
+			unit1Options(unit1);
+			}
+		if (unit1Choice == "Wardancers"){
+			unit1 = wardancers;
+			unit1Options(unit1);
+			}
+		if (unit1Choice == "Waywatchers"){
+			unit1 = waywatchers;
+			unit1Options(unit1);
+			}
 		else {}
 		
 }
 
 function oppunitChoice() {
 	var unit2Choice = (document.getElementById("unit2").value);
+		// Beastmen
+		if (unit2Choice == "Ungor Herd"){
+			unit2 = ungorHerd;
+			unit2Options(unit2);
+			}
+		if (unit2Choice == "Gor Herd"){
+			unit2 = gorHerd;
+			unit2Options(unit2);
+			}
+		if (unit2Choice == "Chaos Warhounds"){
+			unit2 = chaosWarhoundsBeastmen;
+			unit2Options(unit2);
+			}
+		if (unit2Choice == "Centigor Herd"){
+			unit2 = centigorHerd;
+			unit2Options(unit2);
+			}
+		if (unit2Choice == "Minotaurs"){
+			unit2 = minotaurs;
+			unit2Options(unit2);
+			}
+		if (unit2Choice == "Harpies"){
+			unit2 = harpiesBeastmen;
+			unit2Options(unit2);
+			}
+		if (unit2Choice == "Bestigor Herd"){
+			unit2 = bestigorHerd;
+			unit2Options(unit2);
+			}
+		// Daemons of Chaos
+		if (unit2Choice == "Bloodletters of Khorne"){
+			unit2 = bloodlettersOfKhorne;
+			unit2Options(unit2);
+			}
+		if (unit2Choice == "Pink Horrors of Tzeentch"){
+			unit2 = pinkHorrorsOfTzeentch;
+			unit2Options(unit2);
+			}
+		if (unit2Choice == "Plaguebearers of Nurgle"){
+			unit2 = plaguebearersOfNurgle;
+			unit2Options(unit2);
+			}
+		if (unit2Choice == "Daemonettes of Slaanesh"){
+			unit2 = daemonettesOfSlaanesh;
+			unit2Options(unit2);
+			}
+		if (unit2Choice == "Bloodcrushers of Khorne"){
+			unit2 = bloodcrushersOfKhorne;
+			unit2Options(unit2);
+			}
+		if (unit2Choice == "Flesh Hounds of Khorne"){
+			unit2 = fleshHoundsOfKhorne;
+			unit2Options(unit2);
+			}
+		if (unit2Choice == "Seekers of Slaanesh"){
+			unit2 = seekersOfSlaanesh;
+			unit2Options(unit2);
+			}
+		if (unit2Choice == "Plague Drones of Nurgle"){
+			unit2 = plagueDronesOfNurgle;
+			unit2Options(unit2);
+			}
 		// the Empire
 		if (unit2Choice == "Halberdiers"){
 			unit2 = empireHalberdiers;
@@ -885,6 +1033,30 @@ function oppunitChoice() {
 			}
 		if (unit2Choice == "Glade Riders"){
 			unit2 = gladeRiders;
+			unit2Options(unit2);
+			}
+		if (unit2Choice == "Dryads"){
+			unit2 = dryads;
+			unit2Options(unit2);
+			}
+		if (unit2Choice == "Eternal Guard"){
+			unit2 = eternalGuard;
+			unit2Options(unit2);
+			}
+		if (unit2Choice == "Wild Riders"){
+			unit2 = wildRiders;
+			unit2Options(unit2);
+			}
+		if (unit2Choice == "Tree Kin"){
+			unit2 = treeKin;
+			unit2Options(unit2);
+			}
+		if (unit2Choice == "Wardancers"){
+			unit2 = wardancers;
+			unit2Options(unit2);
+			}
+		if (unit2Choice == "Waywatchers"){
+			unit2 = waywatchers;
 			unit2Options(unit2);
 			}
 		else {}

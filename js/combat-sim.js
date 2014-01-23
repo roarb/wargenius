@@ -476,6 +476,7 @@ function combatResultsCalculation(firstUnit,firstUnitWounds,secondUnit,secondUni
 		}
 		else
 		var breakChance = breakChanceCalc(breakTest,coldBlooded) + " chance to stick around and keep fighting.";
+		if (secondUnit['unbreakable'] == 1){ breakChance = "100% chance to stick around and keep fighting.";}
 		
 		var wonByText = wonBy + " won the combat by " + wonByAmount.toFixed(1) + "<br />" + lostBy + " lost and have a " + breakChance;
 	}
@@ -502,6 +503,7 @@ function combatResultsCalculation(firstUnit,firstUnitWounds,secondUnit,secondUni
 		}
 		else 
 		var breakChance = breakChanceCalc(breakTest,coldBlooded) + " chance to stick around and fight some more";
+		if (firstUnit['unbreakable'] == 1){ breakChance = "100% chance to stick around and keep fighting.";}
 			
 		var wonByText = wonBy + " won the combat by " + wonByAmount.toFixed(1) + "<br />" + lostBy + " lost and have a " + breakChance;
 	}
