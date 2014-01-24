@@ -9,13 +9,13 @@ var army = new Array ();
 	army[2] = ("The Empire"); //empire
 	army[3] = ("High Elves"); //highElves
 	army[4] = ("Lizardmen"); //lizardmen
-	//army[9] = ("Ogre Kingdoms"); //ogres
-	army[5] = ("Orcs and Goblins"); //orcsGoblins
+	army[5] = ("Ogre Kingdoms"); //ogresKingdoms
+	army[6] = ("Orcs and Goblins"); //orcsGoblins
 	//army[11] = ("Skaven"); //skaven
 	//army[12] = ("Tomb Kings"); //tombKings
-	army[6] = ("Vampire Counts"); //vampireCounts
-	army[7] = ("Warriors of Chaos"); //chaosWarriors
-	army[8] = ("Wood Elves"); //woodElves
+	army[7] = ("Vampire Counts"); //vampireCounts
+	army[8] = ("Warriors of Chaos"); //chaosWarriors
+	army[9] = ("Wood Elves"); //woodElves
 
 function armyChoice() {
 	var armyChoice = (document.getElementById("army1").value);
@@ -578,6 +578,15 @@ function unitChoice() {
 			unit1 = kroxigor;
 			unit1Options(unit1);
 		}
+		// Ogre Kingdoms
+		if (unit1Choice == "Ogres"){
+			unit1 = bullOgres;
+			unit1Options(unit1);
+			}
+		if (unit1Choice == "Ironguts"){
+			unit1 = ironguts;
+			unit1Options(unit1);
+			}
 		// Orcs and Goblins
 		if (unit1Choice == "Goblins"){
 			unit1 = commonGoblin;
@@ -904,6 +913,15 @@ function oppunitChoice() {
 			unit2 = kroxigor;
 			unit2Options(unit2);
 		}
+		// Ogre Kingdoms
+		if (unit2Choice == "Ogres"){
+			unit2 = bullOgres;
+			unit2Options(unit2);
+			}
+		if (unit2Choice == "Ironguts"){
+			unit2 = ironguts;
+			unit2Options(unit2);
+			}
 		// Orcs and Goblins
 		if (unit2Choice == "Goblins"){
 			unit2 = commonGoblin;

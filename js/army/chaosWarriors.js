@@ -334,6 +334,7 @@ var skullcrushers = new Array ();
 	skullcrushers['maxsize'] = (100); 
 	skullcrushers['minsize'] = (3);
 	skullcrushers['cavbase'] = (1);
+	skullcrushers['stomp'] = (1);
 	skullcrushers['mounted'] = new Array();
 		skullcrushers['mounted']['S'] = (5); // mounts strength
 		skullcrushers['mounted']['A'] = (3); // mounts attacks

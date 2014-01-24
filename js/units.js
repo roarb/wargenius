@@ -73,4 +73,5 @@ var masterUnit = new Array ();
 		masterUnit['options']['MoTzeentch'] = (1); // unit can have mark of tzeentch +1 ward
 		masterUnit['options']['MoNurgle'] = (1); // unit can have mark of nurgle -1 to hit
 		masterUnit['options']['MoSlaanesh'] = (1); // pass all leader tests for fear terror and panic ---- not needed
+		masterUnit['options']['ironFists'] = (1); // unit can take ironfists -- need to find out what this does
 		
