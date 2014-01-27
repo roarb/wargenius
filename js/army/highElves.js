@@ -226,6 +226,7 @@ var dragonPrinces = new Array ();
 	dragonPrinces['minsize'] = (5);
 	dragonPrinces['cavbase'] = (1);
 	dragonPrinces['stomp'] = (.5);
+	dragonPrinces['flameWard'] = (1);
 	dragonPrinces['LD'] = (9);
 	dragonPrinces['options'] = new Array();
 		dragonPrinces['options']['charge'] = (1);

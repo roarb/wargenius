@@ -1,9 +1,62 @@
 // JavaScript Document
 
 var tombKings = new Array();
-	tombKings[0] = ("Skeleton Warriors"); // skeletonWarriors
-	tombKings[1] = ("Skeleton Horsemen"); // skeletonHorsemen
+	tombKings[0] = ("Nehekharan Warriors"); // nehekharanWarriors
+	tombKings[1] = ("Nehekharan Horsemen"); // nehekharanHorsemen
 	tombKings[2] = ("Tomb Guard"); // tombGuard
 	tombKings[3] = ("Ushabti"); // ushabti
 	tombKings[4] = ("Necropolis Knights"); // necropolisKnights
 	
+	
+var nehekharanWarriors = new Array ();
+	nehekharanWarriors['name'] = ("Nehekharan Warriors"); // user friendly name
+	nehekharanWarriors['WS'] = (2); // weapon skill
+	nehekharanWarriors['S'] = (3); // normal strength
+	nehekharanWarriors['T'] = (3); // toughness
+	nehekharanWarriors['W'] = (1); // wounds
+	nehekharanWarriors['I'] = (2); // initiaive
+	nehekharanWarriors['A'] = (1); // attacks
+	nehekharanWarriors['parry'] = (1); 
+	nehekharanWarriors['AS'] = (5); // armor save amount
+	nehekharanWarriors['rank'] = (2); // how many ranks deep can attack
+	nehekharanWarriors['basesize'] = (20); // base width in mm 20, 25, 40, 50
+	nehekharanWarriors['maxsize'] = (100); 
+	nehekharanWarriors['minsize'] = (10);
+	nehekharanWarriors['LD'] = (5); // leadership
+	nehekharanWarriors['crumble'] = (1);
+	nehekharanWarriors['options'] = new Array();
+		nehekharanWarriors['options']['charge'] = (1);
+		nehekharanWarriors['options']['musician'] = (1); // musician 0 not an option 1 is an option
+		nehekharanWarriors['options']['standard'] = (1); // standard 0 not an option 1 is an option
+		nehekharanWarriors['options']['champion'] = (1); 
+		nehekharanWarriors['options']['spears'] = (1);
+		
+var nehekharanHorsemen = new Array ();
+	nehekharanHorsemen['name'] = ("Nehekharan Horsemen"); // user friendly name
+	nehekharanHorsemen['WS'] = (2); // weapon skill
+	nehekharanHorsemen['charge'] = new Array();
+		nehekharanHorsemen['charge']['spears'] = (1);
+	nehekharanHorsemen['S'] = (3); // normal strength
+	nehekharanHorsemen['T'] = (3); // toughness
+	nehekharanHorsemen['W'] = (1); // wounds
+	nehekharanHorsemen['I'] = (2); // initiaive
+	nehekharanHorsemen['A'] = (1); // attacks
+	nehekharanHorsemen['AS'] = (4); // armor save amount
+	nehekharanHorsemen['rank'] = (2); // how many ranks deep can attack
+	nehekharanHorsemen['basesize'] = (25); // base width in mm 20, 25, 40, 50
+	nehekharanHorsemen['cavbase'] = (1);
+	nehekharanHorsemen['stomp'] = (.5);
+	nehekharanHorsemen['maxsize'] = (100); 
+	nehekharanHorsemen['minsize'] = (5);
+	nehekharanHorsemen['LD'] = (5); // leadership
+	nehekharanHorsemen['crumble'] = (1);
+	nehekharanHorsemen['options'] = new Array();
+		nehekharanHorsemen['options']['charge'] = (1);
+		nehekharanHorsemen['options']['musician'] = (1); // musician 0 not an option 1 is an option
+		nehekharanHorsemen['options']['standard'] = (1); // standard 0 not an option 1 is an option
+		nehekharanHorsemen['options']['champion'] = (1);
+	nehekharanHorsemen['mounted'] = new Array();
+		nehekharanHorsemen['mounted']['A'] = (1);
+		nehekharanHorsemen['mounted']['S'] = (3);
+		nehekharanHorsemen['mounted']['WS'] = (2);
+		nehekharanHorsemen['mounted']['I'] = (2);

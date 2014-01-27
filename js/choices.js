@@ -12,10 +12,10 @@ var army = new Array ();
 	army[5] = ("Ogre Kingdoms"); //ogresKingdoms
 	army[6] = ("Orcs and Goblins"); //orcsGoblins
 	//army[11] = ("Skaven"); //skaven
-	//army[12] = ("Tomb Kings"); //tombKings
-	army[7] = ("Vampire Counts"); //vampireCounts
-	army[8] = ("Warriors of Chaos"); //chaosWarriors
-	army[9] = ("Wood Elves"); //woodElves
+	army[7] = ("Tomb Kings"); //tombKings
+	army[8] = ("Vampire Counts"); //vampireCounts
+	army[9] = ("Warriors of Chaos"); //chaosWarriors
+	army[10] = ("Wood Elves"); //woodElves
 
 function armyChoice() {
 	var armyChoice = (document.getElementById("army1").value);
@@ -587,6 +587,22 @@ function unitChoice() {
 			unit1 = ironguts;
 			unit1Options(unit1);
 			}
+		if (unit1Choice == "Gnoblars"){
+			unit1 = gnoblars;
+			unit1Options(unit1);
+			}
+		if (unit1Choice == "Leadbelchers"){
+			unit1 = leadbelchers;
+			unit1Options(unit1);
+			}
+		if (unit1Choice == "Yhetees"){
+			unit1 = yhetees;
+			unit1Options(unit1);
+			}
+		if (unit1Choice == "Mournfang Cavalry"){
+			unit1 = mournfangCavalry;
+			unit1Options(unit1);
+			}
 		// Orcs and Goblins
 		if (unit1Choice == "Goblins"){
 			unit1 = commonGoblin;
@@ -663,6 +679,15 @@ function unitChoice() {
 			}
 		if (unit1Choice == "Skullcrushers of Khorne"){
 			unit1 = skullcrushers;
+			unit1Options(unit1);
+			}
+		// Tomb Kings
+		if (unit1Choice == "Nehekharan Warriors"){
+			unit1 = nehekharanWarriors;
+			unit1Options(unit1);
+			}
+		if (unit1Choice == "Nehekharan Horsemen"){
+			unit1 = nehekharanHorsemen;
 			unit1Options(unit1);
 			}
 		// Vampire Counts
@@ -922,6 +947,22 @@ function oppunitChoice() {
 			unit2 = ironguts;
 			unit2Options(unit2);
 			}
+		if (unit2Choice == "Gnoblars"){
+			unit2 = gnoblars;
+			unit2Options(unit2);
+			}
+		if (unit2Choice == "Leadbelchers"){
+			unit2 = leadbelchers;
+			unit2Options(unit2);
+			}
+		if (unit2Choice == "Yhetees"){
+			unit2 = yhetees;
+			unit2Options(unit2);
+			}
+		if (unit2Choice == "Mournfang Cavalry"){
+			unit2 = mournfangCavalry;
+			unit2Options(unit2);
+			}
 		// Orcs and Goblins
 		if (unit2Choice == "Goblins"){
 			unit2 = commonGoblin;
@@ -998,6 +1039,15 @@ function oppunitChoice() {
 			}
 		if (unit2Choice == "Skullcrushers of Khorne"){
 			unit2 = skullcrushers;
+			unit2Options(unit2);
+			}
+		// Tomb Kings
+		if (unit2Choice == "Nehekharan Warriors"){
+			unit2 = nehekharanWarriors;
+			unit2Options(unit2);
+			}
+		if (unit2Choice == "Nehekharan Horsemen"){
+			unit2 = nehekharanHorsemen;
 			unit2Options(unit2);
 			}
 		// Vampire Counts
